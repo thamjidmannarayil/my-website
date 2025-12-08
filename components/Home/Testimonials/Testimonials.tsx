@@ -16,7 +16,7 @@ const testimonials: Testimonial[] = [
     role: "Project Manager, Neology, Inc.",
     message:
       "I worked with Thamjid at Flycatch Infotech. He consistently delivered high-quality work with efficiency and precision. He has strong technical skills, clear communication, and a collaborative mindset. A reliable and talented developer I would highly recommend.",
-    profileUrl: "https://www.linkedin.com/in/lakshmi-soman-nair/", 
+    profileUrl: "https://www.linkedin.com/in/lakshmi-soman-nair/",
   },
   {
     avatar: "/avatars/manuramachandran.jpg",
@@ -150,18 +150,18 @@ export default function Testimonials() {
   return (
     <section
       id="TestimonialsSection"
-      className="my-16 overflow-x-hidden py-12 bg-gradient-to-b from-white via-gray-50/30 to-white"
+      className="my-16 overflow-x-hidden py-12 bg-gradient-to-b from-AAprimary via-AASurface/30 to-AAprimary"
     >
       {/* Title */}
       <div data-aos="fade-up" className="flex flex-row items-center md:px-0 mb-16">
         <ArrowIcon className={"flex-none h-5 md:h-6 w-5 md:w-5 translate-y-[2px] text-AAsecondary"} />
         <div className="flex-none flex-row space-x-2 items-center pr-2">
-          <span className="font-bold tracking-wider text-gray-900 text-lg md:text-2xl w-44 md:w-56 opacity-85">
+          <span className="font-bold tracking-wider text-AATextPrimary text-lg md:text-2xl w-44 md:w-56 opacity-85">
             {" "}
             Testimonials
           </span>
         </div>
-        <div className="bg-gray-300 h-[0.2px] w-full xl:w-1/3 md:w-1/2"></div>
+        <div className="bg-AATextMuted h-[0.2px] w-full xl:w-1/3 md:w-1/2"></div>
       </div>
 
       <div
@@ -183,48 +183,48 @@ export default function Testimonials() {
             style={{ userSelect: "none" }}
           >
             {/* Avatar positioned on top center of card */}
-            <a 
-              href={t.profileUrl} 
-              target="_blank" 
+            <a
+              href={t.profileUrl}
+              target="_blank"
               rel="noopener noreferrer"
               className="absolute top-0 left-1/2 -translate-x-1/2 z-20"
             >
               <img
                 src={t.avatar}
                 alt={t.name}
-                className="w-28 h-28 rounded-full border-[6px] border-white shadow-2xl hover:scale-110 transition-transform duration-300 object-cover"
+                className="w-28 h-28 rounded-full border-[6px] border-AAprimary shadow-2xl hover:scale-110 transition-transform duration-300 object-cover"
                 draggable={false}
               />
             </a>
-            
+
             {/* Card with gradient background - reduced height */}
-            <div className="bg-gradient-to-br from-gray-100 to-gray-50 rounded-3xl p-6 pt-16 pb-6 w-full flex flex-col items-center shadow-[0_8px_30px_rgba(0,0,0,0.08)] group hover:shadow-[0_20px_60px_rgba(0,0,0,0.15)] hover:-translate-y-2 transition-all duration-500 relative">
-              
+            <div className="bg-gradient-to-br from-AASurface to-AAtertiary rounded-3xl p-6 pt-16 pb-6 w-full flex flex-col items-center shadow-[0_8px_30px_rgba(0,0,0,0.08)] group hover:shadow-[0_20px_60px_rgba(0,0,0,0.15)] hover:-translate-y-2 transition-all duration-500 relative">
+
               {/* Message with quotes */}
               <div className="relative w-full px-4">
                 {/* Opening Quote - top left of text (mirrored) */}
                 <span className="absolute -top-8 left-4 text-5xl font-serif text-cyan-400 opacity-40 leading-none scale-x-[-1]">,,</span>
-                
-                <p className="text-sm text-center text-gray-700 leading-relaxed px-6">
+
+                <p className="text-sm text-center text-AATextMuted leading-relaxed px-6">
                   {t.message.length > testimonialLength ? t.message.substring(0, testimonialLength) + "..." : t.message}
                 </p>
-                
+
                 {/* Closing Quote - bottom right of text */}
                 <span className="absolute -bottom-1 right-4 text-5xl font-serif text-cyan-400 opacity-40 leading-none">,,</span>
               </div>
-              
+
               {/* Name and Role */}
               <div className="text-center mt-6">
                 <a
                   href={t.profileUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-bold font-sans text-gray-900 text-base hover:text-cyan-500 transition-colors"
+                  className="font-bold font-sans text-AATextPrimary text-base hover:text-AAsecondary transition-colors"
                 >
                   {t.name}
                 </a>
                 {t.role && (
-                  <span className="block text-xs text-gray-700 mt-1">{t.role}</span>
+                  <span className="block text-xs text-AATextMuted mt-1">{t.role}</span>
                 )}
               </div>
             </div>

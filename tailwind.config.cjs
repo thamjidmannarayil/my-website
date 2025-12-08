@@ -28,20 +28,33 @@ module.exports = {
         'card-gradient': 'linear-gradient(135deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.01) 100%)',
       },
       colors: {
-        AAprimary: "#ffffff",          // Pure white background (Samsung/Apple style)
-        AAsecondary: "#000000",        // Pure black accent
-        AAAccent: "#1d1d1f",          // Dark gray (Apple's dark text)
-        AAError: "#86868b",           // Mid gray for errors
-        AAtertiary: "#f5f5f7",        // Light gray surface (Apple's light surface)
-        AASurface: "#fafafa",         // Off-white for cards
-        AATextPrimary: "#1d1d1f",     // Dark text (Apple style)
-        AATextSecondary: "#000000",   // Pure black text
-        AATextMuted: "#86868b",       // Gray muted text (Apple's gray)
-        ResumeButtonHover: "#1d1d1f", // Dark hover
-        MobileNavBarColor: "#ffffff", // White navbar
-        StartupBackground: "#ffffff", // White startup
-        DotPattern: "#f5f5f7",        // Light gray dots
-        TextureOverlay: "#fafafa",    // Subtle light overlay
+        AAprimary: "var(--theme-primary)",           // Background color
+        AAsecondary: "var(--theme-secondary)",       // Secondary/accent color
+        AAAccent: "var(--theme-accent)",             // Main accent color
+        AAError: "var(--theme-error)",               // Error/warning color
+        AAtertiary: "var(--theme-tertiary)",         // Tertiary surface
+        AASurface: "var(--theme-surface)",           // Card/surface color
+        AATextPrimary: "var(--theme-text-primary)",  // Primary text
+        AATextSecondary: "var(--theme-text-secondary)", // Secondary text
+        AATextMuted: "var(--theme-text-muted)",      // Muted text
+        ResumeButtonHover: "var(--theme-accent-hover)", // Button hover
+        MobileNavBarColor: "var(--theme-primary)",   // Mobile navbar
+        StartupBackground: "var(--theme-primary)",   // Startup background
+        DotPattern: "var(--theme-dotted-bg)",        // Dotted pattern
+        TextureOverlay: "var(--theme-surface)",      // Texture overlay
+        // Theme-specific utility colors
+        "theme-primary": "var(--theme-primary)",
+        "theme-secondary": "var(--theme-secondary)",
+        "theme-accent": "var(--theme-accent)",
+        "theme-surface": "var(--theme-surface)",
+        "theme-text-primary": "var(--theme-text-primary)",
+        "theme-text-inverse": "var(--theme-text-inverse)",
+        // Dark section colors (for Things I've Built)
+        "dark-section-bg": "var(--theme-dark-section-bg)",
+        "dark-section-text": "var(--theme-dark-section-text)",
+        "dark-section-text-muted": "var(--theme-dark-section-text-muted)",
+        "dark-section-text-highlight": "var(--theme-dark-section-text-highlight)",
+        "dark-section-card": "var(--theme-dark-section-card-bg)",
       },
       screens: {
         sm: "640px",

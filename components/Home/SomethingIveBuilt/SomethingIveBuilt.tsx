@@ -12,27 +12,27 @@ export default function SomethingIveBuilt() {
   return (
     <div
       id="SomethingIveBuiltSection"
-      className=" flex flex-col xl:space-y-28 space-y-12 bg-black w-full overflow-x-hidden
-     2xl:px-72 lg:px-24 md:px-16 sm:px-16 py-32 px-4 relative"
+      className=" flex flex-col xl:space-y-28 space-y-12 bg-dark-section-bg w-full overflow-x-hidden
+     2xl:px-72 lg:px-24 md:px-16 sm:px-16 py-32 px-4 relative transition-all duration-300"
       style={{
-        background: 'linear-gradient(135deg, #000000 0%, #0a0014 50%, #000000 100%)'
+        background: 'var(--theme-dark-section-gradient)'
       }}
     >
       {/* Particle background for this section */}
       <ParticleBackground />
       {/* // ? Title   */}
       <div data-aos="fade-up" className=" flex flex-row  items-center md:px-0">
-        <ArrowIcon className={"flex-none h-5 md:h-6 w-5 md:w-5 translate-y-[2px] text-white"} />
+        <ArrowIcon className={"flex-none h-5 md:h-6 w-5 md:w-5 translate-y-[2px] text-dark-section-text-highlight"} />
         <div className="flex-none flex-row space-x-2 items-center pr-2">
-          <span className=" font-bold tracking-wider text-gray-200 text-lg md:text-2xl w-44 md:w-56 opacity-85">
+          <span className=" font-bold tracking-wider text-dark-section-text text-lg md:text-2xl w-44 md:w-56 opacity-85">
             {" "}
             Some Things I&apos;ve Built
           </span>
         </div>
-        <div className="bg-gray-400 h-[0.2px] w-full xl:w-1/3 md:w-1/2"></div>
+        <div className="bg-dark-section-text-muted h-[0.2px] w-full xl:w-1/3 md:w-1/2"></div>
       </div>
 
-      <div className="flex flex-col   xl:space-y-36 space-y-8 md:space-y-28">       
+      <div className="flex flex-col   xl:space-y-36 space-y-8 md:space-y-28">
 
         {/* Project 1 Azure Horizon */}
         <div data-aos="fade-up" className="relative md:grid md:grid-cols-12 w-full md:h-96">
@@ -76,15 +76,15 @@ export default function SomethingIveBuilt() {
               col-span-8 flex flex-col items-start md:items-end sm:space-y-3 space-y-1 border border-white/10 rounded-lg"
             >
               <div className="flex flex-col space-y-1 md:items-end z-10">
-                <span className="text-gray-400 text-base">Personal Project</span>
+                <span className="text-dark-section-text-muted text-base">Personal Project</span>
                 <a href="https://resort.thamjidthachu.dev" target={"_blank"} rel="noreferrer">
-                  <span className=" md:text-gray-200 text-AATextPrimary keyword-hover font-bold text-xl hover:cursor-pointer">
+                  <span className=" md:text-dark-section-text text-AATextPrimary keyword-hover font-bold text-xl hover:cursor-pointer">
                     Azure Horizon
                   </span>
                 </a>
               </div>
               <div className="w-full md:bg-AAtertiary rounded-md py-6 md:p-6  z-10">
-                <p className="text-gray-300 md:text-gray-400 text-left md:text-right">
+                <p className="text-dark-section-text-highlight md:text-dark-section-text-muted text-left md:text-right">
                   I initiated <span className="text-AATextPrimary keyword-hover">Azure Horizon</span> in 2021 as a{" "}
                   <span className="text-AATextPrimary keyword-hover">demo project</span> for my first job, which
                   later grew into a <span className="text-AATextPrimary keyword-hover">personal passion project</span>.
@@ -100,7 +100,7 @@ export default function SomethingIveBuilt() {
                 </p>
               </div>
               <ul
-                className="flex flex-wrap w-full text-gray-300 md:text-gray-400
+                className="flex flex-wrap w-full text-dark-section-text-highlight md:text-dark-section-text-muted
                text-sm font-Text2 md:justify-end"
               >
                 <span className="pr-4 z-10 keyword-hover">Python/Django</span>
@@ -111,10 +111,10 @@ export default function SomethingIveBuilt() {
                 <span className="pr-4 z-10 keyword-hover">Docker</span>
               </ul>
               <div className="z-10 flex fle-row space-x-5 sm:pt-0 pt-2">
-              <GithubIcon link="https://github.com/thamjidthachu/azure-horizon" />
-              <a href="https://resort.thamjidthachu.dev" target={"_blank"} rel="noreferrer">
-                <ExternalLink url={""} router={router} />
-              </a>
+                <GithubIcon link="https://github.com/thamjidthachu/azure-horizon" />
+                <a href="https://resort.thamjidthachu.dev" target={"_blank"} rel="noreferrer">
+                  <ExternalLink url={""} router={router} />
+                </a>
               </div>
             </div>
           </div>
@@ -153,27 +153,27 @@ export default function SomethingIveBuilt() {
               col-span-8 flex flex-col items-start space-y-3 md:order-1 border border-white/10 rounded-lg"
             >
               <div className="flex flex-col space-y-1 z-10">
-                <span className="text-gray-400 text-base">Internal Web Application</span>
+                <span className="text-dark-section-text-muted text-base">Internal Web Application</span>
                 <a href="https://crm.aqaryone.com" target="_blank" rel="noopener noreferrer">
-                  <span className=" md:text-gray-200 text-AATextPrimary keyword-hover font-bold text-xl hover:cursor-pointer">
+                  <span className=" md:text-dark-section-text text-AATextPrimary keyword-hover font-bold text-xl hover:cursor-pointer">
                     Aqary CRM
                   </span>
                 </a>
               </div>
               <div className="w-full md:bg-AAtertiary rounded-md py-6 md:p-6 z-10">
-                <p className="text-gray-300 md:text-gray-400 text-left">
+                <p className="text-dark-section-text-highlight md:text-dark-section-text-muted text-left">
                   Building <span className="text-AATextPrimary keyword-hover">Aqary CRM</span>, a{" "}
                   <span className="text-AATextPrimary keyword-hover">real estate management platform</span> powered by{" "}
                   <span className="text-AATextPrimary keyword-hover">Django REST Framework</span> and{" "}
                   <span className="text-AATextPrimary keyword-hover">Flask-SocketIO</span> for{" "}
-                  <span className="text-AATextPrimary keyword-hover">real-time operations</span>.  
+                  <span className="text-AATextPrimary keyword-hover">real-time operations</span>.
                   It features a scalable{" "}
                   <span className="text-AATextPrimary keyword-hover">microservices architecture</span> with modules like{" "}
                   <span className="text-AATextPrimary keyword-hover">Admin</span>,{" "}
                   <span className="text-AATextPrimary keyword-hover">Notification</span>, and{" "}
                   <span className="text-AATextPrimary keyword-hover">Booking Management</span>, leveraging{" "}
                   <span className="text-AATextPrimary keyword-hover">Celery & Redis</span> for{" "}
-                  <span className="text-AATextPrimary keyword-hover">async workflows</span>.  
+                  <span className="text-AATextPrimary keyword-hover">async workflows</span>.
                   Designed to be a{" "}
                   <span className="text-AATextPrimary keyword-hover">cloud-ready CRM</span> that unites{" "}
                   <span className="text-AATextPrimary keyword-hover">automation</span> with{" "}
@@ -181,7 +181,7 @@ export default function SomethingIveBuilt() {
                 </p>
               </div>
               <ul
-                className="flex flex-wrap w-full text-gray-300 md:text-gray-400
+                className="flex flex-wrap w-full text-dark-section-text-highlight md:text-dark-section-text-muted
                text-sm font-Text2"
               >
                 <span className="pr-4 z-10 keyword-hover">Python/Flask</span>
@@ -193,10 +193,10 @@ export default function SomethingIveBuilt() {
                 <span className="pr-4 z-10 keyword-hover">Docker</span>
               </ul>
               <div className="z-10 flex fle-row space-x-5 ">
-              <GithubIcon link="https://github.com/thamjidthachu" />
-              <a href="https://crm.aqaryone.com" target={"_blank"} rel="noreferrer">
-                <ExternalLink url={""} router={router} />
-              </a>
+                <GithubIcon link="https://github.com/thamjidthachu" />
+                <a href="https://crm.aqaryone.com" target={"_blank"} rel="noreferrer">
+                  <ExternalLink url={""} router={router} />
+                </a>
               </div>
             </div>
           </div>
@@ -235,22 +235,22 @@ export default function SomethingIveBuilt() {
               col-span-8 flex flex-col items-start md:items-end sm:space-y-3 space-y-1 border border-white/10 rounded-lg"
             >
               <div className="flex flex-col space-y-1 md:items-end z-10">
-                <span className="text-gray-400 text-base">Internal Web Application.</span>
+                <span className="text-dark-section-text-muted text-base">Internal Web Application.</span>
                 <a href="https://www.https://id.aqaryone.com/" target="_blank" rel="noopener noreferrer">
-                  <span className=" md:text-gray-200 text-AATextPrimary keyword-hover font-bold text-xl hover:cursor-pointer">
+                  <span className=" md:text-dark-section-text text-AATextPrimary keyword-hover font-bold text-xl hover:cursor-pointer">
                     HRMS - Identity Service
                   </span>
                 </a>
               </div>
               <div className="w-full md:bg-AAtertiary rounded-md py-6 md:p-6 z-10">
-                <p className="text-gray-300 md:text-gray-400 text-left md:text-right">
+                <p className="text-dark-section-text-highlight md:text-dark-section-text-muted text-left md:text-right">
                   Developing the <span className="text-AATextPrimary keyword-hover">Aqary Identity Service</span>, the{" "}
                   <span className="text-AATextPrimary keyword-hover">core authentication engine</span> of the{" "}
-                  <span className="text-AATextPrimary keyword-hover">Aqary ecosystem</span>.  
+                  <span className="text-AATextPrimary keyword-hover">Aqary ecosystem</span>.
                   It handles{" "}
                   <span className="text-AATextPrimary keyword-hover">user onboarding</span>,{" "}
                   <span className="text-AATextPrimary keyword-hover">multi-role access control</span>, and{" "}
-                  <span className="text-AATextPrimary keyword-hover">secure token-based authentication</span> across microservices.  
+                  <span className="text-AATextPrimary keyword-hover">secure token-based authentication</span> across microservices.
                   Built with{" "}
                   <span className="text-AATextPrimary keyword-hover">Django REST Framework</span> and{" "}
                   <span className="text-AATextPrimary keyword-hover">OAuth2 / JWT</span>, it ensures{" "}
@@ -259,7 +259,7 @@ export default function SomethingIveBuilt() {
                 </p>
               </div>
               <ul
-                className="flex flex-wrap w-full text-gray-300 md:text-gray-400
+                className="flex flex-wrap w-full text-dark-section-text-highlight md:text-dark-section-text-muted
                text-sm font-Text2 md:justify-end"
               >
                 <span className="pr-4 z-10 keyword-hover">Python/Flask</span>
@@ -278,7 +278,7 @@ export default function SomethingIveBuilt() {
               </div>
             </div>
           </div>
-        </div>        
+        </div>
 
         {/* // ? Project 4 Aqary App Console */}
         <div data-aos="fade-up" className="relative md:grid md:grid-cols-12 w-full md:h-96  ">
@@ -313,26 +313,26 @@ export default function SomethingIveBuilt() {
               col-span-8 flex flex-col items-start space-y-3 md:order-1 border border-white/10 rounded-lg"
             >
               <div className="flex flex-col space-y-1 z-10">
-                <span className="text-gray-400 text-base">Internal Web Application</span>
+                <span className="text-dark-section-text-muted text-base">Internal Web Application</span>
                 <a href="https://console.aqaryone.com" target={"_blank"} rel="noreferrer">
-                  <span className=" md:text-gray-200 text-AATextPrimary keyword-hover font-bold text-xl hover:cursor-pointer">
+                  <span className=" md:text-dark-section-text text-AATextPrimary keyword-hover font-bold text-xl hover:cursor-pointer">
                     App Console
                   </span>
                 </a>
               </div>
               <div className="w-full md:bg-AAtertiary rounded-md py-6 md:p-6 z-10">
-                <p className="text-gray-300 md:text-gray-400 text-left md:text-right">
+                <p className="text-dark-section-text-highlight md:text-dark-section-text-muted text-left md:text-right">
                   Building the <span className="text-AATextPrimary keyword-hover">Aqary App Console</span>, a{" "}
                   <span className="text-AATextPrimary keyword-hover">developer platform</span> for seamless{" "}
                   <span className="text-AATextPrimary keyword-hover">app integration</span> within the{" "}
-                  <span className="text-AATextPrimary keyword-hover">Aqary ecosystem</span>.  
+                  <span className="text-AATextPrimary keyword-hover">Aqary ecosystem</span>.
                   Built with{" "}
                   <span className="text-AATextPrimary keyword-hover">Flask</span> and{" "}
                   <span className="text-AATextPrimary keyword-hover">SQLAlchemy</span>, it enables{" "}
                   <span className="text-AATextPrimary keyword-hover">OAuth-based app registration</span>,{" "}
                   <span className="text-AATextPrimary keyword-hover">webhooks</span>, and{" "}
                   <span className="text-AATextPrimary keyword-hover">permission management</span> through{" "}
-                  <span className="text-AATextPrimary keyword-hover">modular APIs</span>.  
+                  <span className="text-AATextPrimary keyword-hover">modular APIs</span>.
                   Supports{" "}
                   <span className="text-AATextPrimary keyword-hover">IP whitelisting</span>,{" "}
                   <span className="text-AATextPrimary keyword-hover">callback validation</span>, and{" "}
@@ -341,7 +341,7 @@ export default function SomethingIveBuilt() {
                 </p>
               </div>
               <ul
-                className="flex flex-wrap w-full text-gray-300 md:text-gray-400
+                className="flex flex-wrap w-full text-dark-section-text-highlight md:text-dark-section-text-muted
                text-sm font-Text2 md:justify-end"
               >
                 <span className="pr-4 z-10 keyword-hover">Python/Flask</span>
@@ -353,10 +353,10 @@ export default function SomethingIveBuilt() {
                 <span className="pr-4 z-10 keyword-hover">Docker</span>
               </ul>
               <div className="z-10 flex fle-row space-x-5 sm:pt-0 pt-2">
-              <GithubIcon link="https://github.com/thamjidthachu" />
-              <a href="https://console.aqaryone.com" target={"_blank"} rel="noreferrer">
-                <ExternalLink url={""} router={router} />
-              </a>
+                <GithubIcon link="https://github.com/thamjidthachu" />
+                <a href="https://console.aqaryone.com" target={"_blank"} rel="noreferrer">
+                  <ExternalLink url={""} router={router} />
+                </a>
               </div>
             </div>
           </div>
@@ -395,36 +395,36 @@ export default function SomethingIveBuilt() {
               col-span-8 flex flex-col items-start md:items-end sm:space-y-3 space-y-1 border border-white/10 rounded-lg"
             >
               <div className="flex flex-col space-y-1 md:items-end z-10">
-                <span className="text-gray-400 text-base">Internal Web Application.</span>
+                <span className="text-dark-section-text-muted text-base">Internal Web Application.</span>
                 <a href="https://www.https://aqaryaid.com/" target="_blank" rel="noopener noreferrer">
-                  <span className=" md:text-gray-200 text-AATextPrimary keyword-hover font-bold text-xl hover:cursor-pointer">
+                  <span className=" md:text-dark-section-text text-AATextPrimary keyword-hover font-bold text-xl hover:cursor-pointer">
                     Aqary API Gateway
                   </span>
                 </a>
               </div>
-            <div className="w-full md:bg-AAtertiary rounded-md py-6 md:p-6 z-10">
-              <p className="text-gray-300 md:text-gray-400 text-left md:text-right">
-                Architected the <span className="text-AATextPrimary keyword-hover">Aqary API Gateway</span> as the{" "}
-                <span className="text-AATextPrimary keyword-hover">central entry point</span> for all{" "}
-                <span className="text-AATextPrimary keyword-hover">Aqary microservices</span>.  
-                Built with{" "}
-                <span className="text-AATextPrimary keyword-hover">Flask</span> and{" "}
-                <span className="text-AATextPrimary keyword-hover">Nginx</span>, it manages{" "}
-                <span className="text-AATextPrimary keyword-hover">routing</span>,{" "}
-                <span className="text-AATextPrimary keyword-hover">authentication</span>,{" "}
-                <span className="text-AATextPrimary keyword-hover">rate limiting</span>, and{" "}
-                <span className="text-AATextPrimary keyword-hover">service-level security</span>.  
-                Integrated with the{" "}
-                <span className="text-AATextPrimary keyword-hover">Identity Service</span> for{" "}
-                <span className="text-AATextPrimary keyword-hover">JWT validation</span> and{" "}
-                <span className="text-AATextPrimary keyword-hover">RBAC</span>, featuring{" "}
-                <span className="text-AATextPrimary keyword-hover">centralized logging</span> and{" "}
-                <span className="text-AATextPrimary keyword-hover">dynamic service discovery</span> for{" "}
-                <span className="text-AATextPrimary keyword-hover">high availability</span> and{" "}
-                <span className="text-AATextPrimary keyword-hover">scalability</span>.
-              </p>
-            </div>
-              <ul className="flex flex-wrap w-full text-gray-300 md:text-gray-400 text-sm font-Text2 md:justify-end">
+              <div className="w-full md:bg-AAtertiary rounded-md py-6 md:p-6 z-10">
+                <p className="text-dark-section-text-highlight md:text-dark-section-text-muted text-left md:text-right">
+                  Architected the <span className="text-AATextPrimary keyword-hover">Aqary API Gateway</span> as the{" "}
+                  <span className="text-AATextPrimary keyword-hover">central entry point</span> for all{" "}
+                  <span className="text-AATextPrimary keyword-hover">Aqary microservices</span>.
+                  Built with{" "}
+                  <span className="text-AATextPrimary keyword-hover">Flask</span> and{" "}
+                  <span className="text-AATextPrimary keyword-hover">Nginx</span>, it manages{" "}
+                  <span className="text-AATextPrimary keyword-hover">routing</span>,{" "}
+                  <span className="text-AATextPrimary keyword-hover">authentication</span>,{" "}
+                  <span className="text-AATextPrimary keyword-hover">rate limiting</span>, and{" "}
+                  <span className="text-AATextPrimary keyword-hover">service-level security</span>.
+                  Integrated with the{" "}
+                  <span className="text-AATextPrimary keyword-hover">Identity Service</span> for{" "}
+                  <span className="text-AATextPrimary keyword-hover">JWT validation</span> and{" "}
+                  <span className="text-AATextPrimary keyword-hover">RBAC</span>, featuring{" "}
+                  <span className="text-AATextPrimary keyword-hover">centralized logging</span> and{" "}
+                  <span className="text-AATextPrimary keyword-hover">dynamic service discovery</span> for{" "}
+                  <span className="text-AATextPrimary keyword-hover">high availability</span> and{" "}
+                  <span className="text-AATextPrimary keyword-hover">scalability</span>.
+                </p>
+              </div>
+              <ul className="flex flex-wrap w-full text-dark-section-text-highlight md:text-dark-section-text-muted text-sm font-Text2 md:justify-end">
                 <span className="pr-4 z-10 keyword-hover">Python/Flask</span>
                 <span className="pr-4 z-10 keyword-hover">Docker</span>
               </ul>
@@ -436,7 +436,7 @@ export default function SomethingIveBuilt() {
               </div>
             </div>
           </div>
-        </div>        
+        </div>
 
         {/* // ? Project 6 Hrms Aqary */}
         <div data-aos="fade-up" className="relative md:grid md:grid-cols-12 w-full md:h-96">
@@ -471,31 +471,31 @@ export default function SomethingIveBuilt() {
               col-span-8 flex flex-col items-start space-y-3 md:order-1 border border-white/10 rounded-lg"
             >
               <div className="flex flex-col space-y-1 z-10">
-                <span className="text-gray-400 text-base">Internal Web Application.</span>
+                <span className="text-dark-section-text-muted text-base">Internal Web Application.</span>
                 <a href="https://people.aqaryone.com/" target={"_blank"} rel="noreferrer">
-                  <span className=" md:text-gray-200 text-AATextPrimary keyword-hover font-bold text-xl hover:cursor-pointer">
+                  <span className=" md:text-dark-section-text text-AATextPrimary keyword-hover font-bold text-xl hover:cursor-pointer">
                     HRMS - Aqary One
                   </span>
                 </a>
               </div>
               <div className="w-full md:bg-AAtertiary rounded-md py-6 md:p-6 z-10">
-                <p className="text-gray-300 md:text-gray-400 text-left">
-                    At <span className="text-AATextPrimary keyword-hover">Aqary Investments and Development</span>, I built{" "}
-                    <span className="text-AATextPrimary keyword-hover">real-time notification services</span> using{" "}
-                    <span className="text-AATextPrimary keyword-hover">Webhooks</span> and{" "}
-                    <span className="text-AATextPrimary keyword-hover">WebSockets</span> to boost system responsiveness.  
-                    Also developed an{" "}
-                    <span className="text-AATextPrimary keyword-hover">AI-powered HRMS</span> with{" "}
-                    <span className="text-AATextPrimary keyword-hover">ATS screening</span>,{" "}
-                    <span className="text-AATextPrimary keyword-hover">chatbot support</span>, and{" "}
-                    <span className="text-AATextPrimary keyword-hover">biometric automation</span> using{" "}
-                    <span className="text-AATextPrimary keyword-hover">Flask</span> and{" "}
-                    <span className="text-AATextPrimary keyword-hover">event-driven architecture</span>, improving{" "}
-                    <span className="text-AATextPrimary keyword-hover">HR workflows</span> and{" "}
-                    <span className="text-AATextPrimary keyword-hover">employee experience</span>.
+                <p className="text-dark-section-text-highlight md:text-dark-section-text-muted text-left">
+                  At <span className="text-AATextPrimary keyword-hover">Aqary Investments and Development</span>, I built{" "}
+                  <span className="text-AATextPrimary keyword-hover">real-time notification services</span> using{" "}
+                  <span className="text-AATextPrimary keyword-hover">Webhooks</span> and{" "}
+                  <span className="text-AATextPrimary keyword-hover">WebSockets</span> to boost system responsiveness.
+                  Also developed an{" "}
+                  <span className="text-AATextPrimary keyword-hover">AI-powered HRMS</span> with{" "}
+                  <span className="text-AATextPrimary keyword-hover">ATS screening</span>,{" "}
+                  <span className="text-AATextPrimary keyword-hover">chatbot support</span>, and{" "}
+                  <span className="text-AATextPrimary keyword-hover">biometric automation</span> using{" "}
+                  <span className="text-AATextPrimary keyword-hover">Flask</span> and{" "}
+                  <span className="text-AATextPrimary keyword-hover">event-driven architecture</span>, improving{" "}
+                  <span className="text-AATextPrimary keyword-hover">HR workflows</span> and{" "}
+                  <span className="text-AATextPrimary keyword-hover">employee experience</span>.
                 </p>
               </div>
-              <ul className="flex flex-wrap w-full text-gray-300 md:text-gray-400 text-sm font-Text2">
+              <ul className="flex flex-wrap w-full text-dark-section-text-highlight md:text-dark-section-text-muted text-sm font-Text2">
                 <span className="pr-4 z-10 keyword-hover">Python/Flask</span>
                 <span className="pr-4 z-10 keyword-hover">PyTorch</span>
                 <span className="pr-4 z-10 keyword-hover">Transformers</span>
@@ -550,15 +550,15 @@ export default function SomethingIveBuilt() {
             col-span-8 flex flex-col items-start md:items-end space-y-3 border border-white/10 rounded-lg"
             >
               <div className="flex flex-col space-y-1 md:items-end z-10">
-                <span className="text-gray-400 text-base">Travel and Tourism</span>
+                <span className="text-dark-section-text-muted text-base">Travel and Tourism</span>
                 <a href="https://www.exploreworld.com/" target="_blank" rel="noopener noreferrer">
-                  <span className=" md:text-gray-200 text-AATextPrimary keyword-hover font-bold text-xl hover:cursor-pointer">
+                  <span className=" md:text-dark-section-text text-AATextPrimary keyword-hover font-bold text-xl hover:cursor-pointer">
                     Explore World
                   </span>
                 </a>
               </div>
               <div className="w-full md:bg-AAtertiary rounded-md py-6 md:p-6  z-10">
-                <p className="text-gray-300 md:text-gray-400 text-left md:text-right">
+                <p className="text-dark-section-text-highlight md:text-dark-section-text-muted text-left md:text-right">
                   I had the opportunity to spearhead the backend development of a travel aggregator platform, leveraging a{" "}
                   <span className="text-AATextPrimary keyword-hover"> microservices architecture</span>. My focus was on integrating{" "}
                   <span className="text-AATextPrimary keyword-hover"> payment gateways</span> and{" "}
@@ -570,7 +570,7 @@ export default function SomethingIveBuilt() {
 
               </div>
               <ul
-                className="flex flex-wrap w-full text-gray-300 md:text-gray-400
+                className="flex flex-wrap w-full text-dark-section-text-highlight md:text-dark-section-text-muted
                text-sm font-Text2 md:justify-end"
               >
                 <span className="pr-4 z-10 keyword-hover">Python/Django</span>
@@ -625,15 +625,15 @@ export default function SomethingIveBuilt() {
             col-span-8 flex flex-col items-start space-y-3 md:order-1 border border-white/10 rounded-lg"
             >
               <div className="flex flex-col space-y-1 z-10">
-                <span className="text-gray-400 text-base">CRM & Inventory Management</span>
+                <span className="text-dark-section-text-muted text-base">CRM & Inventory Management</span>
                 <a href="https://www.wearlay.in/" target="_blank" rel="noopener noreferrer">
-                  <span className=" md:text-gray-200 text-AATextPrimary keyword-hover font-bold text-xl hover:cursor-pointer">
+                  <span className=" md:text-dark-section-text text-AATextPrimary keyword-hover font-bold text-xl hover:cursor-pointer">
                     Wearlay
                   </span>
                 </a>
               </div>
               <div className="w-full md:bg-AAtertiary rounded-md py-6 md:p-6  z-10">
-                <p className="text-gray-300 md:text-gray-400 text-left">
+                <p className="text-dark-section-text-highlight md:text-dark-section-text-muted text-left">
                   I led the backend development of a CRM & Inventory system, built with{" "}
                   <span className="text-AATextPrimary keyword-hover"> Django</span> and{" "}
                   <span className="text-AATextPrimary keyword-hover"> Django REST Framework</span>. The platform automated{" "}
@@ -645,7 +645,7 @@ export default function SomethingIveBuilt() {
 
               </div>
               <ul
-                className="flex flex-wrap w-full text-gray-300 md:text-gray-400
+                className="flex flex-wrap w-full text-dark-section-text-highlight md:text-dark-section-text-muted
                text-sm font-Text2"
               >
                 <span className="pr-4 z-10 keyword-hover">Python/Django</span>
@@ -697,15 +697,15 @@ export default function SomethingIveBuilt() {
             col-span-8 flex flex-col items-start md:items-end space-y-3 border border-white/10 rounded-lg"
             >
               <div className="flex flex-col space-y-1 md:items-end z-10">
-                <span className="text-gray-400 text-base">Learning & Management System</span>
+                <span className="text-dark-section-text-muted text-base">Learning & Management System</span>
                 <Link href="https://my.um.edu.sa/">
-                  <span className=" md:text-gray-200 text-AATextPrimary keyword-hover font-bold text-xl hover:cursor-pointer">
+                  <span className=" md:text-dark-section-text text-AATextPrimary keyword-hover font-bold text-xl hover:cursor-pointer">
                     Al Maarefa
                   </span>
                 </Link>
               </div>
               <div className="w-full md:bg-AAtertiary rounded-md py-6 md:p-6  z-10">
-                <p className="text-gray-300 md:text-gray-400 text-left md:text-right">
+                <p className="text-dark-section-text-highlight md:text-dark-section-text-muted text-left md:text-right">
                   I led the backend development of a role-based{" "}
                   <span className="text-AATextPrimary keyword-hover"> academic platform</span> designed for{" "}
                   <span className="text-AATextPrimary keyword-hover"> students</span>,{" "}
@@ -723,7 +723,7 @@ export default function SomethingIveBuilt() {
                 </p>
               </div>
               <ul
-                className="flex flex-wrap w-full text-gray-300 md:text-gray-400
+                className="flex flex-wrap w-full text-dark-section-text-highlight md:text-dark-section-text-muted
                text-sm font-Text2 md:justify-start"
               >
                 <span className="pr-4 z-10 keyword-hover">Python/Django</span>
@@ -773,15 +773,15 @@ export default function SomethingIveBuilt() {
             col-span-8 flex flex-col items-start space-y-3 md:order-1 border border-white/10 rounded-lg"
             >
               <div className="flex flex-col space-y-1 z-10">
-                <span className="text-gray-400 text-base">Hospitality Management</span>
+                <span className="text-dark-section-text-muted text-base">Hospitality Management</span>
                 <Link href={"https://my.away2gether.com"}>
-                  <span className=" md:text-gray-200 text-AATextPrimary keyword-hover font-bold text-xl hover:cursor-pointer">
+                  <span className=" md:text-dark-section-text text-AATextPrimary keyword-hover font-bold text-xl hover:cursor-pointer">
                     Away2gether
                   </span>
                 </Link>
               </div>
               <div className="w-full md:bg-AAtertiary rounded-md py-6 md:p-6  z-10">
-                <p className="text-gray-300 md:text-gray-400 text-left">
+                <p className="text-dark-section-text-highlight md:text-dark-section-text-muted text-left">
                   I solely developed the backend of a{" "}
                   <span className="text-AATextPrimary keyword-hover"> hospitality platform</span> using{" "}
                   <span className="text-AATextPrimary keyword-hover"> Django</span>,{" "}
@@ -798,7 +798,7 @@ export default function SomethingIveBuilt() {
 
               </div>
               <ul
-                className="flex flex-wrap w-full text-gray-300 md:text-gray-400
+                className="flex flex-wrap w-full text-dark-section-text-highlight md:text-dark-section-text-muted
                text-sm font-Text2"
               >
                 <span className="pr-4 z-10 keyword-hover">Python/Django</span>
@@ -858,15 +858,15 @@ export default function SomethingIveBuilt() {
               col-span-8 flex flex-col items-start md:items-end sm:space-y-3 space-y-1 border border-white/10 rounded-lg"
             >
               <div className="flex flex-col space-y-1 md:items-end z-10">
-                <span className="text-gray-400 text-base">Innovative E-Commerce Platform</span>
+                <span className="text-dark-section-text-muted text-base">Innovative E-Commerce Platform</span>
                 <a href="https://www.redalion.com" target={"_blank"} rel="noreferrer">
-                  <span className=" md:text-gray-200 text-AATextPrimary keyword-hover font-bold text-xl hover:cursor-pointer">
+                  <span className=" md:text-dark-section-text text-AATextPrimary keyword-hover font-bold text-xl hover:cursor-pointer">
                     Redalion
                   </span>
                 </a>
               </div>
               <div className="w-full md:bg-AAtertiary rounded-md py-6 md:p-6  z-10">
-                <p className="text-gray-300 md:text-gray-400 text-left md:text-right">
+                <p className="text-dark-section-text-highlight md:text-dark-section-text-muted text-left md:text-right">
                   I led the backend development of a platform that links{" "}
                   <span className="text-AATextPrimary keyword-hover"> QR-coded medallions</span> to{" "}
                   <span className="text-AATextPrimary keyword-hover"> digital ancestral profiles</span>, featuring{" "}
@@ -878,7 +878,7 @@ export default function SomethingIveBuilt() {
                 </p>
               </div>
               <ul
-                className="flex flex-wrap w-full text-gray-300 md:text-gray-400
+                className="flex flex-wrap w-full text-dark-section-text-highlight md:text-dark-section-text-muted
                text-sm font-Text2 md:justify-end"
               >
                 <span className="pr-4 z-10 keyword-hover">Python/Django</span>
@@ -889,10 +889,10 @@ export default function SomethingIveBuilt() {
                 <span className="pr-4 z-10 keyword-hover">Stripe</span>
               </ul>
               <div className="z-10 flex fle-row space-x-5 sm:pt-0 pt-2">
-              <GithubIcon link="https://github.com/flycatchinfotech/redalion" />
-              <a href="https://www.redalion.com" target={"_blank"} rel="noreferrer">
-                <ExternalLink url={""} router={router} />
-              </a>
+                <GithubIcon link="https://github.com/flycatchinfotech/redalion" />
+                <a href="https://www.redalion.com" target={"_blank"} rel="noreferrer">
+                  <ExternalLink url={""} router={router} />
+                </a>
               </div>
             </div>
           </div>

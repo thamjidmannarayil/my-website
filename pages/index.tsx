@@ -90,7 +90,7 @@ export default function Home() {
     setTimeout(() => {
       setShowElement(true);
     }, 1500);
- 
+
     setTimeout(() => {
       setShowThisCantBeReached(false);
     }, 2000);
@@ -137,7 +137,7 @@ export default function Home() {
       </Head>
 
       {!isBlackListed ? (
-        <div className="relative snap-mandatory min-h-screen bg-white w-full overflow-x-hidden">
+        <div className="relative snap-mandatory min-h-screen bg-AAprimary w-full overflow-x-hidden transition-colors duration-300">
           {/* <ParticleBackground /> */}
           {context.sharedState.finishedLoading ? <></> : ShowThisCantBeReached ? <ThisCantBeReached /> : <></>}
           {context.sharedState.finishedLoading ? <></> : ShowElement ? <Startup /> : <></>}

@@ -1,5 +1,6 @@
 import { motion } from "../../../node_modules/framer-motion/dist/framer-motion";
 import { Link } from "react-scroll";
+import ThemeSelector from "./ThemeSelector";
 const MobileMenu = props => {
   const closeMenu = () => {
     props.setRotate(!props.rotate);
@@ -31,7 +32,7 @@ const MobileMenu = props => {
             className="flex flex-col text-center space-y-2"
           >
             <span
-              className="text-gray-700 font-Text2 text-sm sm:text-base
+              className="text-AATextMuted font-Text2 text-sm sm:text-base
              hover:text-AAsecondary hover:cursor-pointer duration-300"
             >
               About
@@ -47,7 +48,7 @@ const MobileMenu = props => {
             className="flex flex-col text-center space-y-2"
           >
             <span
-              className="text-gray-700 font-Text2 text-sm sm:text-base
+              className="text-AATextMuted font-Text2 text-sm sm:text-base
              hover:text-AAsecondary hover:cursor-pointer duration-300"
             >
               Experience
@@ -63,7 +64,7 @@ const MobileMenu = props => {
             className="flex flex-col text-center space-y-2"
           >
             <span
-              className="text-gray-700 font-Text2 text-sm sm:text-base
+              className="text-AATextMuted font-Text2 text-sm sm:text-base
              hover:text-AAsecondary hover:cursor-pointer duration-300"
             >
               Work
@@ -79,7 +80,7 @@ const MobileMenu = props => {
             className="flex flex-col text-center space-y-2"
           >
             <span
-              className="text-gray-700 font-Text2 text-sm sm:text-base
+              className="text-AATextMuted font-Text2 text-sm sm:text-base
       hover:text-AAsecondary hover:cursor-pointer duration-300"
             >
               Testimonials
@@ -95,7 +96,7 @@ const MobileMenu = props => {
             className="flex flex-col text-center space-y-2"
           >
             <span
-              className="text-gray-700 font-Text2 text-sm sm:text-base
+              className="text-AATextMuted font-Text2 text-sm sm:text-base
       hover:text-AAsecondary hover:cursor-pointer duration-300"
             >
               Gallery
@@ -111,7 +112,7 @@ const MobileMenu = props => {
             className="flex flex-col text-center space-y-2"
           >
             <span
-              className="text-gray-700 font-Text2 text-sm sm:text-base
+              className="text-AATextMuted font-Text2 text-sm sm:text-base
              hover:text-AAsecondary hover:cursor-pointer duration-300"
             >
               Contact
@@ -125,6 +126,8 @@ const MobileMenu = props => {
               Resume
             </button>
           </a>
+
+          <ThemeSelector finishedLoading={true} isMobile={true} />
         </div>
       </motion.div>
     </>

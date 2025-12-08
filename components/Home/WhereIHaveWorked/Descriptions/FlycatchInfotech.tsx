@@ -32,12 +32,12 @@ export default function FlycatchInfotech() {
         <div className="flex flex-col spacey-y-2">
           {/* Title */}
           <div className="flex flex-row items-center gap-2">
-            <span className="text-gray-900 sm:text-lg text-sm font-Arimo tracking-wide font-semibold">
-              Software Engineer <span className="text-gray-700 font-normal">@ Flycatch Infotech Pvt. Ltd., Kochi, Kerala</span>
+            <span className="text-AATextPrimary sm:text-lg text-sm font-Arimo tracking-wide font-semibold">
+              Software Engineer <span className="text-AATextMuted font-normal">@ Flycatch Infotech Pvt. Ltd., Kochi, Kerala</span>
             </span>
-            <a 
-              href="https://www.flycatchtech.com" 
-              target="_blank" 
+            <a
+              href="https://www.flycatchtech.com"
+              target="_blank"
               rel="noopener noreferrer"
               className="flex-shrink-0"
             >
@@ -50,7 +50,7 @@ export default function FlycatchInfotech() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="w-4 h-4 sm:w-5 sm:h-5 text-gray-700 hover:text-AAsecondary hover:cursor-pointer transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-200"
+                className="w-4 h-4 sm:w-5 sm:h-5 text-AATextMuted hover:text-AAsecondary hover:cursor-pointer transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-200"
               >
                 <title>Visit Flycatch Infotech</title>
                 <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -60,7 +60,7 @@ export default function FlycatchInfotech() {
             </a>
           </div>
           {/* Date */}
-          <span className="font-mono text-xs text-gray-700">Mar 2023 – Mar 2025</span>
+          <span className="font-mono text-xs text-AATextMuted">Mar 2023 – Mar 2025</span>
         </div>
         <div className="flex flex-col space-y-4 sm:text-sm text-xs">
           {tasks.map((item, index) => {

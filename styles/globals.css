@@ -4,6 +4,92 @@
 @import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
+/* ===== THEME VARIABLES ===== */
+:root {
+  /* Default Theme - Clean Minimalist (Apple-style) */
+  --theme-primary: #ffffff;
+  --theme-secondary: #000000;
+  --theme-accent: #1d1d1f;
+  --theme-accent-hover: #000000;
+  --theme-error: #86868b;
+  --theme-tertiary: #f5f5f7;
+  --theme-surface: #fafafa;
+  --theme-surface-hover: #f0f0f2;
+  --theme-text-primary: #1d1d1f;
+  --theme-text-secondary: #000000;
+  --theme-text-muted: #86868b;
+  --theme-text-inverse: #ffffff;
+  --theme-border: rgba(0, 0, 0, 0.1);
+  --theme-border-strong: rgba(0, 0, 0, 0.2);
+  --theme-gradient-start: #ffffff;
+  --theme-gradient-mid: #f5f5f7;
+  --theme-gradient-end: #fafafa;
+  --theme-shadow: rgba(0, 0, 0, 0.1);
+  --theme-glow: rgba(0, 0, 0, 0.05);
+  --theme-particle-1: #1d1d1f;
+  --theme-particle-2: #86868b;
+  --theme-particle-3: #000000;
+  --theme-scrollbar-bg: #ffffff;
+  --theme-scrollbar-thumb: linear-gradient(180deg, #1d1d1f, #86868b);
+  --theme-scrollbar-thumb-hover: linear-gradient(180deg, #000000, #1d1d1f);
+  --theme-dotted-bg: #f5f5f7;
+  /* Dark section (for Things I've Built - default is dark) */
+  --theme-dark-section-bg: #000000;
+  --theme-dark-section-gradient: linear-gradient(135deg, #000000 0%, #0a0014 50%, #000000 100%);
+  --theme-dark-section-text: #f0f0f0;
+  --theme-dark-section-text-muted: #a0a0a0;
+  --theme-dark-section-text-highlight: #ffffff;
+  --theme-dark-section-card-bg: #1a1a2e;
+}
+
+:root[data-theme="ironman"] {
+  /* Iron Man Theme - Stark Industries */
+  --theme-primary: #0a0a0a;
+  --theme-secondary: #AA0505;
+  --theme-accent: #FBCA03;
+  --theme-accent-hover: #B97D10;
+  --theme-error: #6A0C0B;
+  --theme-tertiary: #1a1a1a;
+  --theme-surface: #151515;
+  --theme-surface-hover: #252525;
+  --theme-text-primary: #ffffff;
+  --theme-text-secondary: #FBCA03;
+  --theme-text-muted: #888888;
+  --theme-text-inverse: #0a0a0a;
+  --theme-border: rgba(251, 202, 3, 0.2);
+  --theme-border-strong: rgba(170, 5, 5, 0.5);
+  --theme-gradient-start: #0a0a0a;
+  --theme-gradient-mid: #1a1a1a;
+  --theme-gradient-end: #151515;
+  --theme-shadow: rgba(170, 5, 5, 0.3);
+  --theme-glow: rgba(251, 202, 3, 0.1);
+  --theme-particle-1: #AA0505;
+  --theme-particle-2: #FBCA03;
+  --theme-particle-3: #67C7EB;
+  --theme-scrollbar-bg: #0a0a0a;
+  --theme-scrollbar-thumb: linear-gradient(180deg, #AA0505, #6A0C0B);
+  --theme-scrollbar-thumb-hover: linear-gradient(180deg, #FBCA03, #B97D10);
+  --theme-dotted-bg: rgba(251, 202, 3, 0.1);
+  --theme-arc-reactor: #67C7EB;
+  /* Dark section for Iron Man - red/gold accented */
+  --theme-dark-section-bg: #0a0505;
+  --theme-dark-section-gradient: linear-gradient(135deg, #0a0505 0%, #1a0808 30%, #0a0a0a 70%, #050a0a 100%);
+  --theme-dark-section-text: #FBCA03;
+  --theme-dark-section-text-muted: #B97D10;
+  --theme-dark-section-text-highlight: #ffffff;
+  --theme-dark-section-card-bg: rgba(170, 5, 5, 0.15);
+}
+
+/* Theme transition for smooth switching */
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html[data-theme="ironman"] body {
+  background-color: var(--theme-primary);
+  color: var(--theme-text-primary);
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,6 +99,7 @@
     scroll-behavior: smooth;
   }
 }
+
 @layer utilities {
   body::-webkit-scrollbar {
     width: 0.4em;
@@ -24,7 +111,7 @@
     scrollbar-gutter: stable;
     border-radius: 40px;
   }
-  
+
   body::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(180deg, #000000, #1d1d1f);
   }
@@ -40,7 +127,7 @@
     background: #1d1d1f;
     border-radius: 40px;
   }
-  
+
   .work-section-scrollbar::-webkit-scrollbar-thumb:hover {
     background: #000000;
   }
@@ -50,6 +137,7 @@
     border-radius: 40px;
   }
 }
+
 html,
 body {
   padding: 0;
@@ -59,14 +147,18 @@ body {
   overflow-x: hidden;
   width: 100%;
   max-width: 100vw;
+  background-color: var(--theme-primary);
+  color: var(--theme-text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Dotted Background Pattern */
 .dotted-bg {
-  background-color: #ffffff;
-  background-image: radial-gradient(circle at 2px 2px, #f5f5f7 1px, transparent 0);
+  background-color: var(--theme-primary);
+  background-image: radial-gradient(circle at 2px 2px, var(--theme-dotted-bg) 1px, transparent 0);
   background-size: 20px 20px;
   position: relative;
+  transition: background-color 0.3s ease;
 }
 
 .dotted-bg::before {
@@ -76,11 +168,10 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, 
-    rgba(0, 0, 0, 0.02) 0%, 
-    rgba(0, 0, 0, 0.01) 50%, 
-    rgba(0, 0, 0, 0.02) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(0, 0, 0, 0.02) 0%,
+      rgba(0, 0, 0, 0.01) 50%,
+      rgba(0, 0, 0, 0.02) 100%);
   pointer-events: none;
 }
 
@@ -96,14 +187,12 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: 
-    repeating-linear-gradient(
-      45deg,
+  background-image:
+    repeating-linear-gradient(45deg,
       transparent,
       transparent 2px,
       rgba(255, 255, 255, 0.01) 2px,
-      rgba(255, 255, 255, 0.01) 4px
-    );
+      rgba(255, 255, 255, 0.01) 4px);
   pointer-events: none;
   z-index: 1;
 }
@@ -116,9 +205,17 @@ body {
 }
 
 @keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Floating particles effect */
@@ -153,8 +250,17 @@ body {
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.6; }
-  50% { transform: translateY(-20px) rotate(180deg); opacity: 1; }
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+    opacity: 1;
+  }
 }
 
 /* Keyword hover effects */
@@ -184,8 +290,17 @@ body {
 
 /* Animated border */
 @keyframes borderGlow {
-  0%, 100% { border-color: #1d1d1f; box-shadow: 0 0 20px rgba(0, 0, 0, 0.05); }
-  50% { border-color: #000000; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); }
+
+  0%,
+  100% {
+    border-color: #1d1d1f;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  }
+
+  50% {
+    border-color: #000000;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
 }
 
 .border-glow {
@@ -209,6 +324,8 @@ a {
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .no-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
