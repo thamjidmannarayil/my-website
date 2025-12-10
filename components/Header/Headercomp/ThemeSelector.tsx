@@ -28,6 +28,7 @@ const ThemeSelector = ({ finishedLoading, isOnDarkSection, isMobile }: ThemeSele
     const themes = [
         { id: "default", name: "Default", icon: "☀️", description: "Clean & Minimal" },
         { id: "ironman", name: "Iron Man", icon: "🦾", description: "Stark Industries" },
+        { id: "batman", name: "Batman", icon: "🦇", description: "Dark Knight" },
     ] as const;
 
     const currentTheme = themes.find((t) => t.id === theme) || themes[0];
@@ -46,6 +47,8 @@ const ThemeSelector = ({ finishedLoading, isOnDarkSection, isMobile }: ThemeSele
                             bgColorClass = "bg-gradient-to-br from-red-700 to-yellow-500";
                         } else if (t.id === "default") {
                             bgColorClass = "bg-gradient-to-br from-gray-100 to-gray-300";
+                        } else if (t.id === "batman") {
+                            bgColorClass = "bg-gradient-to-br from-[#ffffff] to-[#AE8875]";
                         }
 
                         const isSelected = theme === t.id;
@@ -90,7 +93,9 @@ const ThemeSelector = ({ finishedLoading, isOnDarkSection, isMobile }: ThemeSele
             <button
                 onClick={() => setIsOpen(!isOpen)}
                 className={`w-8 h-8 rounded-full border-2 border-white shadow-md transition-transform duration-300 hover:scale-110
-                    ${theme === "ironman" ? "bg-gradient-to-br from-red-700 to-yellow-500" : "bg-gradient-to-br from-gray-100 to-gray-300"}`}
+                    ${theme === "ironman" ? "bg-gradient-to-br from-red-700 to-yellow-500" :
+                        theme === "batman" ? "bg-gradient-to-br from-[#ffffff] to-[#AE8875]" :
+                            "bg-gradient-to-br from-gray-100 to-gray-300"}`}
                 aria-label="Select theme"
             >
             </button>
@@ -113,6 +118,8 @@ const ThemeSelector = ({ finishedLoading, isOnDarkSection, isMobile }: ThemeSele
                                     bgColorClass = "bg-gradient-to-br from-red-700 to-yellow-500";
                                 } else if (t.id === "default") {
                                     bgColorClass = "bg-gradient-to-br from-gray-100 to-gray-300";
+                                } else if (t.id === "batman") {
+                                    bgColorClass = "bg-gradient-to-br from-[#ffffff] to-[#AE8875]";
                                 }
 
                                 const isSelected = theme === t.id;

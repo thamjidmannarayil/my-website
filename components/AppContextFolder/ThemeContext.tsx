@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 
-type Theme = "default" | "ironman";
+type Theme = "default" | "ironman" | "batman";
 
 interface ThemeContextType {
     theme: Theme;
@@ -30,7 +30,7 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
     useEffect(() => {
         setMounted(true);
         const savedTheme = localStorage.getItem("theme") as Theme;
-        if (savedTheme && (savedTheme === "default" || savedTheme === "ironman")) {
+        if (savedTheme && ["default", "ironman", "batman"].includes(savedTheme)) {
             setThemeState(savedTheme);
             document.documentElement.setAttribute("data-theme", savedTheme);
         }
@@ -44,8 +44,8 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
     };
 
     const toggleTheme = () => {
-        const newTheme = theme === "default" ? "ironman" : "default";
-        setTheme(newTheme);
+        const nextTheme = theme === "default" ? "ironman" : theme === "ironman" ? "batman" : "default";
+        setTheme(nextTheme);
     };
 
     // Apply theme on initial render (after hydration)
