@@ -150,7 +150,7 @@ export default function Testimonials() {
   return (
     <section
       id="TestimonialsSection"
-      className="my-16 overflow-x-hidden py-12 bg-gradient-to-b from-AAprimary via-AASurface/30 to-AAprimary"
+      className="my-16 overflow-x-hidden py-12 bg-AAprimary"
     >
       {/* Title */}
       <div data-aos="fade-up" className="flex flex-row items-center md:px-0 mb-16">

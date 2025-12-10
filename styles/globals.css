@@ -40,44 +40,52 @@
   --theme-dark-section-text-muted: #a0a0a0;
   --theme-dark-section-text-highlight: #ffffff;
   --theme-dark-section-card-bg: #1a1a2e;
+  --theme-name-intro: var(--theme-text-secondary);
+  --theme-project-title: #f0f0f0;
+  --theme-project-subtitle: #a0a0a0;
+  /* "The name is" text */
 }
 
 :root[data-theme="ironman"] {
   /* Iron Man Theme - Stark Industries */
-  --theme-primary: #0a0a0a;
+  --theme-primary: #f5f5f0;
   --theme-secondary: #AA0505;
-  --theme-accent: #FBCA03;
-  --theme-accent-hover: #B97D10;
+  --theme-accent: #B97D10;
+  --theme-accent-hover: #FBCA03;
   --theme-error: #6A0C0B;
-  --theme-tertiary: #1a1a1a;
-  --theme-surface: #151515;
-  --theme-surface-hover: #252525;
-  --theme-text-primary: #ffffff;
-  --theme-text-secondary: #FBCA03;
-  --theme-text-muted: #888888;
-  --theme-text-inverse: #0a0a0a;
-  --theme-border: rgba(251, 202, 3, 0.2);
-  --theme-border-strong: rgba(170, 5, 5, 0.5);
-  --theme-gradient-start: #0a0a0a;
-  --theme-gradient-mid: #1a1a1a;
-  --theme-gradient-end: #151515;
-  --theme-shadow: rgba(170, 5, 5, 0.3);
+  --theme-tertiary: #fafaf7;
+  --theme-surface: #ffffff;
+  --theme-surface-hover: #fffef8;
+  --theme-text-primary: #B97D10;
+  --theme-text-secondary: #6A0C0B;
+  --theme-text-muted: #6a6a6a;
+  --theme-text-inverse: #ffffff;
+  --theme-border: rgba(185, 125, 16, 0.2);
+  --theme-border-strong: rgba(170, 5, 5, 0.4);
+  --theme-gradient-start: #ffffff;
+  --theme-gradient-mid: #fafaf7;
+  --theme-gradient-end: #f5f5f0;
+  --theme-shadow: rgba(185, 125, 16, 0.15);
   --theme-glow: rgba(251, 202, 3, 0.1);
   --theme-particle-1: #AA0505;
   --theme-particle-2: #FBCA03;
   --theme-particle-3: #67C7EB;
-  --theme-scrollbar-bg: #0a0a0a;
-  --theme-scrollbar-thumb: linear-gradient(180deg, #AA0505, #6A0C0B);
+  --theme-scrollbar-bg: #f5f5f0;
+  --theme-scrollbar-thumb: linear-gradient(180deg, #B97D10, #AA0505);
   --theme-scrollbar-thumb-hover: linear-gradient(180deg, #FBCA03, #B97D10);
-  --theme-dotted-bg: rgba(251, 202, 3, 0.1);
+  --theme-dotted-bg: rgba(185, 125, 16, 0.08);
   --theme-arc-reactor: #67C7EB;
   /* Dark section for Iron Man - red/gold accented */
-  --theme-dark-section-bg: #0a0505;
-  --theme-dark-section-gradient: linear-gradient(135deg, #0a0505 0%, #1a0808 30%, #0a0a0a 70%, #050a0a 100%);
-  --theme-dark-section-text: #FBCA03;
-  --theme-dark-section-text-muted: #B97D10;
-  --theme-dark-section-text-highlight: #ffffff;
-  --theme-dark-section-card-bg: rgba(170, 5, 5, 0.15);
+  --theme-dark-section-bg: #1a1410;
+  --theme-dark-section-gradient: linear-gradient(135deg, #1a1410 0%, #2a1f15 30%, #1a1410 70%, #252015 100%);
+  --theme-dark-section-text: #f0f0f0;
+  --theme-dark-section-text-muted: #a0a0a0;
+  --theme-dark-section-text-highlight: #FBCA03;
+  --theme-dark-section-card-bg: rgba(185, 125, 16, 0.12);
+  --theme-name-intro: #B97D10;
+  --theme-project-title: #FBCA03;
+  --theme-project-subtitle: #B97D10;
+  /* "The name is" text */
 }
 
 /* Theme transition for smooth switching */

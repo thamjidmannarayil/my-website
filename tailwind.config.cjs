@@ -55,6 +55,9 @@ module.exports = {
         "dark-section-text-muted": "var(--theme-dark-section-text-muted)",
         "dark-section-text-highlight": "var(--theme-dark-section-text-highlight)",
         "dark-section-card": "var(--theme-dark-section-card-bg)",
+        AANameIntro: "var(--theme-name-intro)",          // "The name is" text
+        AAProjectTitle: "var(--theme-project-title)",
+        AAProjectSubtitle: "var(--theme-project-subtitle)",
       },
       screens: {
         sm: "640px",
