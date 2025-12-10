@@ -36,22 +36,40 @@ const ThemeSelector = ({ finishedLoading, isOnDarkSection, isMobile }: ThemeSele
 
     if (isMobile) {
         return (
-            <div className="flex flex-col items-center space-y-3 mt-4 pt-4 border-t border-AATextMuted/30">
+            <div className="flex flex-col items-center space-y-3 mt-4 pt-4 border-t border-AATextMuted/30 w-full">
                 <span className="text-sm text-AATextMuted font-medium">Theme</span>
-                <div className="flex space-x-3">
-                    {themes.map((t) => (
-                        <button
-                            key={t.id}
-                            onClick={() => setTheme(t.id)}
-                            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${theme === t.id
-                                ? "bg-AAsecondary text-AAprimary"
-                                : "bg-AASurface text-AATextMuted hover:bg-AAtertiary"
-                                }`}
-                        >
-                            <span className="mr-2">{t.icon}</span>
-                            {t.name}
-                        </button>
-                    ))}
+                <div className="flex flex-row space-x-6 justify-center w-full">
+                    {themes.map((t) => {
+                        // Define theme colors for the swatches
+                        let bgColorClass = "bg-gray-200";
+                        if (t.id === "ironman") {
+                            bgColorClass = "bg-gradient-to-br from-red-700 to-yellow-500";
+                        } else if (t.id === "default") {
+                            bgColorClass = "bg-gradient-to-br from-gray-100 to-gray-300";
+                        }
+
+                        const isSelected = theme === t.id;
+
+                        return (
+                            <button
+                                key={t.id}
+                                onClick={() => setTheme(t.id)}
+                                className={`relative w-10 h-10 rounded-full shadow-md flex items-center justify-center transition-transform duration-200
+                                ${bgColorClass}
+                                ${isSelected ? "ring-2 ring-AAsecondary scale-110" : "hover:scale-105"}
+                            `}
+                                aria-label={`Select ${t.name} theme`}
+                            >
+                                {isSelected && (
+                                    <div className="bg-white rounded-full p-0.5 shadow-sm">
+                                        <svg className="w-4 h-4 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                                        </svg>
+                                    </div>
+                                )}
+                            </button>
+                        )
+                    })}
                 </div>
             </div>
         );

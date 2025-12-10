@@ -9,18 +9,18 @@ import AppContext from "../AppContextFolder/AppContext";
 const addClass = (ref: any, myclass: string) => {
   ref.current?.classLIst.add(myclass);
 };
-const Header = (props: { finishedLoading: boolean,sectionsRef }) => {
+const Header = (props: { finishedLoading: boolean, sectionsRef }) => {
   const RefNavBar = useRef<HTMLDivElement>(null);
   const [ShowElement, setShowElement] = useState(false);
   const [rotate, setRotate] = useState<boolean>(false);
   const [isOnDarkSection, setIsOnDarkSection] = useState(false);
   const context = useContext(AppContext);
-  const scrollSizeY=useRef<number>(0);
+  const scrollSizeY = useRef<number>(0);
 
   // Define the EventListener for the NavBar
   useEffect(() => {
     if (context.sharedState.portfolio.NavBar.IntervalEvent == null) {
-      context.sharedState.portfolio.NavBar.IntervalEvent=() => {
+      context.sharedState.portfolio.NavBar.IntervalEvent = () => {
         // Check if we're over the black section (SomethingIveBuilt)
         const blackSection = document.getElementById('SomethingIveBuiltSection');
         if (blackSection) {
@@ -33,7 +33,7 @@ const Header = (props: { finishedLoading: boolean,sectionsRef }) => {
             setIsOnDarkSection(false);
           }
         }
-        
+
         if (scrollSizeY.current == 0) {
           scrollSizeY.current = window.scrollY;
         } else {
@@ -67,7 +67,7 @@ const Header = (props: { finishedLoading: boolean,sectionsRef }) => {
     }
   }, [context.sharedState.portfolio.NavBar, context.sharedState.portfolio.NavBar.scrolling]);
 
-  
+
 
   useEffect(() => {
     setTimeout(() => {
@@ -79,7 +79,7 @@ const Header = (props: { finishedLoading: boolean,sectionsRef }) => {
   //verify document for serverSide rendering and ensure scroll is enabled after navbar loads
   if (typeof document !== "undefined") {
     // Only block scroll when mobile menu is actually open (rotate = true)
-    rotate ? (document.body.style.overflow = "hidden") : (document.body.style.overflow = "auto");
+    rotate ? (document.body.style.overflow = "hidden") : (document.body.style.overflow = "");
   }
 
   // Safety mechanism: Ensure scrolling is enabled after navbar loads
@@ -91,7 +91,7 @@ const Header = (props: { finishedLoading: boolean,sectionsRef }) => {
           document.body.style.overflow = "auto";
         }
       }, 2000); // Enable scroll after 2 seconds regardless of other states
-      
+
       return () => clearTimeout(enableScrollTimeout);
     }
   }, [rotate]);
@@ -107,7 +107,7 @@ const Header = (props: { finishedLoading: boolean,sectionsRef }) => {
         animate={{ opacity: 1 }}
         transition={{ opacity: { delay: props.finishedLoading ? 0 : 0.2, duration: 0.5 } }}
         className={`w-full fixed ${ShowElement ? `backdrop-blur-md bg-black/20 shadow-xl border-b border-white/10` : `bg-opacity-0 `} flex 
-      justify-between px-6 sm:px-12 py-2 sm:py-4  transition-all duration-500 translate-y-0 z-20`}
+      justify-between px-6 sm:px-12 py-2 sm:py-4  transition-all duration-500 translate-y-0 z-50`}
       >
         {/* Logo T */}
         <Logo finishedLoading={props.finishedLoading} isOnDarkSection={isOnDarkSection} />

@@ -111,37 +111,36 @@ html[data-theme="ironman"] body {
 @layer utilities {
   body::-webkit-scrollbar {
     width: 0.4em;
-    background-color: #ffffff;
+    background-color: var(--theme-scrollbar-bg);
   }
 
   body::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #1d1d1f, #86868b);
-    scrollbar-gutter: stable;
+    background: var(--theme-scrollbar-thumb);
     border-radius: 40px;
   }
 
   body::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, #000000, #1d1d1f);
+    background: var(--theme-scrollbar-thumb-hover);
   }
 
   /* Custom scrollbar for work section */
   .work-section-scrollbar::-webkit-scrollbar {
     width: 0.4em;
     height: 0.4em;
-    background-color: #e5e5e5;
+    background-color: var(--theme-scrollbar-bg);
   }
 
   .work-section-scrollbar::-webkit-scrollbar-thumb {
-    background: #1d1d1f;
+    background: var(--theme-scrollbar-thumb);
     border-radius: 40px;
   }
 
   .work-section-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #000000;
+    background: var(--theme-scrollbar-thumb-hover);
   }
 
   .work-section-scrollbar::-webkit-scrollbar-track {
-    background: #f5f5f7;
+    background: var(--theme-scrollbar-bg);
     border-radius: 40px;
   }
 }
@@ -154,7 +153,6 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   overflow-x: hidden;
   width: 100%;
-  max-width: 100vw;
   background-color: var(--theme-primary);
   color: var(--theme-text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
