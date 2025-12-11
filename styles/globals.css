@@ -86,6 +86,47 @@
   --theme-project-title: #FBCA03;
   --theme-project-subtitle: #B97D10;
   /* "The name is" text */
+  /* "The name is" text */
+}
+
+:root[data-theme="batman"] {
+  /* Batman Theme - Wayne Enterprise / Bruce Wayne (Light) */
+  --theme-primary: #ffffff;
+  --theme-secondary: #AE8875;
+  --theme-accent: #AE8875;
+  --theme-accent-hover: #bfa091;
+  --theme-error: #7F8086;
+  --theme-tertiary: #f5f5f5;
+  --theme-surface: #ffffff;
+  --theme-surface-hover: #fafafa;
+  --theme-text-primary: #AE8875;
+  --theme-text-secondary: #AE8875;
+  --theme-text-muted: #515155;
+  --theme-text-inverse: #ffffff;
+  --theme-border: rgba(81, 81, 85, 0.2);
+  --theme-border-strong: #AE8875;
+  --theme-gradient-start: #ffffff;
+  --theme-gradient-mid: #f5f5f5;
+  --theme-gradient-end: #ffffff;
+  --theme-shadow: rgba(0, 0, 0, 0.1);
+  --theme-glow: rgba(174, 136, 117, 0.1);
+  --theme-particle-1: #AE8875;
+  --theme-particle-2: #515155;
+  --theme-particle-3: #7F8086;
+  --theme-scrollbar-bg: #ffffff;
+  --theme-scrollbar-thumb: linear-gradient(180deg, #515155, #AE8875);
+  --theme-scrollbar-thumb-hover: linear-gradient(180deg, #AE8875, #bfa091);
+  --theme-dotted-bg: rgba(81, 81, 85, 0.1);
+  /* Dark section for Batman (Keeps dark aesthetic) */
+  --theme-dark-section-bg: #080808;
+  --theme-dark-section-gradient: linear-gradient(135deg, #080808 0%, #1a1a1a 100%);
+  --theme-dark-section-text: #ffffff;
+  --theme-dark-section-text-muted: #7F8086;
+  --theme-dark-section-text-highlight: #AE8875;
+  --theme-dark-section-card-bg: rgba(81, 81, 85, 0.2);
+  --theme-name-intro: #AE8875;
+  --theme-project-title: #AE8875;
+  --theme-project-subtitle: #7F8086;
 }
 
 /* Theme transition for smooth switching */
@@ -93,7 +134,8 @@ html {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-html[data-theme="ironman"] body {
+html[data-theme="ironman"] body,
+html[data-theme="batman"] body {
   background-color: var(--theme-primary);
   color: var(--theme-text-primary);
 }
