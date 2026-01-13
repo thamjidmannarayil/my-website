@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "../../../node_modules/framer-motion/dist/framer-motion";
 import { Link as ReactScrollLink } from "react-scroll";
-import ThemeSelector from "./ThemeSelector";
+import ThemeSelector from "./ThemeSelectorNew";
 
 export default function DesktopMenu(props: { finishedLoading: boolean; isOnDarkSection?: boolean }) {
   const textColor = props.isOnDarkSection ? "text-white" : "text-AATextSecondary";
