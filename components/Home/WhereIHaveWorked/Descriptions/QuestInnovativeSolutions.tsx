@@ -4,23 +4,23 @@ import { getTasksTextWithHighlightedKeyword } from "./taskAndType";
 
 export default function QuestInnovativeSolutions() {
   const tasks = [
-      {
-        text: "Developed a solid foundation in Python, JavaScript, SQL, Django, Flask, and AngularJS through hands-on projects and guided mentorship sessions.",
-        keywords: ["Python", "JavaScript", "SQL", "Django", "Flask", "AngularJS", "hands-on projects", "mentorship"],
-      },
-      {
-        text: "Actively contributed to live client projects, applying theoretical concepts to solve practical challenges and enhance software performance.",
-        keywords: ["live projects", "client projects", "practical challenges", "software performance"],
-      },
-      {
-        text: "Earned certifications in multiple programming languages and frameworks, strengthening core development and problem-solving skills.",
-        keywords: ["certifications", "programming languages", "frameworks", "problem-solving"],
-      },
-      {
-        text: "Collaborated within agile teams to design and implement responsive web solutions, gaining exposure to version control and industry-standard development practices.",
-        keywords: ["agile teams", "responsive web solutions", "version control", "industry-standard practices"],
-      },
-    ];
+    {
+      text: "Developed a solid foundation in Python, JavaScript, SQL, Django, Flask, and AngularJS through hands-on projects and guided mentorship sessions.",
+      keywords: ["Python", "JavaScript", "SQL", "Django", "Flask", "AngularJS", "hands-on projects", "mentorship"],
+    },
+    {
+      text: "Actively contributed to live client projects, applying theoretical concepts to solve practical challenges and enhance software performance.",
+      keywords: ["live projects", "client projects", "practical challenges", "software performance"],
+    },
+    {
+      text: "Earned certifications in multiple programming languages and frameworks, strengthening core development and problem-solving skills.",
+      keywords: ["certifications", "programming languages", "frameworks", "problem-solving"],
+    },
+    {
+      text: "Collaborated within agile teams to design and implement responsive web solutions, gaining exposure to version control and industry-standard development practices.",
+      keywords: ["agile teams", "responsive web solutions", "version control", "industry-standard practices"],
+    },
+  ];
 
 
   return (
@@ -29,12 +29,12 @@ export default function QuestInnovativeSolutions() {
         <div className="flex flex-col spacey-y-2">
           {/* Title */}
           <div className="flex flex-row items-center gap-2">
-            <span className="text-gray-900 sm:text-lg text-sm font-Arimo tracking-wide font-semibold">
-              Software Engineer Intern <span className="text-gray-700 font-normal">@ Quest Innovative Solutions, Kochi, Kerala</span>
+            <span className="text-AATextPrimary sm:text-lg text-sm font-Arimo tracking-wide font-semibold">
+              Software Engineer Intern <span className="text-AATextMuted font-normal">@ Quest Innovative Solutions, Kochi, Kerala</span>
             </span>
-            <a 
-              href="https://www.qis.co.in/" 
-              target="_blank" 
+            <a
+              href="https://www.qis.co.in/"
+              target="_blank"
               rel="noopener noreferrer"
               className="flex-shrink-0"
             >
@@ -47,7 +47,7 @@ export default function QuestInnovativeSolutions() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="w-4 h-4 sm:w-5 sm:h-5 text-gray-700 hover:text-AAsecondary hover:cursor-pointer transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-200"
+                className="w-4 h-4 sm:w-5 sm:h-5 text-AATextMuted hover:text-AAsecondary hover:cursor-pointer transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-200"
               >
                 <title>Visit Quest Innovative Solutions</title>
                 <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -57,7 +57,7 @@ export default function QuestInnovativeSolutions() {
             </a>
           </div>
           {/* Date */}
-          <span className="font-mono text-xs text-gray-700">Sep 2021 – Mar 2022</span>
+          <span className="font-mono text-xs text-AATextMuted">Sep 2021 – Mar 2022</span>
         </div>
         <div className="flex flex-col space-y-4 sm:text-sm text-xs">
           {tasks.map((item, index) => {

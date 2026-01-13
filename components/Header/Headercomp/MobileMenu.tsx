@@ -1,5 +1,6 @@
 import { motion } from "../../../node_modules/framer-motion/dist/framer-motion";
 import { Link } from "react-scroll";
+import ThemeSelector from "./ThemeSelector";
 const MobileMenu = props => {
   const closeMenu = () => {
     props.setRotate(!props.rotate);
@@ -11,7 +12,7 @@ const MobileMenu = props => {
         initial={{ x: "100%" }}
         animate={props.rotate ? { x: "0" } : { x: "100%" }}
         transition={{ x: { duration: 0.4 } }}
-        className="w-full fixed h-screen flex md:hidden duration-300 z-20"
+        className="w-full fixed h-screen flex md:hidden duration-300 z-50"
       >
         <div
           onClick={() => closeMenu()}
@@ -28,14 +29,10 @@ const MobileMenu = props => {
             offset={-50}
             duration={200}
             onClick={() => closeMenu()}
-            className="flex flex-col text-center space-y-2"
+            activeClass="text-AAsecondary"
+            className="flex flex-col text-center space-y-2 text-AATextMuted font-Text2 text-sm sm:text-base hover:text-AAsecondary hover:cursor-pointer duration-300"
           >
-            <span
-              className="text-gray-700 font-Text2 text-sm sm:text-base
-             hover:text-AAsecondary hover:cursor-pointer duration-300"
-            >
-              About
-            </span>
+            <span>About</span>
           </Link>
           <Link
             to="WhereIhaveWorkedSection"
@@ -44,14 +41,10 @@ const MobileMenu = props => {
             offset={-250}
             duration={200}
             onClick={() => closeMenu()}
-            className="flex flex-col text-center space-y-2"
+            activeClass="text-AAsecondary"
+            className="flex flex-col text-center space-y-2 text-AATextMuted font-Text2 text-sm sm:text-base hover:text-AAsecondary hover:cursor-pointer duration-300"
           >
-            <span
-              className="text-gray-700 font-Text2 text-sm sm:text-base
-             hover:text-AAsecondary hover:cursor-pointer duration-300"
-            >
-              Experience
-            </span>
+            <span>Experience</span>
           </Link>
           <Link
             to="SomethingIveBuiltSection"
@@ -60,14 +53,10 @@ const MobileMenu = props => {
             offset={100}
             duration={200}
             onClick={() => closeMenu()}
-            className="flex flex-col text-center space-y-2"
+            activeClass="text-AAsecondary"
+            className="flex flex-col text-center space-y-2 text-AATextMuted font-Text2 text-sm sm:text-base hover:text-AAsecondary hover:cursor-pointer duration-300"
           >
-            <span
-              className="text-gray-700 font-Text2 text-sm sm:text-base
-             hover:text-AAsecondary hover:cursor-pointer duration-300"
-            >
-              Work
-            </span>
+            <span>Work</span>
           </Link>
           <Link
             to="TestimonialsSection"
@@ -76,14 +65,10 @@ const MobileMenu = props => {
             offset={100}
             duration={200}
             onClick={() => closeMenu()}
-            className="flex flex-col text-center space-y-2"
+            activeClass="text-AAsecondary"
+            className="flex flex-col text-center space-y-2 text-AATextMuted font-Text2 text-sm sm:text-base hover:text-AAsecondary hover:cursor-pointer duration-300"
           >
-            <span
-              className="text-gray-700 font-Text2 text-sm sm:text-base
-      hover:text-AAsecondary hover:cursor-pointer duration-300"
-            >
-              Testimonials
-            </span>
+            <span>Testimonials</span>
           </Link>
           <Link
             to="GallerySection"
@@ -92,14 +77,10 @@ const MobileMenu = props => {
             offset={100}
             duration={200}
             onClick={() => closeMenu()}
-            className="flex flex-col text-center space-y-2"
+            activeClass="text-AAsecondary"
+            className="flex flex-col text-center space-y-2 text-AATextMuted font-Text2 text-sm sm:text-base hover:text-AAsecondary hover:cursor-pointer duration-300"
           >
-            <span
-              className="text-gray-700 font-Text2 text-sm sm:text-base
-      hover:text-AAsecondary hover:cursor-pointer duration-300"
-            >
-              Gallery
-            </span>
+            <span>Gallery</span>
           </Link>
           <Link
             to="GetInTouchSection"
@@ -108,23 +89,21 @@ const MobileMenu = props => {
             offset={100}
             duration={200}
             onClick={() => closeMenu()}
-            className="flex flex-col text-center space-y-2"
+            activeClass="text-AAsecondary"
+            className="flex flex-col text-center space-y-2 text-AATextMuted font-Text2 text-sm sm:text-base hover:text-AAsecondary hover:cursor-pointer duration-300"
           >
-            <span
-              className="text-gray-700 font-Text2 text-sm sm:text-base
-             hover:text-AAsecondary hover:cursor-pointer duration-300"
-            >
-              Contact
-            </span>
+            <span>Contact</span>
           </Link>
           <a href={"/resume.pdf"} target={"_blank"} rel="noreferrer">
             <button
               className="rounded border font-Text2  border-AAsecondary
-           hover:bg-ResumeButtonHover py-2 sm:py-4 px-5 sm:px-10 text-xs text-white"
+           hover:bg-ResumeButtonHover py-2 sm:py-4 px-5 sm:px-10 text-xs text-AAsecondary"
             >
               Resume
             </button>
           </a>
+
+          <ThemeSelector finishedLoading={true} isMobile={true} />
         </div>
       </motion.div>
     </>

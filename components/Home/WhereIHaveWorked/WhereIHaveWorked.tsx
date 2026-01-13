@@ -27,10 +27,10 @@ export default function WhereIHaveWorked() {
           <ArrowIcon className={"flex-none h-4 md:h-6 w-4 md:w-5 text-AAsecondary"} />
         </div>
 
-        <span className="text-gray-900 opacity-85 font-bold tracking-wider text-lg md:text-2xl px-3">
+        <span className="text-AATextPrimary opacity-85 font-bold tracking-wider text-lg md:text-2xl px-3">
           Where I&apos;ve Worked
         </span>
-        <div className="bg-gray-300 h-[0.2px] w-16 sm:w-44 md:w-80"></div>
+        <div className="bg-AATextMuted h-[0.2px] w-16 sm:w-44 md:w-80"></div>
       </section>
       {/* // ? Where I've Worked Content section */}
       <section
@@ -65,11 +65,10 @@ const CompaniesBar = props => {
         }}
         className={`flex-1 md:flex-none text-[10px] xs:text-xs sm:text-sm text-center md:text-left rounded font-mono  
              py-2 px-1 xs:py-3 xs:px-2 md:pl-6 md:px-4 md:w-44 min-w-0 duration-500 transition-all overflow-hidden
-             ${
-               companyNameBackgroundColorGreen[props.ButtonOrderOfcompanyNameBackgroundColorGreen]
-                 ? "bg-AAsecondary bg-opacity-20 text-AAsecondary border-l-2 md:border-l-2 border-b-2 md:border-b-0 border-AAsecondary font-semibold"
-                 : "text-gray-700 hover:text-AAsecondary hover:bg-ResumeButtonHover hover:text-white"
-             }`}
+             ${companyNameBackgroundColorGreen[props.ButtonOrderOfcompanyNameBackgroundColorGreen]
+            ? "bg-AAsecondary bg-opacity-20 text-white border-l-2 md:border-l-2 border-b-2 md:border-b-0 border-AAsecondary font-semibold"
+            : "text-AATextMuted hover:text-AAsecondary hover:bg-AASurface"
+          }`}
       >
         {props.CompanyName}
       </button>
@@ -85,7 +84,7 @@ const CompaniesBar = props => {
     >
       {/* // ? left bar Holder */}
       <div
-        className=" hidden md:block bg-gray-300 relative h-0.5 w-34 md:h-[150px] translate-y-1 md:w-0.5  
+        className=" hidden md:block bg-AATextMuted/30 relative h-0.5 w-34 md:h-[150px] translate-y-1 md:w-0.5  
         rounded md:order-1 order-2 md:mr-4"
       >
         {/* // ? animated left bar */}
@@ -126,7 +125,7 @@ const CompaniesBar = props => {
             setDescriptionJob={props.setDescriptionJob}
           />
         </div>
-        <div className="block md:hidden h-0.5 rounded bg-gray-300 w-full max-w-md">
+        <div className="block md:hidden h-0.5 rounded bg-AATextMuted/30 w-full max-w-md">
           <motion.div animate={{ x: barAbovePosition }} className="w-[150px] h-0.5 rounded bg-AAsecondary"></motion.div>
         </div>
       </div>

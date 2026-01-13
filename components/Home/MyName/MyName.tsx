@@ -12,7 +12,7 @@ const MyName: React.FC<MyNameProps> = props => {
 
   return (
     <div
-      className="h-full flex flex-col justify-center
+      className="h-full flex flex-col justify-center bg-AAprimary
       px-8 2xl:px-72 xl:px-56 lg:px-32 md:px-28 sm:px-8 py-32 sm:py-52 relative" // Added relative for potential scroll indicator
     >
       <motion.span
@@ -22,7 +22,7 @@ const MyName: React.FC<MyNameProps> = props => {
           opacity: { delay: props.finishedLoading ? 0 : 0.4, duration: props.finishedLoading ? 0 : 0.6 },
           y: { delay: props.finishedLoading ? 0 : 0.4, duration: props.finishedLoading ? 0 : 0.6 },
         }}
-        className="text-AATextSecondary font-mono text-lg tracking-widest"
+        className="text-AANameIntro font-mono text-lg tracking-widest"
       >
         The name is
       </motion.span>
@@ -74,20 +74,20 @@ const MyName: React.FC<MyNameProps> = props => {
         <span className="text-AATextPrimary font-medium keyword-hover">Django</span> and{" "}
         <span className="text-AATextPrimary font-medium keyword-hover">Flask</span>.
         <br className="3xl:block hidden" /> I bring a proven track record across{" "}
-        <span className="text-gray-900 font-medium keyword-hover">HR management</span>,{" "}
-        <span className="text-gray-900 font-medium keyword-hover">travel and hospitality</span>,{" "}
-        <span className="text-gray-900 font-medium keyword-hover">university registration and learning systems</span>, and{" "}
-        <span className="text-gray-900 font-medium keyword-hover">e-commerce</span>.
+        <span className="text-AATextPrimary font-medium keyword-hover">HR management</span>,{" "}
+        <span className="text-AATextPrimary font-medium keyword-hover">travel and hospitality</span>,{" "}
+        <span className="text-AATextPrimary font-medium keyword-hover">university registration and learning systems</span>, and{" "}
+        <span className="text-AATextPrimary font-medium keyword-hover">e-commerce</span>.
         <br className="3xl:block hidden" /> Currently working as an{" "}
-        <span className="text-gray-900 font-medium keyword-hover">AI/ML Engineer</span>, I integrate intelligent systems like{" "}
-        <span className="text-gray-900 font-medium keyword-hover">resume parsing</span> and{" "}
-        <span className="text-gray-900 font-medium keyword-hover">ATS optimization</span> to deliver{" "}
-        <span className="text-gray-900 font-medium keyword-hover">data-driven solutions</span>.
+        <span className="text-AATextPrimary font-medium keyword-hover">AI/ML Engineer</span>, I integrate intelligent systems like{" "}
+        <span className="text-AATextPrimary font-medium keyword-hover">resume parsing</span> and{" "}
+        <span className="text-AATextPrimary font-medium keyword-hover">ATS optimization</span> to deliver{" "}
+        <span className="text-AATextPrimary font-medium keyword-hover">data-driven solutions</span>.
         <br className="3xl:block hidden" /> I&apos;m passionate about{" "}
-        <span className="text-gray-900 font-medium keyword-hover">clean architecture</span>,{" "}
-        <span className="text-gray-900 font-medium keyword-hover">microservices</span>, and crafting applications that balance{" "}
-        <span className="text-gray-900 font-medium keyword-hover">performance</span> and{" "}
-        <span className="text-gray-900 font-medium keyword-hover">maintainability</span>.
+        <span className="text-AATextPrimary font-medium keyword-hover">clean architecture</span>,{" "}
+        <span className="text-AATextPrimary font-medium keyword-hover">microservices</span>, and crafting applications that balance{" "}
+        <span className="text-AATextPrimary font-medium keyword-hover">performance</span> and{" "}
+        <span className="text-AATextPrimary font-medium keyword-hover">maintainability</span>.
         <br className="3xl:block hidden" /> I thrive on{" "}
         <span className="text-AATextPrimary font-medium keyword-hover">challenging projects</span> that push the boundaries of{" "}
         <span className="text-AATextPrimary font-medium keyword-hover">innovation</span> and create{" "}
@@ -103,8 +103,8 @@ const MyName: React.FC<MyNameProps> = props => {
         className="mt-12"
       >
         <a href={"/resume.pdf"} target={"_blank"} rel="noreferrer">
-          <button className="backdrop-blur-xl bg-white/10 text-AATextSecondary border-2 border-gray-400 rounded-xl px-6 sm:px-10 py-4 sm:py-5 hover:bg-white/20 hover:border-AAAccent hover:shadow-2xl hover:shadow-AAAccent/30 transition-all duration-500 ease-out font-medium tracking-wide hover:scale-105 relative overflow-hidden group">
-            <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-50 group-hover:opacity-70 transition-opacity duration-500"></div>
+          <button className="backdrop-blur-xl bg-AAprimary/10 text-AATextSecondary border-2 border-AATextMuted rounded-xl px-6 sm:px-10 py-4 sm:py-5 hover:bg-AAprimary/20 hover:border-AAAccent hover:shadow-2xl hover:shadow-AAAccent/30 transition-all duration-500 ease-out font-medium tracking-wide hover:scale-105 relative overflow-hidden group">
+            <div className="absolute inset-0 bg-gradient-to-br from-AAprimary/20 to-transparent opacity-50 group-hover:opacity-70 transition-opacity duration-500"></div>
             <div className="absolute inset-0 bg-gradient-to-t from-AAAccent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <span className="relative z-10">Check out my resume!</span>
           </button>
