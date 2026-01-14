@@ -71,6 +71,18 @@ const MobileMenu = props => {
             <span>Testimonials</span>
           </Link>
           <Link
+            to="ClientIDealtWithSection"
+            spy={true}
+            smooth={true}
+            offset={100}
+            duration={200}
+            onClick={() => closeMenu()}
+            activeClass="text-AAsecondary"
+            className="flex flex-col text-center space-y-2 text-AATextMuted font-Text2 text-sm sm:text-base hover:text-AAsecondary hover:cursor-pointer duration-300"
+          >
+            <span>Clients</span>
+          </Link>
+          <Link
             to="GallerySection"
             spy={true}
             smooth={true}

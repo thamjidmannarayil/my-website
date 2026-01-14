@@ -104,7 +104,27 @@ export default function DesktopMenu(props: { finishedLoading: boolean; isOnDarkS
         transition={{
           type: "spring",
           duration: props.finishedLoading ? 0 : 0.6,
-          delay: props.finishedLoading ? 0 : 1.1,
+          delay: props.finishedLoading ? 0 : 1.2,
+        }}
+        className="text-AAAccent"
+      >
+        <ReactScrollLink to="ClientIDealtWithSection" spy={true} smooth={true} offset={-100} duration={200}>
+          <span className={`${textColor} ${hoverColor} hover:cursor-pointer duration-300`}>Clients</span>
+        </ReactScrollLink>
+      </motion.div>
+      <motion.div
+        initial={{
+          y: -40,
+          opacity: 0,
+        }}
+        animate={{
+          y: 0,
+          opacity: 1,
+        }}
+        transition={{
+          type: "spring",
+          duration: props.finishedLoading ? 0 : 0.6,
+          delay: props.finishedLoading ? 0 : 1.3,
         }}
         className="text-AAAccent"
       >
@@ -124,7 +144,7 @@ export default function DesktopMenu(props: { finishedLoading: boolean; isOnDarkS
         transition={{
           type: "spring",
           duration: props.finishedLoading ? 0 : 0.6,
-          delay: props.finishedLoading ? 0 : 1.3,
+          delay: props.finishedLoading ? 0 : 1.4,
         }}
         className="text-AAAccent"
       >

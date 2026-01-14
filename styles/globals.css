@@ -99,7 +99,7 @@
   --theme-tertiary: #f5f5f5;
   --theme-surface: #ffffff;
   --theme-surface-hover: #fafafa;
-  --theme-text-primary: #AE8875;
+  --theme-text-primary: #715a4e;
   --theme-text-secondary: #AE8875;
   --theme-text-muted: #515155;
   --theme-text-inverse: #ffffff;
@@ -403,6 +403,7 @@ a {
 
 * {
   box-sizing: border-box;
+  cursor: none !important;
 }
 
 

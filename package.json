@@ -16,6 +16,7 @@
     "@vercel/speed-insights": "^1.1.0",
     "aos": "^2.3.4",
     "battery": "^1.0.1",
+    "cobe": "^0.6.3",
     "cookie-cutter": "^0.2.0",
     "detect-browser": "^5.3.0",
     "detect-gpu": "^4.0.36",
