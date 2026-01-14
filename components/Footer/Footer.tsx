@@ -11,7 +11,7 @@ const ClickableIcon = props => {
   );
 };
 const IconsData = [
-  { href: "https://github.com/thamjidthachu", Icon: GithubIcon },
+  { href: "https://github.com/thamjidmannarayil", Icon: GithubIcon },
   { href: "https://www.linkedin.com/in/thamjid-mannarayil/", Icon: LinkedinIcon },
   { href: "https://www.instagram.com/thamjid_mannarayil/", Icon: InstagramIcon },
   { href: "https://www.youtube.com/@thachuthamjid", Icon: YoutubeIcon },
@@ -37,7 +37,7 @@ export default function Fotter(props: { githubUrl: string; hideSocialsInDesktop:
 
           <span className="text-xs flex flex-row items-center space-x-2 group-hover:text-AAsecondary">
             <GithubIcon className={"w-4 h-4 text-white fill-current group-hover:text-AAsecondary"} />
-            <span className="">@thamjidthachu</span>
+            <span className="">@thamjidmannarayil</span>
           </span>
         </div>
       </a>

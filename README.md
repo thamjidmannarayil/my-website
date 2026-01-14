@@ -1,5 +1,5 @@
 <div align="center">
-  <img alt="Logo" src="https://raw.githubusercontent.com/thamjidthachu/my-website/refs/heads/master/public/logo.jpg" width="100" />
+  <img alt="Logo" src="https://raw.githubusercontent.com/thamjidmannarayil/my-website/refs/heads/master/public/logo.jpg" width="100" />
 </div>
 <h1 align="center">
   anaflous.com - v1
@@ -14,7 +14,7 @@
   </a>
 </p>
 
-![demo](https://raw.githubusercontent.com/thamjidthachu/my-website/refs/heads/master/public/projects/home.png)
+![demo](https://raw.githubusercontent.com/thamjidmannarayil/my-website/refs/heads/master/public/projects/home.png)
 ---
 
 ### Table of Contents
@@ -65,7 +65,7 @@ Since i integrated some of my project into my website i'll i mention most of tec
 1. Clone the repo CLI
 
    ```sh
-   git clone https://github.com/thamjidthachu/my-website.git
+   git clone https://github.com/thamjidmannarayil/my-website.git
    ```
 
 2. Install and use the correct version of Node using [NVM](https://github.com/nvm-sh/nvm)
