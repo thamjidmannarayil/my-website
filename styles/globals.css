@@ -129,6 +129,46 @@
   --theme-project-subtitle: #7F8086;
 }
 
+:root[data-theme="spiderman"] {
+  /* Spiderman Theme - Friendly Neighborhood */
+  --theme-primary: #ffffff;
+  --theme-secondary: #223057;
+  --theme-accent: #E72020;
+  --theme-accent-hover: #9A1316;
+  --theme-error: #9A1316;
+  --theme-tertiary: #f0f2f5;
+  --theme-surface: #ffffff;
+  --theme-surface-hover: #fafafa;
+  --theme-text-primary: #223057;
+  --theme-text-secondary: #E72020;
+  --theme-text-muted: #4F6793;
+  --theme-text-inverse: #ffffff;
+  --theme-border: rgba(34, 48, 87, 0.2);
+  --theme-border-strong: #E72020;
+  --theme-gradient-start: #ffffff;
+  --theme-gradient-mid: #f0f2f5;
+  --theme-gradient-end: #ffffff;
+  --theme-shadow: rgba(34, 48, 87, 0.15);
+  --theme-glow: rgba(231, 32, 32, 0.1);
+  --theme-particle-1: #E72020;
+  --theme-particle-2: #223057;
+  --theme-particle-3: #4F6793;
+  --theme-scrollbar-bg: #ffffff;
+  --theme-scrollbar-thumb: linear-gradient(180deg, #E72020, #223057);
+  --theme-scrollbar-thumb-hover: linear-gradient(180deg, #9A1316, #1A2542);
+  --theme-dotted-bg: rgba(79, 103, 147, 0.15);
+  /* Dark section */
+  --theme-dark-section-bg: #1A2542;
+  --theme-dark-section-gradient: linear-gradient(135deg, #1A2542 0%, #0F1628 100%);
+  --theme-dark-section-text: #ffffff;
+  --theme-dark-section-text-muted: #8fa3c7;
+  --theme-dark-section-text-highlight: #E72020;
+  --theme-dark-section-card-bg: rgba(79, 103, 147, 0.2);
+  --theme-name-intro: #E72020;
+  --theme-project-title: #E72020;
+  --theme-project-subtitle: #4F6793;
+}
+
 :root[data-theme="drdoom"] {
   /* Dr. Doom Theme - Latvaria / Monarch (Light) */
   --theme-primary: #ffffff;
@@ -244,8 +284,8 @@ body {
 /* Dotted Background Pattern */
 .dotted-bg {
   background-color: var(--theme-primary);
-  background-image: radial-gradient(circle at 2px 2px, var(--theme-dotted-bg) 1px, transparent 0);
-  background-size: 20px 20px;
+  background-image: radial-gradient(circle, var(--theme-dotted-bg) 1px, transparent 1px);
+  background-size: 24px 24px;
   position: relative;
   transition: background-color 0.3s ease;
 }

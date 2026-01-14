@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 
-type Theme = "default" | "ironman" | "batman" | "drdoom";
+type Theme = "default" | "ironman" | "batman" | "drdoom" | "spiderman";
 
 interface ThemeContextType {
     theme: Theme;
@@ -30,7 +30,7 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
     useEffect(() => {
         setMounted(true);
         const savedTheme = localStorage.getItem("theme") as Theme;
-        if (savedTheme && ["default", "ironman", "batman", "drdoom"].includes(savedTheme)) {
+        if (savedTheme && ["default", "ironman", "batman", "drdoom", "spiderman"].includes(savedTheme)) {
             setThemeState(savedTheme);
             document.documentElement.setAttribute("data-theme", savedTheme);
         }
@@ -44,7 +44,7 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
     };
 
     const toggleTheme = () => {
-        const nextTheme = theme === "default" ? "ironman" : theme === "ironman" ? "batman" : theme === "batman" ? "drdoom" : "default";
+        const nextTheme = theme === "default" ? "ironman" : theme === "ironman" ? "batman" : theme === "batman" ? "drdoom" : theme === "drdoom" ? "spiderman" : "default";
         setTheme(nextTheme);
     };
 
