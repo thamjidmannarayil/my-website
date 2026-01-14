@@ -138,7 +138,7 @@ export default function Home() {
       </Head>
 
       {!isBlackListed ? (
-        <div className="relative snap-mandatory min-h-screen bg-AAprimary w-full overflow-x-hidden transition-colors duration-300">
+        <div className="relative snap-mandatory min-h-screen bg-AAprimary dotted-bg w-full overflow-x-hidden transition-colors duration-300">
           {/* <ParticleBackground /> */}
           {context.sharedState.finishedLoading ? <></> : ShowThisCantBeReached ? <ThisCantBeReached /> : <></>}
           {context.sharedState.finishedLoading ? <></> : ShowElement ? <Startup /> : <></>}

@@ -15,7 +15,7 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>((props, ref) => {
   ];
 
   return (
-    <GlassSection className="snap-start flex flex-col items-center py-20 bg-AAprimary texture-overlay relative" id="aboutSection">
+    <GlassSection className="snap-start flex flex-col items-center py-20 bg-AAprimary dotted-bg texture-overlay relative" id="aboutSection">
       <div data-aos="fade-up" className="flex flex-col space-y-8 px-4 sm:px-0 w-full sm:w-[500px] md:w-[700px] lg:w-[900px] xl:w-[1100px] 2xl:w-[1200px] 3xl:w-[1400px] 4xl:w-[1600px] relative z-10">
         <div className="flex flex-row items-center">
           <div className="flex flex-row items-center mr-4">

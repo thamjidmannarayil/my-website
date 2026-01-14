@@ -12,7 +12,7 @@ const MyName: React.FC<MyNameProps> = props => {
 
   return (
     <div
-      className="h-full flex flex-col justify-center bg-AAprimary
+      className="h-full flex flex-col justify-center bg-AAprimary dotted-bg
       px-8 2xl:px-72 xl:px-56 lg:px-32 md:px-28 sm:px-8 py-32 sm:py-52 relative" // Added relative for potential scroll indicator
     >
       <motion.span

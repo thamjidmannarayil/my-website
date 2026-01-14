@@ -29,7 +29,7 @@ export default function Gallery() {
   return (
     <div
       id="GallerySection"
-      className="flex flex-col bg-gray-50 w-full overflow-x-hidden 2xl:px-72 lg:px-24 md:px-16 sm:px-16 py-32 px-4"
+      className="flex flex-col bg-AAprimary dotted-bg w-full overflow-x-hidden 2xl:px-72 lg:px-24 md:px-16 sm:px-16 py-32 px-4"
     >
       {/* Title */}
       <div data-aos="fade-up" className="flex flex-row items-center md:px-0">
@@ -44,8 +44,8 @@ export default function Gallery() {
       </div>
 
       {/* Gallery Grid */}
-      <div 
-        data-aos="fade-up" 
+      <div
+        data-aos="fade-up"
         className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 w-full max-w-7xl mt-10 mx-auto"
       >
         {images.map((image, index) => (
@@ -61,10 +61,10 @@ export default function Gallery() {
                 alt={image.alt}
                 className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
               />
-              
+
               {/* Overlay - visible by default, hidden on hover */}
               <div className="absolute inset-0 bg-black opacity-30 group-hover:opacity-0 transition-opacity duration-300"></div>
-              
+
               {/* Border effect */}
               <div className="absolute inset-0 border-2 border-transparent group-hover:border-AAsecondary transition-all duration-300 rounded-lg"></div>
             </div>
