@@ -16,6 +16,7 @@ declare global {
 }
 // import useRouter
 import { useRouter } from "next/router";
+import { SmoothCursor } from "../components/CustomComponents/SmoothCursor";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -78,6 +79,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <AppContext.Provider value={{ sharedState, setSharedState }}>
       <ThemeProvider>
+        <SmoothCursor />
         <SpeedInsights />
         <Component {...pageProps} />
         <Analytics />
