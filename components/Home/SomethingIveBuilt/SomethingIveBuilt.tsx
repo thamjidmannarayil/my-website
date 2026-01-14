@@ -111,7 +111,7 @@ export default function SomethingIveBuilt() {
                 <span className="pr-4 z-10 keyword-hover">Docker</span>
               </ul>
               <div className="z-10 flex fle-row space-x-5 sm:pt-0 pt-2">
-                <GithubIcon link="https://github.com/thamjidthachu/azure-horizon" />
+                <GithubIcon link="https://github.com/thamjidmannarayil/azure-horizon" />
                 <a href="https://resort.thamjidthachu.dev" target={"_blank"} rel="noreferrer">
                   <ExternalLink url={""} router={router} />
                 </a>
@@ -193,7 +193,7 @@ export default function SomethingIveBuilt() {
                 <span className="pr-4 z-10 keyword-hover">Docker</span>
               </ul>
               <div className="z-10 flex fle-row space-x-5 ">
-                <GithubIcon link="https://github.com/thamjidthachu" />
+                <GithubIcon link="https://github.com/thamjidmannarayil" />
                 <a href="https://crm.aqaryone.com" target={"_blank"} rel="noreferrer">
                   <ExternalLink url={""} router={router} />
                 </a>
@@ -271,7 +271,7 @@ export default function SomethingIveBuilt() {
                 <span className="pr-4 z-10 keyword-hover">Docker</span>
               </ul>
               <div className="z-10 flex fle-row space-x-5 sm:pt-0 pt-2">
-                <GithubIcon link="https://github.com/thamjidthachu" />
+                <GithubIcon link="https://github.com/thamjidmannarayil" />
                 <a href="https://www.https://id.aqaryone.com/" target={"_blank"} rel="noreferrer">
                   <ExternalLink url={""} router={router} />
                 </a>
@@ -353,7 +353,7 @@ export default function SomethingIveBuilt() {
                 <span className="pr-4 z-10 keyword-hover">Docker</span>
               </ul>
               <div className="z-10 flex fle-row space-x-5 sm:pt-0 pt-2">
-                <GithubIcon link="https://github.com/thamjidthachu" />
+                <GithubIcon link="https://github.com/thamjidmannarayil" />
                 <a href="https://console.aqaryone.com" target={"_blank"} rel="noreferrer">
                   <ExternalLink url={""} router={router} />
                 </a>
@@ -429,7 +429,7 @@ export default function SomethingIveBuilt() {
                 <span className="pr-4 z-10 keyword-hover">Docker</span>
               </ul>
               <div className="z-10 flex fle-row space-x-5 sm:pt-0 pt-2">
-                <GithubIcon link="https://github.com/thamjidthachu" />
+                <GithubIcon link="https://github.com/thamjidmannarayil" />
                 <a href="https://www.https://aqaryaid.com/" target={"_blank"} rel="noreferrer">
                   <ExternalLink url={""} router={router} />
                 </a>

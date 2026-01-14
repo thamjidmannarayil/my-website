@@ -153,7 +153,7 @@ export default function Home() {
           {context.sharedState.finishedLoading ? <Gallery /> : <></>}
           {context.sharedState.finishedLoading ? <GetInTouch /> : <></>}
           {context.sharedState.finishedLoading ? (
-            <Footer githubUrl={"https://github.com/thamjidthachu/my-website"} hideSocialsInDesktop={true} />
+            <Footer githubUrl={"https://github.com/thamjidmannarayil/my-website"} hideSocialsInDesktop={true} />
           ) : (
             <></>
           )}
