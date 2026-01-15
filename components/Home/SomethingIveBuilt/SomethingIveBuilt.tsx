@@ -131,9 +131,9 @@ export default function SomethingIveBuilt() {
                 ></div>
               </a>
 
-              <div className="absolute px-2 bg-AAprimary rounded  ml-4 mt-2 z-10">
+              {/* <div className="absolute px-2 bg-AAprimary rounded  ml-4 mt-2 z-10">
                 <span className="text-AATextPrimary keyword-hover text-xs bg-AAprimary px-2 py-1 rounded">🚧In Development...👷</span>
-              </div>
+              </div> */}
 
               <Img src={"/projects/thequiet.png"} alt={"Project Screen shot"} className={`w-full rounded h-full `} />
             </div>
