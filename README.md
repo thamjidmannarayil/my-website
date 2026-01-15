@@ -28,7 +28,7 @@
 ---
 ## Description
 
-Azure Horizon is more than just a project for me — it started back in 2021 as a demo for my first job, but it slowly grew into something personal. I began with Django templates, but as I evolved, so did the project. Now it’s powered by Django REST Framework on the backend and Next.js on the frontend, giving it both flexibility and scalability.  
+The Quiet is more than just a project for me — it started back in 2021 as a demo for my first job, but it slowly grew into something personal. I began with Django templates, but as I evolved, so did the project. Now it’s powered by Django REST Framework on the backend and Next.js on the frontend, giving it both flexibility and scalability.  
 
 Why Django REST Framework? Because it provides a clean and robust way to structure APIs, making it perfect for scalability and future integrations.  
 
@@ -36,7 +36,7 @@ Why Next.js? Because I wanted a fast, modern frontend that’s SEO-friendly with
 
 And why TailwindCSS? Because I like clean, maintainable code. Tailwind makes it easy to design without bloating CSS files, while still keeping everything consistent and sharp.  
 
-At the end of the day, Azure Horizon isn’t just code. It’s my dream to one day bring it to life as a real resort with its own digital platform.
+At the end of the day, The Quiet isn’t just code. It’s my dream to one day bring it to life as a real resort with its own digital platform.
 
 
 ---
