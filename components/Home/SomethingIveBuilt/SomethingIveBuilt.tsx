@@ -34,7 +34,88 @@ export default function SomethingIveBuilt() {
 
       <div className="flex flex-col   xl:space-y-36 space-y-8 md:space-y-28">
 
-        {/* Project 1 Azure Horizon */}
+        {/* // ? Project 0 Line Inn */}
+        <div data-aos="fade-up" className="relative md:grid md:grid-cols-12 w-full md:h-96  ">
+          {/* Left image */}
+          <div
+            className="hidden z-10  py-4 
+          absolute md:grid grid-cols-12 w-full h-full  content-center "
+          >
+            <div className="relative rounded w-full h-full col-start-6 col-span-7 3xl:col-start-7 3xl:col-span-6 4xl:col-start-8 4xl:col-span-5">
+              <a href={"https://lineinn.thamjidthachu.dev"} target="_blank" rel="noreferrer">
+                <div
+                  className="absolute w-full h-full rounded bg-black
+           transition-opacity opacity-60 hover:opacity-0 hover:cursor-pointer duration-300"
+                ></div>
+              </a>
+              <Img src={"/projects/lineinn.png"} alt={"Project Screen shot"} className={`w-full rounded h-full `} />
+            </div>
+          </div>
+
+          {/* right Content */}
+          <div className=" md:absolute py-4  md:grid md:grid-cols-12 w-full h-full  content-center ">
+            {/* background for text in mobile responsive */}
+            <div className="absolute w-full h-full z-0 md:hidden md:order-2">
+              <div className="relative w-full h-full">
+                <div className="absolute w-full h-full bg-gray-700 opacity-90 z-10 md:opacity-0"></div>
+                <Img src={"/projects/lineinn-sm.png"} alt={"Project Screen shot"} className={`w-full h-full object-cover`} />
+              </div>
+            </div>
+
+            <div
+              className="px-8 pt-8 sm:pt-12 md:py-0 xl:col-span-7 xl:col-start-1 3xl:col-span-7 3xl:col-start-1 4xl:col-span-8 4xl:col-start-1   
+              col-span-8 flex flex-col items-start space-y-3 md:order-1 border border-white/10 rounded-lg"
+            >
+              <div className="flex flex-col space-y-1 z-10">
+                <span className="text-AAProjectSubtitle text-base">Personal Project</span>
+                <a href="https://lineinn.thamjidthachu.dev" target="_blank" rel="noopener noreferrer">
+                  <span className=" text-AAProjectTitle keyword-hover font-bold text-xl hover:cursor-pointer">
+                    Line Inn
+                  </span>
+                </a>
+              </div><div className="w-full md:bg-AAtertiary rounded-md py-6 md:p-6 z-10">
+              <p className="text-dark-section-text-muted text-left">
+                Building a <span className="text-AATextPrimary keyword-hover">linen e-commerce platform</span>, a{" "}
+                <span className="text-AATextPrimary keyword-hover">direct-to-consumer fashion marketplace</span> focused on{" "}
+                <span className="text-AATextPrimary keyword-hover">linen clothing</span> and{" "}
+                <span className="text-AATextPrimary keyword-hover">linen-based products</span> for{" "}
+                <span className="text-AATextPrimary keyword-hover">everyday comfort</span>.
+                It delivers a complete{" "}
+                <span className="text-AATextPrimary keyword-hover">online shopping experience</span> with features like{" "}
+                <span className="text-AATextPrimary keyword-hover">Product Listings</span>,{" "}
+                <span className="text-AATextPrimary keyword-hover">Reviews & Ratings</span>, and{" "}
+                <span className="text-AATextPrimary keyword-hover">Favorites & Cart</span>, enabling{" "}
+                <span className="text-AATextPrimary keyword-hover">seamless browsing</span>.
+                Designed as a{" "}
+                <span className="text-AATextPrimary keyword-hover">scalable e-commerce system</span> supporting{" "}
+                <span className="text-AATextPrimary keyword-hover">secure checkout</span> with{" "}
+                <span className="text-AATextPrimary keyword-hover">payment integration</span> for{" "}
+                <span className="text-AATextPrimary keyword-hover">modern retail workflows</span>.
+              </p>
+            </div>
+
+              <ul
+                className="flex flex-wrap w-full text-dark-section-text-highlight md:text-dark-section-text-muted
+               text-sm font-Text2"
+              >
+                <span className="pr-4 z-10 keyword-hover">Python/Django REST Framework</span>
+                <span className="pr-4 z-10 keyword-hover">PostgreSQL</span>
+                <span className="pr-4 z-10 keyword-hover">Celery</span>
+                <span className="pr-4 z-10 keyword-hover">RabbitMQ/Redis</span>
+                <span className="pr-4 z-10 keyword-hover">Flask-SocketIO</span>
+                <span className="pr-4 z-10 keyword-hover">Docker</span>
+              </ul>
+              <div className="z-10 flex fle-row space-x-5 ">
+                <GithubIcon link="https://github.com/thamjidmannarayil" />
+                <a href="https://lineinn.thamjidthachu.dev" target={"_blank"} rel="noreferrer">
+                  <ExternalLink url={""} router={router} />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Project 1 The Quiet */}
         <div data-aos="fade-up" className="relative md:grid md:grid-cols-12 w-full md:h-96">
           {/* Left image */}
           <div
@@ -54,7 +135,7 @@ export default function SomethingIveBuilt() {
                 <span className="text-AATextPrimary keyword-hover text-xs bg-AAprimary px-2 py-1 rounded">🚧In Development...👷</span>
               </div>
 
-              <Img src={"/projects/azurehorizon.png"} alt={"Project Screen shot"} className={`w-full rounded h-full `} />
+              <Img src={"/projects/thequiet.png"} alt={"Project Screen shot"} className={`w-full rounded h-full `} />
             </div>
           </div>
 
@@ -64,7 +145,7 @@ export default function SomethingIveBuilt() {
             <div className="absolute w-full h-full z-0 md:hidden">
               <div className="relative w-full h-full">
                 <div className="absolute w-full h-full bg-gray-700 opacity-90 z-10 md:opacity-0"></div>
-                <Img src={"/projects/azurehorizon-sm.jpg"} alt={"Project Screen shot"} className={`w-full h-full object-cover`} />
+                <Img src={"/projects/thequiet-sm.png"} alt={"Project Screen shot"} className={`w-full h-full object-cover`} />
               </div>
             </div>
             <div className="absolute w-full   rounded  ml-4 mt-2  text-end pr-8 md:hidden">
@@ -79,13 +160,13 @@ export default function SomethingIveBuilt() {
                 <span className="text-AAProjectSubtitle text-base">Personal Project</span>
                 <a href="https://resort.thamjidthachu.dev" target={"_blank"} rel="noreferrer">
                   <span className=" text-AAProjectTitle keyword-hover font-bold text-xl hover:cursor-pointer">
-                    Azure Horizon
+                    The Quiet
                   </span>
                 </a>
               </div>
               <div className="w-full md:bg-AAtertiary rounded-md py-6 md:p-6  z-10">
                 <p className="text-dark-section-text-muted text-left md:text-right">
-                  I initiated <span className="text-AATextPrimary keyword-hover">Azure Horizon</span> in 2021 as a{" "}
+                  I initiated <span className="text-AATextPrimary keyword-hover">The Quiet</span> in 2021 as a{" "}
                   <span className="text-AATextPrimary keyword-hover">demo project</span> for my first job, which
                   later grew into a <span className="text-AATextPrimary keyword-hover">personal passion project</span>.
                   Originally built with <span className="text-AATextPrimary keyword-hover">Django templates</span>,
@@ -96,7 +177,7 @@ export default function SomethingIveBuilt() {
                   <span className="text-AATextPrimary keyword-hover">real resort</span> under the same name,
                   combining <span className="text-AATextPrimary keyword-hover">scalability</span> and{" "}
                   <span className="text-AATextPrimary keyword-hover">future-ready design</span> to bring the dream
-                  of <span className="text-AATextPrimary keyword-hover">Azure Horizon Resort</span> to life.
+                  of <span className="text-AATextPrimary keyword-hover">The Quiet Resort</span> to life.
                 </p>
               </div>
               <ul
@@ -111,7 +192,7 @@ export default function SomethingIveBuilt() {
                 <span className="pr-4 z-10 keyword-hover">Docker</span>
               </ul>
               <div className="z-10 flex fle-row space-x-5 sm:pt-0 pt-2">
-                <GithubIcon link="https://github.com/thamjidmannarayil/azure-horizon" />
+                <GithubIcon link="https://github.com/thamjidmannarayil/the-quiet" />
                 <a href="https://resort.thamjidthachu.dev" target={"_blank"} rel="noreferrer">
                   <ExternalLink url={""} router={router} />
                 </a>
