@@ -29,7 +29,7 @@ export default function Gallery() {
   return (
     <div
       id="GallerySection"
-      className="flex flex-col bg-AAprimary dotted-bg w-full overflow-x-hidden 2xl:px-72 lg:px-24 md:px-16 sm:px-16 py-32 px-4"
+      className="flex flex-col bg-AAprimary dotted-bg w-full overflow-x-hidden 2xl:px-72 lg:px-24 md:px-16 sm:px-16 py-16 sm:py-32 px-4"
     >
       {/* Title */}
       <div data-aos="fade-up" className="flex flex-row items-center md:px-0">

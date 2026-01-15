@@ -13,7 +13,7 @@ export default function SomethingIveBuilt() {
     <div
       id="SomethingIveBuiltSection"
       className=" flex flex-col xl:space-y-28 space-y-12 bg-dark-section-bg w-full overflow-x-hidden
-     2xl:px-72 lg:px-24 md:px-16 sm:px-16 py-32 px-4 relative transition-all duration-300"
+     2xl:px-72 lg:px-24 md:px-16 sm:px-16 py-16 sm:py-32 px-4 relative transition-all duration-300"
       style={{
         background: 'var(--theme-dark-section-gradient)'
       }}
