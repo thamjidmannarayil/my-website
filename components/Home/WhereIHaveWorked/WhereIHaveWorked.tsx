@@ -20,7 +20,7 @@ export default function WhereIHaveWorked() {
   };
   const [DescriptionJob, setDescriptionJob] = React.useState("Aqary");
   return (
-    <div data-aos="fade-up" className="flex flex-col items-center justify-center py-24 space-y-12 bg-AAprimary dotted-bg">
+    <div data-aos="fade-up" className="flex flex-col items-center justify-center py-12 sm:py-24 space-y-6 sm:space-y-12 bg-AAprimary dotted-bg">
       {/* // ? Title "Where I've Worked" */}
       <section className="flex flex-row items-center w-full max-w-[500px] sm:max-w-[600px] md:max-w-[700px] lg:max-w-[900px] xl:max-w-[1100px] 2xl:max-w-[1200px] 3xl:max-w-[1400px] 4xl:max-w-[1600px] mx-auto px-4 md:px-0">
         <div className="flex flex-row items-center">
