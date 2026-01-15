@@ -284,10 +284,11 @@ body {
 /* Dotted Background Pattern */
 .dotted-bg {
   background-color: var(--theme-primary);
-  background-image: radial-gradient(circle, var(--theme-dotted-bg) 1px, transparent 1px);
+  background-image: radial-gradient(circle, var(--theme-dotted-bg) 1.25px, transparent 1px);
   background-size: 24px 24px;
   position: relative;
   transition: background-color 0.3s ease;
+  scrollbar-width: none;
 }
 
 .dotted-bg::before {

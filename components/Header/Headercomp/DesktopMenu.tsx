@@ -108,8 +108,8 @@ export default function DesktopMenu(props: { finishedLoading: boolean; isOnDarkS
         }}
         className="text-AAAccent"
       >
-        <ReactScrollLink to="ClientIDealtWithSection" spy={true} smooth={true} offset={-100} duration={200}>
-          <span className={`${textColor} ${hoverColor} hover:cursor-pointer duration-300`}>Clients</span>
+        <ReactScrollLink to="TeamsIWorkedWithSection" spy={true} smooth={true} offset={-100} duration={200}>
+          <span className={`${textColor} ${hoverColor} hover:cursor-pointer duration-300`}>Teams</span>
         </ReactScrollLink>
       </motion.div>
       <motion.div

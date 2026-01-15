@@ -25,13 +25,15 @@ const GLOBE_CONFIG: COBEOptions = {
     markerColor: [251 / 255, 100 / 255, 21 / 255],
     glowColor: [1, 1, 1],
     markers: [
-        { location: [25.2048, 55.2708], size: 0.1 }, // UAE
-        { location: [10.1632, 76.6413], size: 0.1 }, // Kerala, India
-        { location: [51.9194, 19.1451], size: 0.1 }, // Poland
-        { location: [42.1292, -80.0851], size: 0.1 }, // Erie, Pennsylvania, USA
-        { location: [23.8859, 45.0792], size: 0.1 }, // Saudi Arabia
-        { location: [26.8206, 30.8025], size: 0.1 }, // Egypt
-    ],
+    { location: [25.2048, 55.2708], size: 0.1 }, // UAE
+    { location: [10.1632, 76.6413], size: 0.1 }, // Kerala, India
+    { location: [51.9194, 19.1451], size: 0.1 }, // Poland
+    { location: [42.1292, -80.0851], size: 0.1 }, // Erie, Pennsylvania, USA
+    { location: [23.8859, 45.0792], size: 0.1 }, // Saudi Arabia
+    { location: [26.8206, 30.8025], size: 0.1 }, // Egypt
+    { location: [34.8021, 38.9968], size: 0.1 }, // Syria
+    { location: [12.8628, 30.2176], size: 0.1 }, // Sudan
+],
 }
 
 export function GlobeCanvas({
@@ -166,7 +168,7 @@ export function GlobeCanvas({
 
 export default function GlobeSection() {
     return (
-        <section id="ClientIDealtWithSection" className="relative overflow-hidden border-y border-AAsecondary/10 bg-AAprimary dotted-bg py-24">
+        <section id="TeamsIWorkedWithSection" className="relative overflow-hidden border-y border-AAsecondary/10 bg-AAprimary dotted-bg py-24">
             {/* Title */}
             <div data-aos="fade-up" className="flex flex-row items-center 2xl:px-72 lg:px-24 md:px-16 sm:px-16 px-4 mb-16">
                 <ArrowIcon className={"flex-none h-5 md:h-6 w-5 md:w-5 translate-y-[2px] text-AAsecondary"} />
@@ -180,8 +182,10 @@ export default function GlobeSection() {
             </div>
             <div className="container relative mx-auto flex max-w-6xl flex-col items-center gap-12 px-4 md:flex-row">
                 <div className="relative z-10 flex flex-1 flex-col items-start gap-6 text-left" data-aos="fade-right">
-                    <h2 className="text-3xl font-bold tracking-tight text-AATextPrimary md:text-4xl lg:text-5xl">
-                        Working with Clients <span className="text-AAsecondary">Globally</span>
+                    <h2 className="text-3xl font-bold tracking-tight text-AATextPrimary md:text-3xl lg:text-4xl">
+                        <span className="text-AATextSecondary tracking-widest">Working with Teams</span>
+                        <br />
+                        Globally
                     </h2>
                     <p className="max-w-[500px] text-lg text-AATextMuted md:text-xl">
                         I collaborate with innovative companies and teams worldwide, delivering AI and Machine Learning solutions that scale across borders.
