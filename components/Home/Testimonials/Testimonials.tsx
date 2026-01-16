@@ -11,12 +11,12 @@ type Testimonial = {
 
 const testimonials: Testimonial[] = [
   {
-    avatar: "/avatars/lakshminair.jpg",
-    name: "Lakshmi Nair",
-    role: "Project Manager, Neology, Inc.",
+    avatar: "/avatars/stevenwaheed.jpg",
+    name: "Steven Waheed",
+    role: "Machine Learning Engineer, Fine Home Real Estate",
     message:
-      "I worked with Thamjid at Flycatch Infotech. He consistently delivered high-quality work with efficiency and precision. He has strong technical skills, clear communication, and a collaborative mindset. A reliable and talented developer I would highly recommend.",
-    profileUrl: "https://www.linkedin.com/in/lakshmi-soman-nair/",
+      "I've had the pleasure of working with Thamjid Mannarayil as an AI/ML Developer, and he consistently delivers high-quality, well-structured code on time. His strong problem-solving skills, attention to detail, and clean coding practices make his solutions reliable and scalable. Thamjid also brings creative ideas to the table and proactively improves models and workflows. A highly dependable and talented engineer.",
+    profileUrl: "https://www.linkedin.com/in/stevensaad11/",
   },
   {
     avatar: "/avatars/manuramachandran.jpg",
@@ -25,6 +25,14 @@ const testimonials: Testimonial[] = [
     message:
       "Thamjid is exceptionally talented in programming, analytical reasoning, and problem-solving. He has demonstrated a natural ability to grasp complex concepts quickly and apply them effectively to both academic and practical projects.",
     profileUrl: "https://www.linkedin.com/in/dr-manu-mundappat-ramachandran-3686591a6/",
+  },
+  {
+    avatar: "/avatars/lakshminair.jpg",
+    name: "Lakshmi Nair",
+    role: "Project Manager, Neology, Inc.",
+    message:
+      "I worked with Thamjid at Flycatch Infotech. He consistently delivered high-quality work with efficiency and precision. He has strong technical skills, clear communication, and a collaborative mindset. A reliable and talented developer I would highly recommend.",
+    profileUrl: "https://www.linkedin.com/in/lakshmi-soman-nair/",
   },
   {
     avatar: "/avatars/arunnramesh.jpg",
