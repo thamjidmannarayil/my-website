@@ -30,7 +30,7 @@ jobs:
           git reset --hard origin/master
           
           # Stop and remove existing containers
-          echo "🛑 Stopping existing containers..."
+          echo "� Stopping existing containers..."
           docker-compose down || true
           
           # Build and start containers
