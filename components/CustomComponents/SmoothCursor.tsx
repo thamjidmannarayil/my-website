@@ -2,6 +2,7 @@
 
 import { FC, useEffect, useRef, useState } from "react"
 import { motion, useSpring } from "framer-motion"
+import { useCursor } from "../AppContextFolder/CursorContext"
 
 interface Position {
   x: number
@@ -30,11 +31,11 @@ const DefaultCursorSVG: FC = () => {
       <g filter="url(#filter0_d_91_7928)">
         <path
           d="M42.6817 41.1495L27.5103 6.79925C26.7269 5.02557 24.2082 5.02558 23.3927 6.79925L7.59814 41.1495C6.75833 42.9759 8.52712 44.8902 10.4125 44.1954L24.3757 39.0496C24.8829 38.8627 25.4385 38.8627 25.9422 39.0496L39.8121 44.1954C41.6849 44.8902 43.4884 42.9759 42.6817 41.1495Z"
-          fill="black"
+          fill="var(--theme-text-primary)"
         />
         <path
           d="M43.7146 40.6933L28.5431 6.34306C27.3556 3.65428 23.5772 3.69516 22.3668 6.32755L6.57226 40.6778C5.3134 43.4156 7.97238 46.298 10.803 45.2549L24.7662 40.109C25.0221 40.0147 25.2999 40.0156 25.5494 40.1082L39.4193 45.254C42.2261 46.2953 44.9254 43.4347 43.7146 40.6933Z"
-          stroke="white"
+          stroke="var(--theme-primary)"
           strokeWidth={2.25825}
         />
       </g>
@@ -79,8 +80,30 @@ const DefaultCursorSVG: FC = () => {
   )
 }
 
+const CircleCursorSVG: FC = () => (
+  <svg width="50" height="54" viewBox="0 0 50 54" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ filter: "drop-shadow(0px 2px 2px rgba(0,0,0,0.1))" }}>
+    <circle cx="25" cy="27" r="16" stroke="var(--theme-text-primary)" strokeWidth="2" fill="rgba(0,0,0,0.1)" />
+    <circle cx="25" cy="27" r="3" fill="var(--theme-text-primary)" />
+  </svg>
+)
+
+const DotCursorSVG: FC = () => (
+  <svg width="50" height="54" viewBox="0 0 50 54" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ filter: "drop-shadow(0px 1px 2px rgba(0,0,0,0.2))" }}>
+    <circle cx="25" cy="27" r="6" fill="var(--theme-text-primary)" stroke="var(--theme-primary)" strokeWidth="1" />
+  </svg>
+)
+
+const CrosshairCursorSVG: FC = () => (
+  <svg width="50" height="54" viewBox="0 0 50 54" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ filter: "drop-shadow(0px 1px 2px rgba(0,0,0,0.2))" }}>
+    <line x1="25" y1="15" x2="25" y2="39" stroke="var(--theme-text-primary)" strokeWidth="2" strokeLinecap="round" />
+    <line x1="13" y1="27" x2="37" y2="27" stroke="var(--theme-text-primary)" strokeWidth="2" strokeLinecap="round" />
+    <circle cx="25" cy="27" r="12" stroke="var(--theme-text-primary)" strokeWidth="1.5" />
+    <circle cx="25" cy="27" r="2" fill="var(--theme-text-primary)" />
+  </svg>
+)
+
 export function SmoothCursor({
-  cursor = <DefaultCursorSVG />,
+  cursor: propCursor,
   springConfig = {
     damping: 45,
     stiffness: 400,
@@ -88,7 +111,9 @@ export function SmoothCursor({
     restDelta: 0.001,
   },
 }: SmoothCursorProps) {
+  const { cursorType } = useCursor()
   const [isVisible, setIsVisible] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
   const lastMousePos = useRef<Position>({ x: 0, y: 0 })
   const velocity = useRef<Position>({ x: 0, y: 0 })
   const lastUpdateTime = useRef(Date.now())
@@ -109,6 +134,19 @@ export function SmoothCursor({
   })
 
   useEffect(() => {
+    const checkMobile = () => {
+      // Check if device is touch or small screen
+      setIsMobile(window.matchMedia("(max-width: 768px) or (pointer: coarse)").matches)
+    }
+
+    checkMobile()
+    window.addEventListener("resize", checkMobile)
+    return () => window.removeEventListener("resize", checkMobile)
+  }, [])
+
+  useEffect(() => {
+    if (isMobile) return
+
     const updateVelocity = (currentPos: Position) => {
       const currentTime = Date.now()
       const deltaTime = currentTime - lastUpdateTime.current
@@ -179,7 +217,32 @@ export function SmoothCursor({
       window.removeEventListener("mousemove", throttledMouseMove)
       if (rafId) cancelAnimationFrame(rafId)
     }
-  }, [cursorX, cursorY, rotation, scale, isVisible])
+  }, [cursorX, cursorY, rotation, scale, isVisible, isMobile])
+
+  if (isMobile) return null
+
+  // Determine which cursor to render
+  let activeCursor = <DefaultCursorSVG />
+
+  if (propCursor) {
+    activeCursor = <>{propCursor}</>
+  } else {
+    switch (cursorType) {
+      case 'circle':
+        activeCursor = <CircleCursorSVG />
+        break
+      case 'dot':
+        activeCursor = <DotCursorSVG />
+        break
+      case 'crosshair':
+        activeCursor = <CrosshairCursorSVG />
+        break
+      case 'default':
+      default:
+        activeCursor = <DefaultCursorSVG />
+        break
+    }
+  }
 
   return (
     <motion.div
@@ -189,7 +252,7 @@ export function SmoothCursor({
         top: cursorY,
         translateX: "-50%",
         translateY: "-50%",
-        rotate: rotation,
+        rotate: cursorType === 'default' ? rotation : 0, // Only rotate the arrow cursor
         scale: scale,
         zIndex: 1000,
         pointerEvents: "none",
@@ -199,7 +262,8 @@ export function SmoothCursor({
       initial={{ opacity: 0 }}
       animate={{ opacity: isVisible ? 1 : 0 }}
     >
-      {cursor}
+      {activeCursor}
     </motion.div>
   )
 }
+

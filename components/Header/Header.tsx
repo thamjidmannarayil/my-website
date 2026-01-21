@@ -3,6 +3,7 @@ import Logo from "./Headercomp/Logo";
 import DesktopMenu from "./Headercomp/DesktopMenu";
 import IconMenu from "./Headercomp/IconMenu";
 import MobileMenu from "./Headercomp/MobileMenu";
+import CursorSwitcher from "./Headercomp/CursorSwitcher";
 import { motion } from "framer-motion";
 import AppContext from "../AppContextFolder/AppContext";
 
@@ -109,8 +110,13 @@ const Header = (props: { finishedLoading: boolean, sectionsRef }) => {
         className={`w-full fixed ${ShowElement ? `backdrop-blur-md bg-black/20 shadow-xl border-b border-white/10` : `bg-opacity-0 `} flex 
       justify-between px-6 sm:px-12 py-2 sm:py-4  transition-all duration-500 translate-y-0 z-50`}
       >
-        {/* Logo T */}
-        <Logo finishedLoading={props.finishedLoading} isOnDarkSection={isOnDarkSection} />
+        {/* Logo and Cursor Switcher Container */}
+        <div className="flex flex-row items-center gap-4">
+          <Logo finishedLoading={props.finishedLoading} isOnDarkSection={isOnDarkSection} />
+          <div className="hidden md:block">
+            <CursorSwitcher finishedLoading={props.finishedLoading} />
+          </div>
+        </div>
 
         {/* Hide icon Designed by me */}
 

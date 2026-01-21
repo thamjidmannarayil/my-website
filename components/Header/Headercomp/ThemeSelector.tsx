@@ -1,175 +1,98 @@
-import React, { useState, useRef, useEffect } from "react";
-import { motion } from "../../../node_modules/framer-motion/dist/framer-motion";
+"use client"
+
+import React from "react";
+import { motion } from "framer-motion";
 import { useTheme } from "../../AppContextFolder/ThemeContext";
 
 interface ThemeSelectorProps {
-    finishedLoading: boolean;
-    isOnDarkSection?: boolean;
-    isMobile?: boolean;
+  finishedLoading: boolean;
+  isOnDarkSection?: boolean;
+  isMobile?: boolean;
+  className?: string;
 }
 
-const ThemeSelector = ({ finishedLoading, isOnDarkSection, isMobile }: ThemeSelectorProps) => {
-    const { theme, setTheme } = useTheme();
-    const [isOpen, setIsOpen] = useState(false);
-    const dropdownRef = useRef<HTMLDivElement>(null);
+const ThemeSelector = ({ finishedLoading, isOnDarkSection, isMobile, className }: ThemeSelectorProps) => {
+  const { theme, setTheme } = useTheme();
 
-    // Close dropdown when clicking outside
-    useEffect(() => {
-        const handleClickOutside = (event: MouseEvent) => {
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-                setIsOpen(false);
-            }
-        };
+  const themes = [
+    { id: "default", name: "Default", gradient: "from-gray-100 to-gray-300", icon: "/theme/default.svg" },
+    { id: "ironman", name: "Iron Man", gradient: "from-red-700 to-yellow-500", icon: "/theme/ironman.svg" },
+    { id: "batman", name: "Batman", gradient: "from-[#ffffff] to-[#AE8875]", icon: "/theme/batman.svg" },
+    { id: "spiderman", name: "Spiderman", gradient: "from-[#E72020] to-[#223057]", icon: "/theme/spiderman.svg" },
+    { id: "drdoom", name: "Dr. Doom", gradient: "from-[#ffffff] to-[#00643D]", icon: "/theme/drdoom.svg" },
+  ] as const;
 
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => document.removeEventListener("mousedown", handleClickOutside);
-    }, []);
-
-    const themes = [
-        { id: "default", name: "Default", icon: "☀️", description: "Clean & Minimal" },
-        { id: "ironman", name: "Iron Man", icon: "🦾", description: "Stark Industries" },
-        { id: "batman", name: "Batman", icon: "🦇", description: "Dark Knight" },
-        { id: "drdoom", name: "Dr. Doom", icon: "🎭", description: "Latverian Monarch" },
-    ] as const;
-
-    const currentTheme = themes.find((t) => t.id === theme) || themes[0];
-
-    const baseTextColor = isOnDarkSection ? "text-white" : "text-AATextSecondary";
-
-    if (isMobile) {
-        return (
-            <div className="flex flex-col items-center space-y-3 mt-4 pt-4 border-t border-AATextMuted/30 w-full">
-                <span className="text-sm text-AATextMuted font-medium">Theme</span>
-                <div className="flex flex-row space-x-6 justify-center w-full">
-                    {themes.map((t) => {
-                        // Define theme colors for the swatches
-                        let bgColorClass = "bg-gray-200";
-                        if (t.id === "ironman") {
-                            bgColorClass = "bg-gradient-to-br from-red-700 to-yellow-500";
-                        } else if (t.id === "default") {
-                            bgColorClass = "bg-gradient-to-br from-gray-100 to-gray-300";
-                        } else if (t.id === "batman") {
-                            bgColorClass = "bg-gradient-to-br from-[#ffffff] to-[#AE8875]";
-                        } else if (t.id === "drdoom") {
-                            bgColorClass = "bg-gradient-to-br from-[#ffffff] to-[#00643D]";
-                        }
-
-                        const isSelected = theme === t.id;
-
-                        return (
-                            <button
-                                key={t.id}
-                                onClick={() => setTheme(t.id)}
-                                className={`relative w-10 h-10 rounded-full shadow-md flex items-center justify-center transition-transform duration-200
-                                ${bgColorClass}
-                                ${isSelected ? "ring-2 ring-AAsecondary scale-110" : "hover:scale-105"}
-                            `}
-                                aria-label={`Select ${t.name} theme`}
-                            >
-                                {isSelected && (
-                                    <div className="bg-white rounded-full p-0.5 shadow-sm">
-                                        <svg className="w-4 h-4 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                                        </svg>
-                                    </div>
-                                )}
-                            </button>
-                        )
-                    })}
-                </div>
-            </div>
-        );
-    }
-
-    return (
-        <motion.div
-            ref={dropdownRef}
-            initial={{ y: -40, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{
-                type: "spring",
-                duration: finishedLoading ? 0 : 0.6,
-                delay: finishedLoading ? 0 : 1.7,
+  const renderThemeButton = (t: typeof themes[number], isSelected: boolean) => (
+    <button
+      key={t.id}
+      onClick={() => setTheme(t.id)}
+      className={`relative h-10 w-10 rounded-full border-2 transition-all duration-200 group
+                  bg-gradient-to-br ${t.gradient}
+                  ${isSelected
+          ? "border-AAsecondary scale-110 z-20 shadow-lg"
+          : "border-white hover:scale-105 hover:z-10 shadow-md"
+        }
+      `}
+      aria-label={`Select ${t.name} theme`}
+      title={t.name}
+    >
+      {t.icon && (
+        <div className="absolute inset-0 flex items-center justify-center p-0.5 pointer-events-none">
+          <img
+            src={t.icon}
+            alt=""
+            className={`w-full h-full object-contain transition-opacity duration-300 ${isSelected ? 'opacity-100' : 'opacity-60 group-hover:opacity-100'}`}
+            style={{
+              filter: t.id === 'ironman'
+                ? 'brightness(0) saturate(100%) invert(84%) sepia(35%) saturate(2320%) hue-rotate(359deg) brightness(103%) contrast(106%)'
+                : t.id === 'spiderman'
+                  ? 'brightness(0) saturate(100%) invert(18%) sepia(88%) saturate(5412%) hue-rotate(355deg) brightness(93%) contrast(92%)'
+                  : t.id === 'batman' ? 'brightness(0) opacity(0.7)' : 'none'
             }}
-            className="relative"
+          />
+        </div>
+      )}
+      {isSelected && (
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          className="absolute -top-1 -right-1 flex items-center justify-center z-30"
         >
-            <button
-                onClick={() => setIsOpen(!isOpen)}
-                className={`w-8 h-8 rounded-full border-2 border-white shadow-md transition-transform duration-300 hover:scale-110
-                    ${theme === "ironman" ? "bg-gradient-to-br from-red-700 to-yellow-500" :
-                        theme === "batman" ? "bg-gradient-to-br from-[#ffffff] to-[#AE8875]" :
-                            theme === "drdoom" ? "bg-gradient-to-br from-[#ffffff] to-[#00643D]" :
-                                "bg-gradient-to-br from-gray-100 to-gray-300"}`}
-                aria-label="Select theme"
-            >
-            </button>
-
-            {isOpen && (
-                <motion.div
-                    initial={{ opacity: 0, y: -10, scale: 0.95 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    transition={{ duration: 0.15 }}
-                    className="absolute right-0 mt-2 w-40 rounded-xl overflow-hidden
-              bg-AAprimary border border-AAsecondary/20 shadow-xl z-50 p-2"
-                >
-                    <div className="flex flex-col items-center space-y-2">
-                        <span className="text-AATextPrimary font-bold font-sans text-xs tracking-wide">Themes</span>
-                        <div className="flex flex-col space-y-1 w-full">
-                            {themes.map((t) => {
-                                // Define theme colors for the swatches
-                                let bgColorClass = "bg-gray-200";
-                                if (t.id === "ironman") {
-                                    bgColorClass = "bg-gradient-to-br from-red-700 to-yellow-500";
-                                } else if (t.id === "default") {
-                                    bgColorClass = "bg-gradient-to-br from-gray-100 to-gray-300";
-                                } else if (t.id === "batman") {
-                                    bgColorClass = "bg-gradient-to-br from-[#ffffff] to-[#AE8875]";
-                                } else if (t.id === "drdoom") {
-                                    bgColorClass = "bg-gradient-to-br from-[#ffffff] to-[#00643D]";
-                                }
-
-                                const isSelected = theme === t.id;
-
-                                return (
-                                    <button
-                                        key={t.id}
-                                        onClick={() => {
-                                            setTheme(t.id);
-                                            setTimeout(() => setIsOpen(false), 300);
-                                        }}
-                                        className={`w-full flex flex-row items-center space-x-3 p-2 rounded-lg transition-colors duration-200
-                                            ${isSelected ? "bg-AAsecondary/10" : "hover:bg-AAtertiary"}
-                                        `}
-                                        aria-label={`Select ${t.name} theme`}
-                                    >
-                                        <div className={`relative w-8 h-8 rounded-full shadow-md flex items-center justify-center
-                                            ${bgColorClass}
-                                            ${isSelected ? "ring-2 ring-AAsecondary/30" : ""}
-                                        `}>
-                                            {isSelected && (
-                                                <motion.div
-                                                    initial={{ scale: 0 }}
-                                                    animate={{ scale: 1 }}
-                                                    className="bg-white rounded-full p-0.5 shadow-sm"
-                                                >
-                                                    <svg className="w-4 h-4 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                                                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                                                    </svg>
-                                                </motion.div>
-                                            )}
-                                        </div>
-                                        <span className={`text-sm font-medium ${isSelected ? "text-AAsecondary" : "text-AATextMuted"}`}>
-                                            {t.name}
-                                        </span>
-                                    </button>
-                                );
-                            })}
-                        </div>
-                    </div>
-                </motion.div>
-            )}
+          <div className="bg-white rounded-full p-0.5 shadow-sm border border-black/10">
+            <svg className="w-2.5 h-2.5 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={4}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
         </motion.div>
+      )}
+    </button>
+  );
+
+  if (isMobile) {
+    return (
+      <div className="flex flex-col items-center space-y-3 mt-4 pt-4 border-t border-AATextMuted/30 w-full">
+        <span className="text-sm text-AATextMuted font-medium">Theme</span>
+        <div className={`z-10 flex -space-x-3 rtl:space-x-reverse ${className || ""}`}>
+          {themes.map((t) => renderThemeButton(t, theme === t.id))}
+        </div>
+      </div>
     );
+  }
+
+  return (
+    <motion.div
+      initial={{ y: -40, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{
+        type: "spring",
+        duration: finishedLoading ? 0 : 0.6,
+        delay: finishedLoading ? 0 : 1.7,
+      }}
+      className={`z-10 flex -space-x-3 rtl:space-x-reverse ${className || ""}`}
+    >
+      {themes.map((t) => renderThemeButton(t, theme === t.id))}
+    </motion.div>
+  );
 };
 
 export default ThemeSelector;
