@@ -57,7 +57,7 @@ export default function SomethingIveBuilt() {
             {/* background for text in mobile responsive */}
             <div className="absolute w-full h-full z-0 md:hidden md:order-2">
               <div className="relative w-full h-full">
-                <div className="absolute w-full h-full bg-gray-700 opacity-90 z-10 md:opacity-0"></div>
+                <div className="absolute w-full h-full bg-black/50 backdrop-blur-md z-10 md:opacity-0"></div>
                 <Img src={"/projects/lineinn-sm.png"} alt={"Project Screen shot"} className={`w-full h-full object-cover`} />
               </div>
             </div>
@@ -74,25 +74,25 @@ export default function SomethingIveBuilt() {
                   </span>
                 </a>
               </div><div className="w-full md:bg-AAtertiary rounded-md py-6 md:p-6 z-10">
-              <p className="text-dark-section-text-muted text-left">
-                Building a <span className="text-AATextPrimary keyword-hover">linen e-commerce platform</span>, a{" "}
-                <span className="text-AATextPrimary keyword-hover">direct-to-consumer fashion marketplace</span> focused on{" "}
-                <span className="text-AATextPrimary keyword-hover">linen clothing</span> and{" "}
-                <span className="text-AATextPrimary keyword-hover">linen-based products</span> for{" "}
-                <span className="text-AATextPrimary keyword-hover">everyday comfort</span>.
-                It delivers a complete{" "}
-                <span className="text-AATextPrimary keyword-hover">online shopping experience</span> with features like{" "}
-                <span className="text-AATextPrimary keyword-hover">Product Listings</span>,{" "}
-                <span className="text-AATextPrimary keyword-hover">Reviews & Ratings</span>, and{" "}
-                <span className="text-AATextPrimary keyword-hover">Favorites & Cart</span>, enabling{" "}
-                <span className="text-AATextPrimary keyword-hover">seamless browsing</span>.
-                Designed as a{" "}
-                <span className="text-AATextPrimary keyword-hover">scalable e-commerce system</span> supporting{" "}
-                <span className="text-AATextPrimary keyword-hover">secure checkout</span> with{" "}
-                <span className="text-AATextPrimary keyword-hover">payment integration</span> for{" "}
-                <span className="text-AATextPrimary keyword-hover">modern retail workflows</span>.
-              </p>
-            </div>
+                <p className="text-dark-section-text-muted text-left">
+                  Building a <span className="text-AATextPrimary keyword-hover">linen e-commerce platform</span>, a{" "}
+                  <span className="text-AATextPrimary keyword-hover">direct-to-consumer fashion marketplace</span> focused on{" "}
+                  <span className="text-AATextPrimary keyword-hover">linen clothing</span> and{" "}
+                  <span className="text-AATextPrimary keyword-hover">linen-based products</span> for{" "}
+                  <span className="text-AATextPrimary keyword-hover">everyday comfort</span>.
+                  It delivers a complete{" "}
+                  <span className="text-AATextPrimary keyword-hover">online shopping experience</span> with features like{" "}
+                  <span className="text-AATextPrimary keyword-hover">Product Listings</span>,{" "}
+                  <span className="text-AATextPrimary keyword-hover">Reviews & Ratings</span>, and{" "}
+                  <span className="text-AATextPrimary keyword-hover">Favorites & Cart</span>, enabling{" "}
+                  <span className="text-AATextPrimary keyword-hover">seamless browsing</span>.
+                  Designed as a{" "}
+                  <span className="text-AATextPrimary keyword-hover">scalable e-commerce system</span> supporting{" "}
+                  <span className="text-AATextPrimary keyword-hover">secure checkout</span> with{" "}
+                  <span className="text-AATextPrimary keyword-hover">payment integration</span> for{" "}
+                  <span className="text-AATextPrimary keyword-hover">modern retail workflows</span>.
+                </p>
+              </div>
 
               <ul
                 className="flex flex-wrap w-full text-dark-section-text-highlight md:text-dark-section-text-muted
@@ -144,14 +144,14 @@ export default function SomethingIveBuilt() {
             {/* background for text in mobile responsive */}
             <div className="absolute w-full h-full z-0 md:hidden">
               <div className="relative w-full h-full">
-                <div className="absolute w-full h-full bg-gray-700 opacity-90 z-10 md:opacity-0"></div>
+                <div className="absolute w-full h-full bg-black/50 backdrop-blur-md z-10 md:opacity-0"></div>
                 <Img src={"/projects/thequiet-sm.png"} alt={"Project Screen shot"} className={`w-full h-full object-cover`} />
               </div>
             </div>
-            <div className="absolute w-full   rounded  ml-4 mt-2  text-end pr-8 md:hidden">
+            {/* <div className="absolute w-full   rounded  ml-4 mt-2  text-end pr-8 md:hidden">
               <div className="w-full"></div>
               <span className="text-AATextPrimary keyword-hover sm:text-lg bg-AAprimary px-2 py-1 rounded">🚧Developement In Progress...👷</span>
-            </div>
+            </div> */}
             <div
               className="px-8 pt-8 sm:pt-12 md:py-0 xl:col-span-7 xl:col-start-6 3xl:col-span-7 3xl:col-start-6 4xl:col-span-8 4xl:col-start-6 col-start-5 
               col-span-8 flex flex-col items-start md:items-end sm:space-y-3 space-y-1 border border-white/10 rounded-lg"
@@ -224,7 +224,7 @@ export default function SomethingIveBuilt() {
             {/* background for text in mobile responsive */}
             <div className="absolute w-full h-full z-0 md:hidden md:order-2">
               <div className="relative w-full h-full">
-                <div className="absolute w-full h-full bg-gray-700 opacity-90 z-10 md:opacity-0"></div>
+                <div className="absolute w-full h-full bg-black/50 backdrop-blur-md z-10 md:opacity-0"></div>
                 <Img src={"/projects/aqarycrm-sm.jpg"} alt={"Project Screen shot"} className={`w-full h-full object-cover`} />
               </div>
             </div>
@@ -307,7 +307,7 @@ export default function SomethingIveBuilt() {
             {/* background for text in mobile responsive */}
             <div className="absolute w-full h-full z-0 md:hidden">
               <div className="relative w-full h-full">
-                <div className="absolute w-full h-full bg-gray-700 opacity-90 z-10 md:opacity-0"></div>
+                <div className="absolute w-full h-full bg-black/50 backdrop-blur-md z-10 md:opacity-0"></div>
                 <Img src={"/projects/aqaryidentity-sm.jpg"} alt={"Project Screen shot"} className={`w-full h-full object-cover`} />
               </div>
             </div>
@@ -384,7 +384,7 @@ export default function SomethingIveBuilt() {
             {/* background for text in mobile responsive */}
             <div className="absolute w-full h-full z-0 md:hidden md:order-2">
               <div className="relative w-full h-full">
-                <div className="absolute w-full h-full bg-gray-700 opacity-90 z-10 md:opacity-0"></div>
+                <div className="absolute w-full h-full bg-black/50 backdrop-blur-md z-10 md:opacity-0"></div>
                 <Img src={"/projects/aqaryconsole-sm.jpg"} alt={"Project Screen shot"} className={`w-full h-full object-cover`} />
               </div>
             </div>
@@ -466,7 +466,7 @@ export default function SomethingIveBuilt() {
             {/* background for text in mobile responsive */}
             <div className="absolute w-full h-full z-0 md:hidden">
               <div className="relative w-full h-full">
-                <div className="absolute w-full h-full bg-gray-700 opacity-90 z-10 md:opacity-0"></div>
+                <div className="absolute w-full h-full bg-black/50 backdrop-blur-md z-10 md:opacity-0"></div>
                 <Img src={"/projects/aqaryrealestate-sm.jpg"} alt={"Project Screen shot"} className={`w-full h-full object-cover`} />
               </div>
             </div>
@@ -543,7 +543,7 @@ export default function SomethingIveBuilt() {
             {/* background for text in mobile responsive */}
             <div className="absolute w-full h-full z-0 md:hidden md:order-2">
               <div className="relative w-full h-full">
-                <div className="absolute w-full h-full bg-gray-700 opacity-90 z-10 md:opacity-0"></div>
+                <div className="absolute w-full h-full bg-black/50 backdrop-blur-md z-10 md:opacity-0"></div>
                 <Img src={"/projects/hrmsaqary-sm.jpg"} alt={"Project Screen shot"} className={`w-full h-full object-cover`} />
               </div>
             </div>
@@ -621,7 +621,7 @@ export default function SomethingIveBuilt() {
             {/* background for text in mobile responsive */}
             <div className="absolute w-full h-full z-0 md:hidden">
               <div className="relative w-full h-full">
-                <div className="absolute w-full h-full bg-gray-700 opacity-90 z-10 md:opacity-0"></div>
+                <div className="absolute w-full h-full bg-black/50 backdrop-blur-md z-10 md:opacity-0"></div>
                 <Img src={"/projects/exploreworld-sm.jpg"} alt={"Project Screen shot"} className={`w-full h-full object-cover`} />
               </div>
             </div>
@@ -696,7 +696,7 @@ export default function SomethingIveBuilt() {
             {/* background for text in mobile responsive */}
             <div className="absolute w-full h-full z-0 md:hidden md:order-2">
               <div className="relative w-full h-full">
-                <div className="absolute w-full h-full bg-gray-700 opacity-90 z-10 md:opacity-0"></div>
+                <div className="absolute w-full h-full bg-black/50 backdrop-blur-md z-10 md:opacity-0"></div>
                 <Img src={"/projects/wearlay-sm.jpg"} alt={"Project Screen shot"} className={`w-full h-full object-cover`} />
               </div>
             </div>
@@ -768,7 +768,7 @@ export default function SomethingIveBuilt() {
             {/* background for text in mobile responsive */}
             <div className="absolute w-full h-full z-0 md:hidden">
               <div className="relative w-full h-full">
-                <div className="absolute w-full h-full bg-gray-700 opacity-90 z-10 md:opacity-0"></div>
+                <div className="absolute w-full h-full bg-black/50 backdrop-blur-md z-10 md:opacity-0"></div>
                 <Img src={"/projects/almaarefa-sm.jpg"} alt={"Project Screen shot"} className={`w-full h-full object-cover`} />
               </div>
             </div>
@@ -844,7 +844,7 @@ export default function SomethingIveBuilt() {
             {/* background for text in mobile responsive */}
             <div className="absolute w-full h-full z-0 md:hidden md:order-2">
               <div className="relative w-full h-full">
-                <div className="absolute w-full h-full bg-gray-700 opacity-90 z-10 md:opacity-0"></div>
+                <div className="absolute w-full h-full bg-black/50 backdrop-blur-md z-10 md:opacity-0"></div>
                 <Img src={"/projects/away2gether-sm.jpg"} alt={"Project Screen shot"} className={`w-full h-full object-cover`} />
               </div>
             </div>
@@ -926,7 +926,7 @@ export default function SomethingIveBuilt() {
             {/* background for text in mobile responsive */}
             <div className="absolute w-full h-full z-0 md:hidden">
               <div className="relative w-full h-full">
-                <div className="absolute w-full h-full bg-gray-700 opacity-90 z-10 md:opacity-0"></div>
+                <div className="absolute w-full h-full bg-black/50 backdrop-blur-md z-10 md:opacity-0"></div>
                 <Img src={"/projects/redalion-sm.png"} alt={"Project Screen shot"} className={`w-full h-full object-cover`} />
               </div>
             </div>

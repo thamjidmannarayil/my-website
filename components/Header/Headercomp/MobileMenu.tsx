@@ -1,6 +1,6 @@
 import { motion } from "../../../node_modules/framer-motion/dist/framer-motion";
 import { Link } from "react-scroll";
-import ThemeSelector from "./ThemeSelectorNew";
+import ThemeSelector from "./ThemeSelector";
 const MobileMenu = props => {
   const closeMenu = () => {
     props.setRotate(!props.rotate);
