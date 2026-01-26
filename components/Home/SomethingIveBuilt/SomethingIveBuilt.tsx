@@ -6,7 +6,7 @@ import Img from "../../smallComp/image/Img";
 import GithubIcon from "../../Icons/GithubIconForSomethingIveBuild";
 import ExternalLink from "../../Icons/ExternalLink";
 import ParticleBackground from "../../Background/ParticleBackground";
-import { getTasksTextWithHighlightedKeyword } from "../WhereIHaveWorked/taskAndType";
+import { getTextWithHighlightedKeyword } from "../TextAndHighlight";
 
 type Project = {
   name: string;
@@ -275,7 +275,7 @@ export default function SomethingIveBuilt() {
                     <p
                       className={`text-dark-section-text-muted ${isLeft ? "text-left" : "text-left md:text-right"}`}
                       dangerouslySetInnerHTML={{
-                        __html: getTasksTextWithHighlightedKeyword(project.description.text, project.description.keywords),
+                        __html: getTextWithHighlightedKeyword(project.description.text, project.description.keywords),
                       }}
                     />
                   </div>

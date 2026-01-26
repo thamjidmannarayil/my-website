@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "../../../node_modules/framer-motion/dist/framer-motion";
 import ArrowIcon from "../../Icons/ArrowIcon";
-import { getTasksTextWithHighlightedKeyword } from "./taskAndType";
+import { getTextWithHighlightedKeyword } from "../TextAndHighlight";
 
 type WorkExperience = {
   id: string;
@@ -250,7 +250,7 @@ const JobDescription = ({ experience }: { experience: WorkExperience }) => {
               <span
                 className="text-AATextMuted sm:text-sm text-xs"
                 dangerouslySetInnerHTML={{
-                  __html: getTasksTextWithHighlightedKeyword(item.text, item.keywords),
+                  __html: getTextWithHighlightedKeyword(item.text, item.keywords),
                 }}
               ></span>
             </div>
