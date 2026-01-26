@@ -198,7 +198,7 @@ const CompaniesBar = ({ selectedJob, setSelectedJob, experiences }) => {
             <CompanyButton key={experience.id} experience={experience} index={index} />
           ))}
         </div>
-        <div className="block md:hidden h-0.5 rounded bg-AATextMuted/30 w-full max-w-md">
+        <div className="block md:hidden h-0.5 rounded bg-AATextMuted/30 w-full max-w-md overflow-hidden">
           <motion.div animate={{ x: barAbovePosition }} className="w-[150px] h-0.5 rounded bg-AAsecondary"></motion.div>
         </div>
       </div>
