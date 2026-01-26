@@ -6,7 +6,7 @@ import Img from "../../smallComp/image/Img";
 import GithubIcon from "../../Icons/GithubIconForSomethingIveBuild";
 import ExternalLink from "../../Icons/ExternalLink";
 import ParticleBackground from "../../Background/ParticleBackground";
-import { getTasksTextWithHighlightedKeyword } from "../WhereIHaveWorked/Descriptions/taskAndType";
+import { getTasksTextWithHighlightedKeyword } from "../WhereIHaveWorked/taskAndType";
 
 type Project = {
   name: string;
@@ -219,8 +219,8 @@ export default function SomethingIveBuilt() {
               absolute md:grid grid-cols-12 w-full h-full  content-center"
               >
                 <div className={`relative rounded w-full h-full ${isLeft
-                    ? "col-start-6 col-span-7 3xl:col-start-7 3xl:col-span-6 4xl:col-start-8 4xl:col-span-5"
-                    : "col-span-7 3xl:col-span-6 4xl:col-span-5"
+                  ? "col-start-6 col-span-7 3xl:col-start-7 3xl:col-span-6 4xl:col-start-8 4xl:col-span-5"
+                  : "col-span-7 3xl:col-span-6 4xl:col-span-5"
                   }`}>
                   <a href={project.externalUrl} target="_blank" rel="noreferrer">
                     <div
@@ -258,8 +258,8 @@ export default function SomethingIveBuilt() {
 
                 <div
                   className={`px-8 pt-8 sm:pt-12 md:py-0 ${isLeft
-                      ? "xl:col-span-7 xl:col-start-1 3xl:col-span-7 3xl:col-start-1 4xl:col-span-8 4xl:col-start-1 col-span-8 flex flex-col items-start space-y-3 md:order-1"
-                      : "xl:col-span-7 xl:col-start-6 3xl:col-span-7 3xl:col-start-6 4xl:col-span-8 4xl:col-start-6 col-start-5 col-span-8 flex flex-col items-start md:items-end sm:space-y-3 space-y-1"
+                    ? "xl:col-span-7 xl:col-start-1 3xl:col-span-7 3xl:col-start-1 4xl:col-span-8 4xl:col-start-1 col-span-8 flex flex-col items-start space-y-3 md:order-1"
+                    : "xl:col-span-7 xl:col-start-6 3xl:col-span-7 3xl:col-start-6 4xl:col-span-8 4xl:col-start-6 col-start-5 col-span-8 flex flex-col items-start md:items-end sm:space-y-3 space-y-1"
                     } border border-white/10 rounded-lg`}
                 >
                   <div className={`flex flex-col space-y-1 z-10 ${isLeft ? "" : "md:items-end"}`}>
