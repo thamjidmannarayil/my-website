@@ -444,6 +444,10 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+body.custom-cursor-active,
+body.custom-cursor-active * {
   cursor: none !important;
 }
 

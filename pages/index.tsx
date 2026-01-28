@@ -99,8 +99,10 @@ export default function Home() {
     setTimeout(() => {
       setShowElement(false);
       setShowMe(true);
-      context.sharedState.finishedLoading = true;
-      context.setSharedState(context.sharedState);
+      context.setSharedState((prev) => ({
+        ...prev,
+        finishedLoading: true,
+      }));
     }, 3000);
   }, [context, context.sharedState]);
 

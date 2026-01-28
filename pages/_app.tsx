@@ -4,7 +4,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import AppContext from "../components/AppContextFolder/AppContext";
 import { ThemeProvider } from "../components/AppContextFolder/ThemeContext";
-import { CursorProvider } from "../components/AppContextFolder/CursorContext";
+
 import { useRef, useState, useEffect } from "react";
 // import NEXT_PUBLIC_GA_TRACKING_ID form .env
 const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID;
@@ -76,16 +76,15 @@ function MyApp({ Component, pageProps }) {
       eventInputLostFocus: null,
     },
     finishedLoading: false,
+    customCursorEnabled: false,
   });
   return (
     <AppContext.Provider value={{ sharedState, setSharedState }}>
       <ThemeProvider>
-        <CursorProvider>
-          <SmoothCursor />
-          <SpeedInsights />
-          <Component {...pageProps} />
-          <Analytics />
-        </CursorProvider>
+        <SmoothCursor />
+        <SpeedInsights />
+        <Component {...pageProps} />
+        <Analytics />
       </ThemeProvider>
     </AppContext.Provider>
   );

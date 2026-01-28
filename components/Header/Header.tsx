@@ -3,7 +3,7 @@ import Logo from "./Headercomp/Logo";
 import DesktopMenu from "./Headercomp/DesktopMenu";
 import IconMenu from "./Headercomp/IconMenu";
 import MobileMenu from "./Headercomp/MobileMenu";
-import CursorSwitcher from "./Headercomp/CursorSwitcher";
+
 import { motion } from "framer-motion";
 import AppContext from "../AppContextFolder/AppContext";
 
@@ -113,9 +113,7 @@ const Header = (props: { finishedLoading: boolean, sectionsRef }) => {
         {/* Logo and Cursor Switcher Container */}
         <div className="flex flex-row items-center gap-4">
           <Logo finishedLoading={props.finishedLoading} isOnDarkSection={isOnDarkSection} />
-          <div className="hidden md:block">
-            <CursorSwitcher finishedLoading={props.finishedLoading} />
-          </div>
+
         </div>
 
         {/* Hide icon Designed by me */}
