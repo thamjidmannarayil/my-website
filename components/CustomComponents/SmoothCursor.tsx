@@ -1,8 +1,9 @@
 "use client"
 
-import { FC, useEffect, useRef, useState } from "react"
+
+import { FC, useEffect, useRef, useState, useContext } from "react"
 import { motion, useSpring } from "framer-motion"
-import { useCursor } from "../AppContextFolder/CursorContext"
+import AppContext from "../AppContextFolder/AppContext"
 
 interface Position {
   x: number
@@ -80,28 +81,6 @@ const DefaultCursorSVG: FC = () => {
   )
 }
 
-const CircleCursorSVG: FC = () => (
-  <svg width="50" height="54" viewBox="0 0 50 54" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ filter: "drop-shadow(0px 2px 2px rgba(0,0,0,0.1))" }}>
-    <circle cx="25" cy="27" r="16" stroke="var(--theme-text-primary)" strokeWidth="2" fill="rgba(0,0,0,0.1)" />
-    <circle cx="25" cy="27" r="3" fill="var(--theme-text-primary)" />
-  </svg>
-)
-
-const DotCursorSVG: FC = () => (
-  <svg width="50" height="54" viewBox="0 0 50 54" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ filter: "drop-shadow(0px 1px 2px rgba(0,0,0,0.2))" }}>
-    <circle cx="25" cy="27" r="6" fill="var(--theme-text-primary)" stroke="var(--theme-primary)" strokeWidth="1" />
-  </svg>
-)
-
-const CrosshairCursorSVG: FC = () => (
-  <svg width="50" height="54" viewBox="0 0 50 54" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ filter: "drop-shadow(0px 1px 2px rgba(0,0,0,0.2))" }}>
-    <line x1="25" y1="15" x2="25" y2="39" stroke="var(--theme-text-primary)" strokeWidth="2" strokeLinecap="round" />
-    <line x1="13" y1="27" x2="37" y2="27" stroke="var(--theme-text-primary)" strokeWidth="2" strokeLinecap="round" />
-    <circle cx="25" cy="27" r="12" stroke="var(--theme-text-primary)" strokeWidth="1.5" />
-    <circle cx="25" cy="27" r="2" fill="var(--theme-text-primary)" />
-  </svg>
-)
-
 export function SmoothCursor({
   cursor: propCursor,
   springConfig = {
@@ -111,7 +90,6 @@ export function SmoothCursor({
     restDelta: 0.001,
   },
 }: SmoothCursorProps) {
-  const { cursorType } = useCursor()
   const [isVisible, setIsVisible] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
   const lastMousePos = useRef<Position>({ x: 0, y: 0 })
@@ -119,6 +97,10 @@ export function SmoothCursor({
   const lastUpdateTime = useRef(Date.now())
   const previousAngle = useRef(0)
   const accumulatedRotation = useRef(0)
+
+  const { sharedState } = useContext(AppContext)
+  const isEnabled = sharedState?.customCursorEnabled
+  console.log("SmoothCursor isEnabled:", isEnabled, "isMobile:", isMobile);
 
   const cursorX = useSpring(0, springConfig)
   const cursorY = useSpring(0, springConfig)
@@ -135,14 +117,28 @@ export function SmoothCursor({
 
   useEffect(() => {
     const checkMobile = () => {
-      // Check if device is touch or small screen
-      setIsMobile(window.matchMedia("(max-width: 768px) or (pointer: coarse)").matches)
+      // Check if device is small screen
+      // Removed pointer: coarse to ensure touch laptops still get the custom cursor
+      setIsMobile(window.matchMedia("(max-width: 768px)").matches)
     }
 
     checkMobile()
     window.addEventListener("resize", checkMobile)
     return () => window.removeEventListener("resize", checkMobile)
   }, [])
+
+  // Manage system cursor visibility
+  useEffect(() => {
+    if (isEnabled && !isMobile) {
+      document.body.classList.add("custom-cursor-active")
+    } else {
+      document.body.classList.remove("custom-cursor-active")
+    }
+
+    return () => {
+      document.body.classList.remove("custom-cursor-active")
+    }
+  }, [isMobile, isEnabled])
 
   useEffect(() => {
     if (isMobile) return
@@ -163,6 +159,7 @@ export function SmoothCursor({
     }
 
     const smoothMouseMove = (e: MouseEvent) => {
+      // Ensure visibility on move
       if (!isVisible) setIsVisible(true)
 
       const target = e.target as HTMLElement
@@ -219,42 +216,23 @@ export function SmoothCursor({
     }
   }, [cursorX, cursorY, rotation, scale, isVisible, isMobile])
 
-  if (isMobile) return null
+  if (!isEnabled || isMobile) return null
 
-  // Determine which cursor to render
-  let activeCursor = <DefaultCursorSVG />
-
-  if (propCursor) {
-    activeCursor = <>{propCursor}</>
-  } else {
-    switch (cursorType) {
-      case 'circle':
-        activeCursor = <CircleCursorSVG />
-        break
-      case 'dot':
-        activeCursor = <DotCursorSVG />
-        break
-      case 'crosshair':
-        activeCursor = <CrosshairCursorSVG />
-        break
-      case 'default':
-      default:
-        activeCursor = <DefaultCursorSVG />
-        break
-    }
-  }
+  const activeCursor = propCursor ? <>{propCursor}</> : <DefaultCursorSVG />
 
   return (
     <motion.div
       style={{
         position: "fixed",
-        left: cursorX,
-        top: cursorY,
+        top: 0,
+        left: 0,
+        x: cursorX,
+        y: cursorY,
         translateX: "-50%",
         translateY: "-50%",
-        rotate: cursorType === 'default' ? rotation : 0, // Only rotate the arrow cursor
+        rotate: rotation,
         scale: scale,
-        zIndex: 1000,
+        zIndex: 9999,
         pointerEvents: "none",
         willChange: "transform",
         opacity: isVisible ? 1 : 0,
