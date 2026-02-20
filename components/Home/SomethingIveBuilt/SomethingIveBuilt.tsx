@@ -67,7 +67,7 @@ const projects: Project[] = [
     name: "HRMS - Identity Service",
     subtitle: "Internal Web Application.",
     image: "/projects/aqaryidentity.png",
-    imageSm: "/projects/aqaryidentity-sm.jpg",
+    imageSm: "/projects/aqaryidentity-sm.png",
     description: {
       text: "Developing the Aqary Identity Service, the core authentication engine of the Aqary ecosystem. It handles user onboarding, multi-role access control, and secure token-based authentication across microservices. Built with Django REST Framework and OAuth2 / JWT, it ensures secure, scalable, and consistent access control across the platform.",
       keywords: ["Aqary Identity Service", "core authentication engine", "Aqary ecosystem", "user onboarding", "multi-role access control", "secure token-based authentication", "Django REST Framework", "OAuth2 / JWT", "secure, scalable", "consistent access control"],
@@ -80,7 +80,7 @@ const projects: Project[] = [
     name: "App Console",
     subtitle: "Internal Web Application",
     image: "/projects/aqaryconsole.png",
-    imageSm: "/projects/aqaryconsole-sm.jpg",
+    imageSm: "/projects/aqaryconsole-sm.png",
     description: {
       text: "Building the Aqary App Console, a developer platform for seamless app integration within the Aqary ecosystem. Built with Flask and SQLAlchemy, it enables OAuth-based app registration, webhooks, and permission management through modular APIs. Supports IP whitelisting, callback validation, and dynamic event mapping to deliver secure, scalable integrations.",
       keywords: ["Aqary App Console", "developer platform", "app integration", "Aqary ecosystem", "Flask", "SQLAlchemy", "OAuth-based app registration", "webhooks", "permission management", "modular APIs", "IP whitelisting", "callback validation", "dynamic event mapping", "secure, scalable integrations"],
@@ -244,7 +244,7 @@ export default function SomethingIveBuilt() {
                 {/* background for text in mobile responsive */}
                 <div className={`absolute w-full h-full z-0 md:hidden ${isLeft ? "md:order-2" : ""}`}>
                   <div className="relative w-full h-full">
-                    <div className="absolute w-full h-full bg-black/50 backdrop-blur-md z-10 md:opacity-0"></div>
+                    <div className="absolute w-full h-full bg-white/10 backdrop-blur-xl backdrop-saturate-150 z-10 md:opacity-0"></div>
                     <Img src={project.imageSm} alt={"Project Screen shot"} className={`w-full h-full object-cover`} />
                   </div>
                 </div>
@@ -265,7 +265,7 @@ export default function SomethingIveBuilt() {
                   <div className={`flex flex-col space-y-1 z-10 ${isLeft ? "" : "md:items-end"}`}>
                     <span className="text-AAProjectSubtitle text-base">{project.subtitle}</span>
                     <a href={project.externalUrl} target="_blank" rel="noopener noreferrer">
-                      <span className=" text-AAProjectTitle keyword-hover font-bold text-xl hover:cursor-pointer">
+                      <span className=" text-white md:text-AAProjectTitle keyword-hover font-bold text-xl hover:cursor-pointer">
                         {project.name}
                       </span>
                     </a>
@@ -273,7 +273,7 @@ export default function SomethingIveBuilt() {
 
                   <div className="w-full md:bg-AAtertiary rounded-md py-6 md:p-6 z-10">
                     <p
-                      className={`text-dark-section-text-muted ${isLeft ? "text-left" : "text-left md:text-right"}`}
+                      className={`text-black/50 md:text-dark-section-text-muted ${isLeft ? "text-left" : "text-left md:text-right"}`}
                       dangerouslySetInnerHTML={{
                         __html: getTextWithHighlightedKeyword(project.description.text, project.description.keywords),
                       }}
