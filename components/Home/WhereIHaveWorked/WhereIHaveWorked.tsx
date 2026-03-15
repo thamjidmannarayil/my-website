@@ -21,10 +21,14 @@ const experiences: WorkExperience[] = [
     id: "Aqary",
     companyName: "Aqary International",
     position: "AI/ML Engineer",
-    location: "Aqary International Group, Al-Reem Island, Abu Dhabi",
+    location: "Aqary Holdings Limited ADGM, Al-Reem Island, Abu Dhabi",
     date: "May 2025– Present",
     url: "https://aqaryaid.com",
     tasks: [
+      {
+        text: "Architected and developed a microservices based enterprise CRM platform supporting sales pipeline management, workflow automation, role based access control & AI powered record summarization.",
+        keywords: ["Architected", "developed", "microservices", "CRM", "sales pipeline", "workflow automation", "AI powered"],
+      },
       {
         text: "Developed and maintained an AI-enhanced HRMS platform using Flask, featuring ATS-driven resume screening and an intelligent chatbot for employee assistance and onboarding support.",
         keywords: ["AI-enhanced", "Flask", "ATS-driven", "chatbot", "employee assistance", "onboarding support"],
