@@ -33,7 +33,7 @@ export default function Logo(props: { finishedLoading: boolean; isOnDarkSection?
         onDoubleClick={activateCursor}
       >
         <Image
-          src="/logo.jpg"
+          src="/logo.png"
           alt="Logo"
           width={48}
           height={48}
