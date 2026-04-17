@@ -1,182 +1,118 @@
 <div align="center">
-  <img alt="Logo" src="https://raw.githubusercontent.com/thamjidmannarayil/my-website/refs/heads/master/public/logo.jpg" width="100" />
+  <img alt="Logo" src="https://raw.githubusercontent.com/thamjidmannarayil/my-website/refs/heads/master/public/logo.png" width="120" />
 </div>
-<h1 align="center">
-  anaflous.com - v1
-</h1>
+
+<h1 align="center">Thamjid Mannarayil — Personal Portfolio</h1>
+
 <p align="center">
-  The first iteration of <a href="https://thamjidthachu.dev" target="_blank">anaflous.com</a> built with <a href="https://nextjs.org/" target="_blank">Nextjs</a> and hosted with <a href="https://vercel.com/" target="_blank">Vercel</a>
+  A modern developer portfolio built with Next.js, Tailwind CSS, and custom theme-based audio playback.
 </p>
 
 <p align="center">
-  <a href="https://my-website-ten-sage.vercel.app/" target="_blank">
-    <img src="https://raw.githubusercontent.com/DataDog/integrations-extras/master/vercel/images/logo-full-black.png" width="100" alt="Vercel Status" />
-  </a>
+  <a href="https://thamjidthachu.dev" target="_blank">Live site</a> ·
+  <a href="https://github.com/thamjidmannarayil/my-website" target="_blank">GitHub</a>
 </p>
 
-![demo](https://raw.githubusercontent.com/thamjidmannarayil/my-website/refs/heads/master/public/projects/home.png)
 ---
 
-### Table of Contents
+## Overview
 
-- [Description](#description)
-- [How To Use](#how-to-use)
-- [ Color Reference](#references)
-- [License](#license)
-- [Author Info](#author-info)
+This repository contains a personal portfolio website for Thamjid Mannarayil. The site includes a rich, animated experience with support for theme switching, theme-driven music playback, project showcases, testimonials, and contact details.
 
----
-## Description
+The frontend is built with:
 
-The Quiet is more than just a project for me — it started back in 2021 as a demo for my first job, but it slowly grew into something personal. I began with Django templates, but as I evolved, so did the project. Now it’s powered by Django REST Framework on the backend and Next.js on the frontend, giving it both flexibility and scalability.  
-
-Why Django REST Framework? Because it provides a clean and robust way to structure APIs, making it perfect for scalability and future integrations.  
-
-Why Next.js? Because I wanted a fast, modern frontend that’s SEO-friendly with features like Server-Side Rendering — essential for when this turns into a real resort’s digital presence.  
-
-And why TailwindCSS? Because I like clean, maintainable code. Tailwind makes it easy to design without bloating CSS files, while still keeping everything consistent and sharp.  
-
-At the end of the day, The Quiet isn’t just code. It’s my dream to one day bring it to life as a real resort with its own digital platform.
-
+- Next.js 14
+- React 18
+- Tailwind CSS
+- Framer Motion
+- React Leaflet and Google Maps support
+- Custom theme audio and UI state management
 
 ---
-## Technologies & libraries
 
-Since i integrated some of my project into my website i'll i mention most of technologies & libraries that i used.
+## Features
 
-- Python
-- Django
-- Flask
-- MySQL/PostgreSQL
-- Elastic Search
-- Docker
-- Celery
-- Redis
-- RabbitMQ
+- Responsive portfolio homepage
+- Theme selector with custom audio tracks
+- Animated intro and project sections
+- Testimonials, gallery, and contact form components
+- IP-based access restriction support via environment variables
+- Optional Google Maps / location-based utility support
 
-##### Note : 
-##### You can find the rest of packages in the file ```/package.json```
 ---
 
-### How To Use
+## Getting Started
 
-## 🛠 Installation & Set Up
+### Prerequisites
 
-1. Clone the repo CLI
+- Node.js 18 or newer
+- Yarn 4
 
-   ```sh
-   git clone https://github.com/thamjidmannarayil/my-website.git
-   ```
+### Install
 
-2. Install and use the correct version of Node using [NVM](https://github.com/nvm-sh/nvm)
-
-   ```sh
-   nvm install
-   ```
-
-3. Install dependencies
-
-   ```sh
-   yarn
-   ```
-   
-4. (OPTIONAL) : Add .env file to the root project 
- 
 ```bash
-    touch .env
+git clone https://github.com/thamjidmannarayil/my-website.git
+cd my-website
+yarn install
 ```
 
-5.  (OPTIONAL) : Add your Google API key inside .env file.
+### Run locally
 
-###### ***Note :***
-###### not Adding Google API to the project will cause not returning the correct zip code, it might be always "00000"
-###### make sure you enabled Geolocation to this API
-
-```Javascript
-    NEXT_PUBLIC_KEY_GOOGLE_API="your API key"
+```bash
+yarn dev
 ```
 
-6. Start the development server
+Open `http://localhost:3000` to view the site.
 
-   ```sh
-   yarn dev
-   ```
+### Build for production
 
-## 🚀 Building and Running for Production
-
-1. Generate a full static production build
-
-   ```sh
-   yarn build
-   ```
-
-1. Preview the site as it will appear once deployed
-
-   ```sh
-   yarn run serve
-   ```
----
-## API Description :
-##### Endpoint 1 :
-the following endpoint will return a json object contains a bunch of information about the ip address  
-
-```api
-    /api/userInfoByIP/[IP-Address]
-```
-example :
-
-```api
-    /api/userInfoByIP/159.89.173.104
-```
-###### ***Get Request to above endpoint will return the following json data :***
-```JavaScript
-    {"zip":"560002","country":"India","countryCode":"IN","region":"KA","regionName":"Karnataka","city":"Bengaluru","datetime":"9/6/2022, 1:24:30 AM","lat":12.9634,"lon":77.5855,"timezone":"Asia/Kolkata","isp":"DigitalOcean, LLC","org":"Digital Ocean","as":"AS14061 DigitalOcean, LLC","query":"159.89.173.104"}
+```bash
+yarn build
 ```
 
-##### Endpoint 2 :
-the following endpoint will return a json object contains the zip code for the latitude and logitude
+### Start production server
 
-```api
-    "/api/userInfoByLatLon/" + lat + "/" + lon
-```
-example :
-
-```api
-    /api/userInfoByIP/159.89.173.104
-```
-###### ***Get Request to above endpoint will return the zipcode of the lat and long provided :***
-```JavaScript
-    {"zipcode" : "56998"}
-```
-###### ***the Response below is returned if the lat and long provided has no zip code in Google maps, like lat & long in positioned in the ocean :***
-```JavaScript
-    {"zipcode" : "00000"}
+```bash
+yarn start
 ```
 
-##### Endpoint 3 :
-the following endpoint will return a json object contains "quote" and "author", for SpeedTyping project i displayed only the quote, **minLength** is considered as the minimum of characters.  
-
-```api
-    /api/typing/[minLength]
-```
-##### notes : 
-- ***minLength*** should be between 10 - 300.
-- the returned quote is a chain of 
-- i costumized the original Endpoint using The API Route of Nextjs, here is the Original Endpoint.
-
-##### Original Endpiont :
-###### URL : 
-```api
-    https://api.quotable.io/random?minLength=[minLength]
-```
 ---
 
+## Optional Environment Variables
+
+The website works without environment variables, but these can enable optional behavior:
+
+- `NEXT_PUBLIC_BLACKLIST_COUNTRIES` — comma-separated country codes to restrict access
+- `NEXT_PUBLIC_KEY_GOOGLE_API` — optional Google Maps API key for location/zipcode features
+
+Create a `.env` file in the project root to set any of these values.
+
+---
+
+## Project Structure
+
+- `pages/` — Next.js pages and API routes
+- `components/` — React components used across the site
+- `public/` — static assets including images and audio files
+- `styles/` — Tailwind and global styles
+
+---
+
+## Notable Files
+
+- `pages/index.tsx` — homepage layout and logic
+- `components/AppContextFolder/ThemeContext.tsx` — theme provider and theme state
+- `components/AppContextFolder/ThemeAudio.tsx` — theme-based audio playback
+- `components/Home/` — homepage section components
+- `components/Header/` — navigation and theme selector components
+
+---
 
 ## License
 
 MIT License
 
-Copyright (c) [2022] [Abdellatif Anaflous]
+Copyright (c) 2026 Thamjid Mannarayil
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -196,9 +132,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-
 ---
 
-
-[Back To The Top](#description) ^
-
+[Back To The Top](#overview)
