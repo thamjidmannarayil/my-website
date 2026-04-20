@@ -82,7 +82,6 @@ yarn start
 
 The website works without environment variables, but these can enable optional behavior:
 
-- `NEXT_PUBLIC_BLACKLIST_COUNTRIES` — comma-separated country codes to restrict access
 - `NEXT_PUBLIC_KEY_GOOGLE_API` — optional Google Maps API key for location/zipcode features
 
 Create a `.env` file in the project root to set any of these values.

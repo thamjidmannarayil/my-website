@@ -96,7 +96,7 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>((props, ref) => {
             <div className="absolute w-5/6 h-5/6 rounded-xl overflow-hidden shadow-2xl">
               <div className="absolute w-full h-full group-hover:opacity-0 bg-gradient-to-br from-AATextPrimary/20 to-AAAccent/20 opacity-30 duration-500 rounded-xl overflow-hidden backdrop-blur-sm"></div>
               <Img
-                src={"/img/Portfolio-portrait-3.jpg"}
+                src={"/img/thamjidmannarayil-1.jpeg"}
                 className={"object-contain rounded-xl transition-transform duration-500 group-hover:scale-105"}
                 alt="My Image Not Found"
               />
@@ -108,7 +108,7 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>((props, ref) => {
             <div className="absolute w-48 h-full rounded-xl translate-x-5 translate-y-5 border-2 border-gradient-to-br from-AAAccent to-AAsecondary shadow-lg shadow-AAsecondary/20"></div>
             <div className="absolute w-48 h-full rounded-xl overflow-hidden shadow-xl">
               <Img
-                src={"/img/Portfolio-portrait-3.jpg"}
+                src={"/img/thamjidmannarayil-1.jpeg"}
                 className={"object-contain rounded-xl"}
                 alt="My Image Not Found"
               />
