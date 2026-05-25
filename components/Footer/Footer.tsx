@@ -3,6 +3,7 @@ import GithubIcon from "../Icons/GithubIcon";
 import LinkedinIcon from "../Icons/LinkedinIcon";
 import InstagramIcon from "../Icons/InstagramIcon";
 import YoutubeIcon from "../Icons/YoutubeIcon";
+import LinktreeIcon from "../Icons/LinktreeIcon";
 const ClickableIcon = props => {
   return (
     <a href={props.href} className="" target={"_blank"} rel="noreferrer">
@@ -11,6 +12,7 @@ const ClickableIcon = props => {
   );
 };
 const IconsData = [
+  { href: "https://linktr.ee/thamjidmannarayil", Icon: LinktreeIcon },
   { href: "https://github.com/thamjidmannarayil", Icon: GithubIcon },
   { href: "https://www.linkedin.com/in/thamjid-mannarayil/", Icon: LinkedinIcon },
   { href: "https://www.instagram.com/thamjid_mannarayil/", Icon: InstagramIcon },

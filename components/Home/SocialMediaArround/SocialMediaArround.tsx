@@ -4,6 +4,7 @@ import GithubIcon from "../../Icons/GithubIcon";
 import LinkedinIcon from "../../Icons/LinkedinIcon";
 import InstagramIcon from "../../Icons/InstagramIcon";
 import YoutubeIcon from "../../Icons/YoutubeIcon";
+import LinktreeIcon from "../../Icons/LinktreeIcon";
 
 const IconClickableWithAnimation = props => {
   return (
@@ -31,6 +32,8 @@ export default function SocialMediaEmail(props: { finishedLoading: boolean }) {
       >
         <div className="flex flex-col space-y-8 justify-center items-center">
           <div className="flex flex-col justify-center items-center space-y-5">
+            {/* Linktree Icon */}
+            <IconClickableWithAnimation Icon={LinktreeIcon} href={"https://linktr.ee/thamjidmannarayil"} />
             {/* Github Icon */}
             <IconClickableWithAnimation Icon={GithubIcon} href={"https://github.com/thamjidmannarayil"} />
             {/* Linkedin icon */}
