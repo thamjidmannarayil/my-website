@@ -2,7 +2,7 @@ name: Auto Pull Request Description
 
 on:
   pull_request:
-    types: [opened, edited]
+    types: [opened]
 
 permissions:
   contents: read
