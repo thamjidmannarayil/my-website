@@ -18,6 +18,8 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import Head from "next/head";
 import ScreenSizeDetector from "../components/CustomComponents/ScreenSizeDetector";
+import DynamicBackground from "../components/Background/DynamicBackground";
+
 export default function Home() {
   const [ShowElement, setShowElement] = useState(false);
   const [ShowThisCantBeReached, setShowThisCantBeReached] = useState(false);
@@ -89,7 +91,8 @@ export default function Home() {
         <meta name="twitter:image" content={meta.image} />
       </Head>
 
-      <div className="relative min-h-screen bg-AAprimary dotted-bg w-full overflow-x-hidden transition-colors duration-300">
+      <div className="relative min-h-screen bg-transparent w-full overflow-x-hidden transition-colors duration-300">
+        <DynamicBackground />
         {/* <ParticleBackground /> */}
         {context.sharedState.finishedLoading ? <></> : ShowThisCantBeReached ? <ThisCantBeReached /> : <></>}
         {context.sharedState.finishedLoading ? <></> : ShowElement ? <Startup /> : <></>}

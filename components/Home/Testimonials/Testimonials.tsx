@@ -1,5 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import ArrowIcon from "../../Icons/ArrowIcon";
+import Img from "../../smallComp/image/Img";
+import { GlassCard } from "../../Glass/GlassComponents";
 
 type Testimonial = {
   avatar: string;
@@ -158,7 +160,7 @@ export default function Testimonials() {
   return (
     <section
       id="TestimonialsSection"
-      className="my-8 sm:my-16 overflow-x-hidden py-6 sm:py-12 bg-AAprimary dotted-bg"
+      className="my-8 sm:my-16 overflow-x-hidden py-6 sm:py-12 relative"
     >
       {/* Title */}
       <div data-aos="fade-up" className="flex flex-row items-center 2xl:px-72 lg:px-24 md:px-16 sm:px-16 px-4 mb-16">
@@ -200,25 +202,24 @@ export default function Testimonials() {
               <img
                 src={t.avatar}
                 alt={t.name}
-                className="w-28 h-28 rounded-full border-[6px] border-AAprimary shadow-2xl hover:scale-110 transition-transform duration-300 object-cover"
+                className="w-28 h-28 rounded-full border border-gray-200/50 shadow-2xl hover:scale-110 transition-transform duration-300 object-cover"
                 draggable={false}
               />
             </a>
 
-            {/* Card with gradient background - reduced height */}
-            <div className="bg-gradient-to-br from-AASurface to-AAtertiary rounded-3xl p-6 pt-16 pb-6 w-full flex flex-col items-center shadow-[0_8px_30px_rgba(0,0,0,0.08)] group hover:shadow-[0_20px_60px_rgba(0,0,0,0.15)] hover:-translate-y-2 transition-all duration-500 relative">
+            {/* Card with GlassCard background - reduced height */}
+            <GlassCard className="p-6 pt-16 pb-6 w-full flex flex-col items-center relative">
 
               {/* Message with quotes */}
               <div className="relative w-full px-4">
                 {/* Opening Quote - top left of text (mirrored) */}
-                <span className="absolute -top-8 left-4 text-5xl font-serif text-cyan-400 opacity-40 leading-none scale-x-[-1]">,,</span>
+                <span className="absolute -top-8 left-4 text-5xl font-serif text-gray-300 opacity-60 leading-none scale-x-[-1]">,,</span>
 
                 <p className="text-sm text-center text-AATextMuted leading-relaxed px-6">
                   {t.message.length > testimonialLength ? t.message.substring(0, testimonialLength) + "..." : t.message}
                 </p>
 
-                {/* Closing Quote - bottom right of text */}
-                <span className="absolute -bottom-1 right-4 text-5xl font-serif text-cyan-400 opacity-40 leading-none">,,</span>
+                <span className="absolute -bottom-1 right-4 text-5xl font-serif text-gray-300 opacity-60 leading-none">,,</span>
               </div>
 
               {/* Name and Role */}
@@ -235,7 +236,7 @@ export default function Testimonials() {
                   <span className="block text-xs text-AATextMuted mt-1">{t.role}</span>
                 )}
               </div>
-            </div>
+            </GlassCard>
           </div>
         ))}
       </div>

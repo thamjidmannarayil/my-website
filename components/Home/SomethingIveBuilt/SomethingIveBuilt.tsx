@@ -187,24 +187,20 @@ export default function SomethingIveBuilt() {
   return (
     <div
       id="SomethingIveBuiltSection"
-      className=" flex flex-col xl:space-y-28 space-y-12 bg-dark-section-bg w-full overflow-x-hidden
-     2xl:px-72 lg:px-24 md:px-16 sm:px-16 py-16 sm:py-32 px-4 relative transition-all duration-300"
-      style={{
-        background: 'var(--theme-dark-section-gradient)'
-      }}
+      className=" flex flex-col xl:space-y-28 space-y-12 relative w-full overflow-x-hidden 2xl:px-72 lg:px-24 md:px-16 sm:px-16 py-32 px-4"
     >
       {/* Particle background for this section */}
       <ParticleBackground />
       {/* // ? Title   */}
       <div data-aos="fade-up" className=" flex flex-row  items-center md:px-0">
-        <ArrowIcon className={"flex-none h-5 md:h-6 w-5 md:w-5 translate-y-[2px] text-dark-section-text-highlight"} />
+        <ArrowIcon className={"flex-none h-5 md:h-6 w-5 md:w-5 translate-y-[2px] text-AAsecondary"} />
         <div className="flex-none flex-row space-x-2 items-center pr-2">
-          <span className=" font-bold tracking-wider text-dark-section-text text-lg md:text-2xl w-44 md:w-56 opacity-85">
+          <span className=" font-bold tracking-wider text-AATextPrimary text-lg md:text-2xl w-44 md:w-56 opacity-85">
             {" "}
             Some Things I&apos;ve Built
           </span>
         </div>
-        <div className="bg-dark-section-text-muted h-[0.2px] w-full xl:w-1/3 md:w-1/2"></div>
+        <div className="bg-AATextMuted h-[0.2px] w-full xl:w-1/3 md:w-1/2"></div>
       </div>
 
       <div className="flex flex-col   xl:space-y-36 space-y-8 md:space-y-28">
@@ -215,77 +211,75 @@ export default function SomethingIveBuilt() {
             <div key={index} data-aos="fade-up" className="relative md:grid md:grid-cols-12 w-full md:h-96">
               {/* Desktop image */}
               <div
-                className="hidden z-10  py-4 
-              absolute md:grid grid-cols-12 w-full h-full  content-center"
+                className="hidden z-10 py-4 absolute md:grid grid-cols-12 w-full h-full content-center"
               >
-                <div className={`relative rounded w-full h-full ${isLeft
+                <div className={`relative rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-black/5 overflow-hidden w-full h-full ${isLeft
                   ? "col-start-6 col-span-7 3xl:col-start-7 3xl:col-span-6 4xl:col-start-8 4xl:col-span-5"
                   : "col-span-7 3xl:col-span-6 4xl:col-span-5"
                   }`}>
                   <a href={project.externalUrl} target="_blank" rel="noreferrer">
                     <div
-                      className="absolute w-full h-full rounded bg-black
-           transition-opacity opacity-60 hover:opacity-0 hover:cursor-pointer duration-300"
+                      className="absolute w-full h-full bg-black transition-opacity opacity-20 hover:opacity-0 hover:cursor-pointer duration-300 z-10"
                     ></div>
                   </a>
 
                   {project.badge && (
-                    <div className="absolute px-2 bg-AAprimary rounded  ml-4 mt-2 z-10">
+                    <div className="absolute px-2 bg-AAprimary rounded ml-4 mt-2 z-20">
                       <span className="text-AATextPrimary keyword-hover text-xs">{project.badge}</span>
                     </div>
                   )}
 
-                  <Img src={project.image} alt={"Project Screen shot"} className={`w-full rounded h-full `} />
+                  <Img src={project.image} alt={"Project Screen shot"} className={`w-full rounded-xl h-full object-cover `} />
                 </div>
               </div>
 
               {/* Content */}
-              <div className=" md:absolute py-4  md:grid md:grid-cols-12 w-full h-full  content-center ">
-                {/* background for text in mobile responsive */}
-                <div className={`absolute w-full h-full z-0 md:hidden ${isLeft ? "md:order-2" : ""}`}>
-                  <div className="relative w-full h-full">
-                    <div className="absolute w-full h-full bg-white/10 backdrop-blur-xl backdrop-saturate-150 z-10 md:opacity-0"></div>
-                    <Img src={project.imageSm} alt={"Project Screen shot"} className={`w-full h-full object-cover`} />
+              <div className="relative md:absolute md:grid md:grid-cols-12 w-full h-[65vh] md:h-full p-[2px] md:p-0 flex flex-col justify-center md:block">
+                
+                {/* Mobile Image (Full Background Fixed Height) */}
+                <div className={`absolute inset-0 z-0 md:hidden ${isLeft ? "md:order-2" : ""}`}>
+                  <div className="relative w-full h-full rounded-[24px] overflow-hidden">
+                    <div className="absolute inset-0 bg-gray-900/40 z-20 pointer-events-none"></div>
+                    <Img src={project.imageSm} alt={"Project Screen shot"} className={`w-full h-full object-cover z-10`} />
                   </div>
                 </div>
 
                 {project.badge && !isLeft && (
-                  <div className="absolute w-full   rounded  ml-4 mt-2  text-end pr-8 md:hidden">
-                    <div className="w-full"></div>
-                    <span className="text-AATextPrimary keyword-hover sm:text-lg bg-AAprimary px-2 py-1 rounded">{project.badge}</span>
+                  <div className="absolute top-4 right-4 md:hidden z-40">
+                    <span className="text-AATextPrimary keyword-hover sm:text-lg bg-AAprimary px-3 py-1 rounded-full">{project.badge}</span>
                   </div>
                 )}
 
                 <div
-                  className={`px-8 pt-8 sm:pt-12 md:py-0 ${isLeft
-                    ? "xl:col-span-7 xl:col-start-1 3xl:col-span-7 3xl:col-start-1 4xl:col-span-8 4xl:col-start-1 col-span-8 flex flex-col items-start space-y-3 md:order-1"
-                    : "xl:col-span-7 xl:col-start-6 3xl:col-span-7 3xl:col-start-6 4xl:col-span-8 4xl:col-start-6 col-start-5 col-span-8 flex flex-col items-start md:items-end sm:space-y-3 space-y-1"
-                    } border border-white/10 rounded-lg`}
+                  className={`relative w-full h-full flex flex-col justify-center p-6 sm:p-8 md:m-0 md:p-0 z-30 bg-black/40 backdrop-blur-md border border-white/10 md:bg-transparent md:backdrop-blur-none md:border-none rounded-[22px] md:rounded-lg ${isLeft
+                    ? "xl:col-span-7 xl:col-start-1 3xl:col-span-7 3xl:col-start-1 4xl:col-span-8 4xl:col-start-1 col-span-8 md:order-1"
+                    : "xl:col-span-7 xl:col-start-6 3xl:col-span-7 3xl:col-start-6 4xl:col-span-8 4xl:col-start-6 col-start-5 col-span-8 items-start md:items-end"
+                    }`}
                 >
                   <div className={`flex flex-col space-y-1 z-10 ${isLeft ? "" : "md:items-end"}`}>
-                    <span className="text-AAProjectSubtitle text-base">{project.subtitle}</span>
+                    <span className="text-gray-300 md:text-gray-500 font-medium text-base">{project.subtitle}</span>
                     <a href={project.externalUrl} target="_blank" rel="noopener noreferrer">
-                      <span className=" text-white md:text-AAProjectTitle keyword-hover font-bold text-xl hover:cursor-pointer">
+                      <span className="text-white md:text-gray-900 keyword-hover font-bold text-xl hover:cursor-pointer">
                         {project.name}
                       </span>
                     </a>
                   </div>
 
-                  <div className="w-full md:bg-AAtertiary rounded-md py-6 md:p-6 z-10">
+                  <div className="w-full md:backdrop-blur-md md:bg-transparent md:border md:border-gray-200/50 md:rounded-xl py-4 md:py-6 md:p-6 z-10 shadow-[0_8px_30px_rgba(0,0,0,0.04)] md:hover:bg-white/5 md:hover:border-gray-300/50 transition-all duration-300">
                     <p
-                      className={`text-black/50 md:text-dark-section-text-muted ${isLeft ? "text-left" : "text-left md:text-right"}`}
+                      className={`text-gray-300 md:text-gray-700 text-sm md:text-base ${isLeft ? "text-left" : "text-left md:text-right"}`}
                       dangerouslySetInnerHTML={{
-                        __html: getTextWithHighlightedKeyword(project.description.text, project.description.keywords),
+                        __html: getTextWithHighlightedKeyword(project.description.text, project.description.keywords).replace(/class="text-AAsecondary/g, 'class="text-AAsecondary font-semibold'),
                       }}
                     />
                   </div>
 
                   <ul
-                    className={`flex flex-wrap w-full text-dark-section-text-highlight md:text-dark-section-text-muted text-sm font-Text2 ${isLeft ? "" : "md:justify-end"
+                    className={`flex flex-wrap w-full text-gray-400 md:text-gray-500 text-sm font-Text2 ${isLeft ? "" : "md:justify-end"
                       }`}
                   >
                     {project.technologies.map((tech, techIndex) => (
-                      <span key={techIndex} className="pr-4 z-10 keyword-hover">{tech}</span>
+                      <span key={techIndex} className="pr-4 z-10 hover:text-white md:hover:text-black transition-colors cursor-default">{tech}</span>
                     ))}
                   </ul>
 

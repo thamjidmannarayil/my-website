@@ -19,7 +19,7 @@ const MobileMenu = props => {
           className={`w-1/4 h-full bg-MobileNavColor/30 hover:cursor-pointer ${props.rotate ? 'backdrop-blur-sm' : ''}`}
         ></div>
         <div
-          className="w-3/4 h-full bg-MobileNavBarColor flex flex-col 
+          className="w-3/4 h-full bg-white/40 backdrop-blur-2xl border-l border-white/50 shadow-[-10px_0_30px_rgba(0,0,0,0.05)] flex flex-col 
         justify-center items-center space-y-8 font-sans"
         >
           <Link
@@ -30,7 +30,7 @@ const MobileMenu = props => {
             duration={200}
             onClick={() => closeMenu()}
             activeClass="text-AAsecondary"
-            className="flex flex-col text-center space-y-2 text-AATextMuted font-Text2 text-sm sm:text-base hover:text-AAsecondary hover:cursor-pointer duration-300"
+            className="flex flex-col text-center space-y-2 text-gray-800 font-Text2 text-sm sm:text-base hover:text-gray-900 hover:cursor-pointer duration-300"
           >
             <span>About</span>
           </Link>
@@ -42,7 +42,7 @@ const MobileMenu = props => {
             duration={200}
             onClick={() => closeMenu()}
             activeClass="text-AAsecondary"
-            className="flex flex-col text-center space-y-2 text-AATextMuted font-Text2 text-sm sm:text-base hover:text-AAsecondary hover:cursor-pointer duration-300"
+            className="flex flex-col text-center space-y-2 text-gray-800 font-Text2 text-sm sm:text-base hover:text-gray-900 hover:cursor-pointer duration-300"
           >
             <span>Experience</span>
           </Link>
@@ -54,7 +54,7 @@ const MobileMenu = props => {
             duration={200}
             onClick={() => closeMenu()}
             activeClass="text-AAsecondary"
-            className="flex flex-col text-center space-y-2 text-AATextMuted font-Text2 text-sm sm:text-base hover:text-AAsecondary hover:cursor-pointer duration-300"
+            className="flex flex-col text-center space-y-2 text-gray-800 font-Text2 text-sm sm:text-base hover:text-gray-900 hover:cursor-pointer duration-300"
           >
             <span>Work</span>
           </Link>
@@ -66,7 +66,7 @@ const MobileMenu = props => {
             duration={200}
             onClick={() => closeMenu()}
             activeClass="text-AAsecondary"
-            className="flex flex-col text-center space-y-2 text-AATextMuted font-Text2 text-sm sm:text-base hover:text-AAsecondary hover:cursor-pointer duration-300"
+            className="flex flex-col text-center space-y-2 text-gray-800 font-Text2 text-sm sm:text-base hover:text-gray-900 hover:cursor-pointer duration-300"
           >
             <span>Testimonials</span>
           </Link>
@@ -78,7 +78,7 @@ const MobileMenu = props => {
             duration={200}
             onClick={() => closeMenu()}
             activeClass="text-AAsecondary"
-            className="flex flex-col text-center space-y-2 text-AATextMuted font-Text2 text-sm sm:text-base hover:text-AAsecondary hover:cursor-pointer duration-300"
+            className="flex flex-col text-center space-y-2 text-gray-800 font-Text2 text-sm sm:text-base hover:text-gray-900 hover:cursor-pointer duration-300"
           >
             <span>Teams</span>
           </Link>
@@ -90,7 +90,7 @@ const MobileMenu = props => {
             duration={200}
             onClick={() => closeMenu()}
             activeClass="text-AAsecondary"
-            className="flex flex-col text-center space-y-2 text-AATextMuted font-Text2 text-sm sm:text-base hover:text-AAsecondary hover:cursor-pointer duration-300"
+            className="flex flex-col text-center space-y-2 text-gray-800 font-Text2 text-sm sm:text-base hover:text-gray-900 hover:cursor-pointer duration-300"
           >
             <span>Gallery</span>
           </Link>
@@ -102,7 +102,7 @@ const MobileMenu = props => {
             duration={200}
             onClick={() => closeMenu()}
             activeClass="text-AAsecondary"
-            className="flex flex-col text-center space-y-2 text-AATextMuted font-Text2 text-sm sm:text-base hover:text-AAsecondary hover:cursor-pointer duration-300"
+            className="flex flex-col text-center space-y-2 text-gray-800 font-Text2 text-sm sm:text-base hover:text-gray-900 hover:cursor-pointer duration-300"
           >
             <span>Contact</span>
           </Link>
