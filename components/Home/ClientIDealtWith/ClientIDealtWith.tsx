@@ -73,10 +73,19 @@ export function GlobeCanvas({
     }
 
     useEffect(() => {
-        // Function to get the current computed theme text primary color
+        // Function to get the current computed theme accent color
         const updateMarkerColor = () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'default';
+            
+            if (currentTheme === 'default') {
+                // Default theme has a dark grey accent which is invisible on the globe.
+                // Using a vibrant blue (Apple Blue) instead so the pinpoints stand out.
+                setMarkerColor([0 / 255, 122 / 255, 255 / 255]);
+                return;
+            }
+
             const tempDiv = document.createElement('div');
-            tempDiv.style.color = 'var(--theme-text-primary)';
+            tempDiv.style.color = 'var(--theme-accent)';
             document.body.appendChild(tempDiv);
             const color = getComputedStyle(tempDiv).color;
             document.body.removeChild(tempDiv);
