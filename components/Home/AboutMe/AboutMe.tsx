@@ -1,7 +1,7 @@
 import React from "react";
 import Img from "../../../components/smallComp/image/Img"; // Assuming this path is correct for your project
 import ArrowIcon from "../../../components/Icons/ArrowIcon"; // Assuming this path is correct for your project
-import { GlassSection } from "../../Glass/GlassComponents";
+import { GlassCard } from "../../Glass/GlassComponents";
 import { forwardRef } from "react";
 interface AboutMeProps {
   // Define any props you might pass to AboutMe here
@@ -15,7 +15,7 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>((props, ref) => {
   ];
 
   return (
-    <GlassSection className="snap-start flex flex-col items-center py-10 sm:py-8 bg-AAprimary dotted-bg texture-overlay relative" id="aboutSection">
+    <section className="snap-start flex flex-col items-center py-10 sm:py-8 relative" id="aboutSection">
       <div data-aos="fade-up" className="flex flex-col space-y-8 px-4 sm:px-0 w-full sm:w-[500px] md:w-[700px] lg:w-[900px] xl:w-[1100px] 2xl:w-[1200px] 3xl:w-[1400px] 4xl:w-[1600px] relative z-10">
         <div className="flex flex-row items-center">
           <div className="flex flex-row items-center mr-4">
@@ -28,7 +28,7 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>((props, ref) => {
         </div>
 
         {/* Paragraphs & Image */}
-        <div className="w-full flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8 sm:space-x-2">
+        <GlassCard className="w-full flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8 sm:space-x-2 p-6 md:p-8">
           {/* Text Content */}
           <div className="w-full md:w-7/12 space-y-4 sm:text-base text-sm">
             <div className="font-Header text-AATextMuted text-justify leading-relaxed">
@@ -74,7 +74,7 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>((props, ref) => {
             <div className="absolute w-5/6 h-5/6 rounded-xl overflow-hidden shadow-2xl">
               <div className="absolute w-full h-full group-hover:opacity-0 bg-gradient-to-br from-AATextPrimary/20 to-AAAccent/20 opacity-30 duration-500 rounded-xl overflow-hidden backdrop-blur-sm"></div>
               <Img
-                src={"/img/thamjidmannarayil-1.jpeg"}
+                src={"/img/thamjidmannarayil-1.jpg"}
                 className={"object-contain rounded-xl transition-transform duration-500 group-hover:scale-105"}
                 alt="My Image Not Found"
               />
@@ -86,16 +86,16 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>((props, ref) => {
             <div className="absolute w-48 h-full rounded-xl translate-x-5 translate-y-5 border-2 border-gradient-to-br from-AAAccent to-AAsecondary shadow-lg shadow-AAsecondary/20"></div>
             <div className="absolute w-48 h-full rounded-xl overflow-hidden shadow-xl">
               <Img
-                src={"/img/thamjidmannarayil-1.jpeg"}
+                src={"/img/thamjidmannarayil-1.jpg"}
                 className={"object-contain rounded-xl"}
                 alt="My Image Not Found"
               />
             </div>
             <div className="absolute w-48 h-full bg-gradient-to-br from-AATextPrimary/20 to-AAAccent/20 opacity-30 rounded-xl overflow-hidden backdrop-blur-sm"></div>
           </div>
-        </div>
+        </GlassCard>
       </div>
-    </GlassSection>
+    </section>
   );
 });
 AboutMe.displayName = "AboutMe";

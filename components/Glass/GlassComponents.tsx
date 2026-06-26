@@ -12,9 +12,9 @@ export const GlassCard: React.FC<GlassCardProps> = ({
   hover = true 
 }) => {
   const baseClasses = `
-    backdrop-blur-md bg-gradient-to-br from-white/10 to-white/5
-    border border-white/20 rounded-2xl shadow-xl
-    ${hover ? 'hover:shadow-2xl hover:border-white/30 transition-all duration-300' : ''}
+    backdrop-blur-md bg-transparent
+    border border-gray-200/50 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.04)]
+    ${hover ? 'hover:bg-white/5 hover:border-gray-300/50 hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all duration-300' : ''}
     ${className}
   `;
 
@@ -25,30 +25,5 @@ export const GlassCard: React.FC<GlassCardProps> = ({
   );
 };
 
-interface GlassSectionProps {
-  children: React.ReactNode;
-  className?: string;
-  id?: string;
-}
-
-export const GlassSection: React.FC<GlassSectionProps> = ({ 
-  children, 
-  className = '',
-  id
-}) => {
-  return (
-    <div 
-      id={id}
-      className={`
-        backdrop-blur-sm bg-gradient-to-br from-black/20 to-black/10
-        border-t border-white/10
-        ${className}
-      `}
-    >
-      {children}
-    </div>
-  );
-};
-
-const GlassComponents = { GlassCard, GlassSection };
+const GlassComponents = { GlassCard };
 export default GlassComponents;

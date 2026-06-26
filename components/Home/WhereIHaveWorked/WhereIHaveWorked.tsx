@@ -109,13 +109,15 @@ const experiences: WorkExperience[] = [
   },
 ];
 
+import { GlassSection, GlassCard } from "../../Glass/GlassComponents";
+
 export default function WhereIHaveWorked() {
   const [selectedJob, setSelectedJob] = React.useState("Aqary");
 
   const currentExperience = experiences.find(exp => exp.id === selectedJob);
 
   return (
-    <div data-aos="fade-up" className="flex flex-col items-center justify-center py-12 sm:py-24 space-y-6 sm:space-y-12 bg-AAprimary dotted-bg">
+    <div data-aos="fade-up" className="flex flex-col items-center justify-center py-12 sm:py-24 space-y-6 sm:space-y-12 relative">
       {/* // ? Title "Where I've Worked" */}
       <section className="flex flex-row items-center w-full max-w-[500px] sm:max-w-[600px] md:max-w-[700px] lg:max-w-[900px] xl:max-w-[1100px] 2xl:max-w-[1200px] 3xl:max-w-[1400px] 4xl:max-w-[1600px] mx-auto px-4 md:px-0">
         <div className="flex flex-row items-center">
@@ -204,8 +206,8 @@ const CompaniesBar = ({ selectedJob, setSelectedJob, experiences }) => {
 
 const JobDescription = ({ experience }: { experience: WorkExperience }) => {
   return (
-    <div className="flex flex-col space-y-5 max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-4xl 3xl:max-w-5xl 4xl:max-w-6xl px-4 md:px-0 work-section-scrollbar">
-      <div className="flex flex-col spacey-y-2">
+    <GlassCard className="flex flex-col space-y-5 max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-4xl 3xl:max-w-5xl 4xl:max-w-6xl p-6 md:p-8 work-section-scrollbar">
+      <div className="flex flex-col space-y-2">
         {/* Title */}
         <div className="flex flex-row items-center gap-2">
           <span className="text-AATextPrimary sm:text-lg text-sm font-Arimo tracking-wide font-semibold">
@@ -241,7 +243,7 @@ const JobDescription = ({ experience }: { experience: WorkExperience }) => {
       <div className="flex flex-col space-y-4 sm:text-sm text-xs">
         {experience.tasks.map((item, index) => {
           return (
-            <div key={index} className="flex flex-row space-x-2">
+             <div key={index} className="flex flex-row space-x-2">
               <ArrowIcon className={" h-5 w-4 text-AAsecondary flex-none"} />
               <span
                 className="text-AATextMuted sm:text-sm text-xs"
@@ -253,6 +255,6 @@ const JobDescription = ({ experience }: { experience: WorkExperience }) => {
           );
         })}
       </div>
-    </div>
+    </GlassCard>
   );
 };

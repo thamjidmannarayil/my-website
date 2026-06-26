@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import ArrowIcon from "../../Icons/ArrowIcon";
+
 export default function GetInTouch() {
   const [isAndroidWebView, setIsAndroidWebView] = useState(false);
 
   useEffect(() => {
-    const userAgent = navigator.userAgent || navigator.vendor;
-    // Check for Android WebView by inspecting the user agent
-    if (/android/i.test(userAgent) && /wv/.test(userAgent)) {
+    const userAgent = navigator.userAgent.toLowerCase();
+    if (userAgent.includes("wv") || (userAgent.includes("android") && userAgent.includes("version/"))) {
       setIsAndroidWebView(true);
     }
   }, []);
@@ -14,7 +14,7 @@ export default function GetInTouch() {
     <div
       id="GetInTouchSection"
       data-aos="fade-up"
-      className="flex flex-col space-y-4 w-full py-6 sm:py-12 items-center bg-AAprimary dotted-bg"
+      className="flex flex-col space-y-4 w-full py-6 sm:py-12 items-center relative"
     >
       {/* // ? Title === > What's Next?  */}
       <div className="flex flex-row items-center ">
@@ -40,7 +40,7 @@ export default function GetInTouch() {
         ) : (
           <a href="mailto:thachuthamjid@gmail.com" target={"_blank"} rel="noreferrer">
             <button
-              className="font-mono text-sm text-AAsecondary border-AAsecondary px-8 py-4 border-[1.5px] rounded cursor-pointer bg-AAprimary hover:bg-AASurface transition-colors"
+              className="font-mono text-sm text-AAsecondary border-AAsecondary px-8 py-4 border-[1.5px] rounded cursor-pointer bg-transparent hover:bg-AAsecondary/10 transition-colors"
             >
               Say Hello
             </button>
