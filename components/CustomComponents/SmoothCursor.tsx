@@ -100,7 +100,7 @@ export function SmoothCursor({
 
   const { sharedState } = useContext(AppContext)
   const isEnabled = sharedState?.customCursorEnabled
-  console.log("SmoothCursor isEnabled:", isEnabled, "isMobile:", isMobile);
+
 
   const cursorX = useSpring(0, springConfig)
   const cursorY = useSpring(0, springConfig)

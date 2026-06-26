@@ -60,7 +60,7 @@ export default function Home() {
     Aos.init({ duration: 2000, once: true });
   }, []);
 
-  console.log("website is rendering...");
+
   const meta = {
     title: "Thamjid Mannarayil  - Artificial Intelligence and Machine Learning Engineer",
     description: `I've been working on Software development for more than 4 years. Get in touch with me to know more.`,
@@ -89,7 +89,7 @@ export default function Home() {
         <meta name="twitter:image" content={meta.image} />
       </Head>
 
-      <div className="relative snap-mandatory min-h-screen bg-AAprimary dotted-bg w-full overflow-x-hidden transition-colors duration-300">
+      <div className="relative min-h-screen bg-AAprimary dotted-bg w-full overflow-x-hidden transition-colors duration-300">
         {/* <ParticleBackground /> */}
         {context.sharedState.finishedLoading ? <></> : ShowThisCantBeReached ? <ThisCantBeReached /> : <></>}
         {context.sharedState.finishedLoading ? <></> : ShowElement ? <Startup /> : <></>}

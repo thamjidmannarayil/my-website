@@ -17,12 +17,12 @@ const ThemeAudio = () => {
   const { theme } = useTheme();
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [hasInteraction, setHasInteraction] = useState(false);
+
   const [notification, setNotification] = useState<string>("");
 
   const source = useMemo(() => themeAudioMap[theme as Theme] || themeAudioMap.default, [theme]);
   const songName = useMemo(() => {
-    if (theme === "default") return "Thachu";
+    if (theme === "default") return "";
     return theme.charAt(0).toUpperCase() + theme.slice(1);
   }, [theme]);
 
@@ -31,7 +31,7 @@ const ThemeAudio = () => {
     try {
       await audioRef.current.play();
       setIsPlaying(true);
-      setNotification(`${songName} is playing`);
+      setNotification(`${songName} Theme Music is playing`);
       window.setTimeout(() => setNotification(""), 3500);
     } catch (error) {
       setIsPlaying(false);
@@ -47,21 +47,13 @@ const ThemeAudio = () => {
   };
 
   useEffect(() => {
-    const handleFirstInteraction = () => setHasInteraction(true);
-    document.addEventListener("click", handleFirstInteraction, { once: true, capture: true });
-    return () => {
-      document.removeEventListener("click", handleFirstInteraction, { capture: true });
-    };
-  }, []);
-
-  useEffect(() => {
     if (!audioRef.current) return;
     audioRef.current.src = source;
     audioRef.current.load();
-    if (hasInteraction) {
+    if (isPlaying) {
       playAudio();
     }
-  }, [source, hasInteraction]);
+  }, [source]);
 
   useEffect(() => {
     if (!audioRef.current) return;
@@ -75,19 +67,14 @@ const ThemeAudio = () => {
     };
   }, []);
 
-  useEffect(() => {
-    if (!audioRef.current) return;
-    const attemptPlay = async () => {
-      await playAudio();
-    };
-    attemptPlay();
-  }, [source]);
+  const MUSIC_ENABLED = false; // Toggle this to true to re-enable the music feature
+  if (!MUSIC_ENABLED) return null;
 
   return (
     <>
-      <audio ref={audioRef} loop preload="auto" autoPlay />
+      <audio ref={audioRef} loop preload="auto" />
       {notification && (
-        <div className="fixed top-4 right-4 z-50 animate-in slide-in-from-top-2 fade-in duration-500">
+        <div className="fixed top-24 right-4 z-[60] animate-in slide-in-from-top-2 fade-in duration-500">
           <div className="flex items-center gap-3 rounded-2xl bg-gradient-to-r from-purple-600/90 to-blue-600/90 px-4 py-3 text-sm text-white shadow-2xl backdrop-blur-md border border-white/20">
             <div className="flex-shrink-0">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
