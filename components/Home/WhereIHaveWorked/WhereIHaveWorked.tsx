@@ -19,73 +19,65 @@ type WorkExperience = {
 const experiences: WorkExperience[] = [
   {
     id: "Aqary",
-    companyName: "Aqary International",
-    position: "AI/ML Engineer",
-    location: "Aqary Holdings Limited ADGM, Al-Reem Island, Abu Dhabi",
-    date: "May 2025– Present",
+    companyName: "Aqary Investment and Development",
+    position: "AI ML Engineer",
+    location: "Abu Dhabi, UAE",
+    date: "May 2025 - Present",
     url: "https://aqaryaid.com",
     tasks: [
       {
         text: "Architected and developed a microservices based enterprise CRM platform supporting sales pipeline management, workflow automation, role based access control & AI powered record summarization.",
-        keywords: ["Architected", "developed", "microservices", "CRM", "sales pipeline", "workflow automation", "AI powered"],
+        keywords: ["Architected", "developed", "microservices", "CRM platform", "workflow automation", "AI powered", "record summarization"],
       },
       {
-        text: "Developed and maintained an AI-enhanced HRMS platform using Flask, featuring ATS-driven resume screening and an intelligent chatbot for employee assistance and onboarding support.",
-        keywords: ["AI-enhanced", "Flask", "ATS-driven", "chatbot", "employee assistance", "onboarding support"],
+        text: "Built a reusable AI service layer enabling automated resume screening, contextual chatbot responses, and intelligent record summarization across CRM and HRMS ecosystems.",
+        keywords: ["AI service layer", "automated resume screening", "contextual chatbot responses", "intelligent record summarization", "HRMS"],
       },
       {
-        text: "Implemented a subscription-based event system that allows external applications to receive real-time HRMS updates via Webhooks, improving automation and system interoperability.",
-        keywords: ["subscription-based event system", "real-time HRMS updates", "webhooks", "automation", "interoperability"],
+        text: "Designed and implemented a centralized Identity Service handling authentication, authorization, OAuth app whitelisting, and secure token based inter service communication.",
+        keywords: ["Identity Service", "authentication", "authorization", "OAuth app whitelisting", "secure token based", "inter service communication"],
       },
       {
-        text: "Integrated biometric devices and designed event-driven workflows to automate attendance tracking, validation, and exception handling for a seamless HR experience.",
-        keywords: ["biometric devices", "event-driven", "automate", "attendance tracking", "HR experience"],
+        text: "Implemented real time event driven architecture using Celery, Azure Service Bus, WebSockets, and Webhooks for asynchronous processing and responsive system behavior.",
+        keywords: ["real time event driven architecture", "Celery", "Azure Service Bus", "WebSockets", "Webhooks", "asynchronous processing"],
       },
       {
-        text: "Built a WebSocket-powered notification module to deliver instant alerts and real-time updates, enhancing employee engagement and operational visibility.",
-        keywords: ["WebSocket-powered notification", "alert", "real-time", "enhancing"],
-      },
-      {
-        text: "Contributed to the backend development of a large-scale CRM platform, handling backend coding, database architecture, API design, and system integration.",
-        keywords: ["backend development", "large-scale CRM", "coding", "architecture", "design", "integration"],
-      },
-      {
-        text: "Integrated WebSockets and message queuing mechanisms to enable real-time updates, asynchronous communication, and efficient data processing.",
-        keywords: ["WebSockets", "queuing mechanisms ", "real-time", "asynchronous", "efficient", "processing"],
-      },
-      {
-        text: "Collaborated closely with cross-functional teams to ensure scalability, maintainability, and clean code practices across the system's microservices.",
-        keywords: ["cross-functional", "scalability,", "maintainability", "clean code", "architecture", "microservices"],
+        text: "Containerized and deployed distributed services using Docker ensuring secure, scalable, and production grade deployments.",
+        keywords: ["Containerized", "deployed distributed services", "Docker", "secure", "scalable", "production grade deployments"],
       },
     ],
   },
   {
     id: "Flycatch",
-    companyName: "Flycatch Infotech",
+    companyName: "Flycatch Infotech Pvt. Ltd.",
     position: "Software Engineer",
-    location: "Flycatch Infotech Pvt. Ltd., Kochi, Kerala",
-    date: "Mar 2023 – Mar 2025",
+    location: "Kochi, Kerala",
+    date: "Mar 2022 - Mar 2025",
     url: "https://www.flycatchtech.com",
     tasks: [
       {
-        text: "Led backend development across multiple projects, owning system architecture, API design, and performance tuning to ensure scalable and efficient solutions.",
-        keywords: ["backend development", "system architecture", "API design", "performance tuning", "scalable", "efficient solutions"],
+        text: "Led backend architecture and delivered four customized enterprise applications from scratch, owning system design, API development, database modeling, and performance optimization.",
+        keywords: ["backend architecture", "four customized enterprise applications", "system design", "API development", "database modeling", "performance optimization"],
       },
       {
-        text: "Delivered four fully customized, client-focused applications from scratch, ensuring on-time deployment and seamless integration into production.",
-        keywords: ["customized", "client-focused applications", "on-time deployment", "seamless integration", "production"],
+        text: "Optimized API performance and system responsiveness through query tuning, caching strategies, and asynchronous processing mechanisms.",
+        keywords: ["Optimized API performance", "system responsiveness", "query tuning", "caching strategies", "asynchronous processing mechanisms"],
       },
       {
-        text: "Collaborated with cross-functional teams and directly with clients to translate requirements into user-centric solutions, while mentoring junior developers and ensuring code quality.",
-        keywords: ["cross-functional teams", "clients", "user-centric solutions", "mentoring", "junior developers", "code quality"],
+        text: "Spearheaded backend development of a travel aggregator platform using microservices, integrating payment gateways and Elasticsearch for advanced search capabilities.",
+        keywords: ["backend development", "travel aggregator platform", "microservices", "payment gateways", "Elasticsearch", "advanced search capabilities"],
       },
       {
-        text: "Implemented CI/CD pipelines and containerized deployments using Docker, streamlining the development workflow and reducing deployment downtime.",
-        keywords: ["CI/CD", "Docker", "containerized deployments", "development workflow", "deployment downtime"],
+        text: "Led development of a role based LMS and registration system integrating academic tracking, messaging workflows, and payment gateway systems.",
+        keywords: ["LMS", "registration system", "academic tracking", "messaging workflows", "payment gateway systems"],
       },
       {
-        text: "Integrated third-party APIs and optimized database queries to enhance application performance and deliver a seamless user experience.",
-        keywords: ["third-party APIs", "optimized queries", "application performance", "user experience"],
+        text: "Developed CRM and inventory platforms using Django and DRF automating business workflows and improving operational efficiency.",
+        keywords: ["CRM and inventory platforms", "Django", "DRF", "automating business workflows", "improving operational efficiency"],
+      },
+      {
+        text: "Mentored junior developers and enforced engineering standards through structured code reviews and architectural guidance.",
+        keywords: ["Mentored junior developers", "engineering standards", "structured code reviews", "architectural guidance"],
       },
     ],
   },

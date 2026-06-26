@@ -10,8 +10,8 @@ interface AboutMeProps {
 
 const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>((props, ref) => {
   const technologies = [
-    ["Python", "Django/Flask", "AI Agents/Automation", "Azure DevOps", "AWS/Google Cloud"],
-    ["SQL Servers", "Docker", "Celery/Redis", "TypeScript/JavaScript: Basics", "Next.js/React: Basics"],
+    ["Python", "SQL", "JavaScript", "Django, Flask & FastAPI", "NextJS"],
+    ["Azure & AWS", "Docker & Nginx", "Microservices Architecture", "Event-Driven Systems (Celery, Redis)", "System Design & OAuth"],
   ];
 
   return (
@@ -33,38 +33,24 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>((props, ref) => {
           <div className="w-full md:w-7/12 space-y-4 sm:text-base text-sm">
             <div className="font-Header text-AATextMuted text-justify leading-relaxed">
               Hey there! I&apos;m <span className="text-AATextPrimary font-medium keyword-hover">Thamjid</span>, an{' '}
-              <span className="text-AATextPrimary font-medium keyword-hover">AI-focused Python Developer</span>{' '}
+              <span className="text-AATextPrimary font-medium keyword-hover">AI/ML Engineer & Software Developer</span>{' '}
               who loves building <span className="text-AATextPrimary font-medium keyword-hover">scalable</span>{' '}and{' '}
-              <span className="text-AATextPrimary font-medium keyword-hover">intelligent</span>{' '}digital solutions.{' '}
-              My journey started with a passion for programming and has grown into over{' '}
-              <span className="text-AATextPrimary font-medium keyword-hover">4 years of professional experience</span>{' '}
-              crafting web applications and data-driven platforms using{' '}
+              <span className="text-AATextPrimary font-medium keyword-hover">intelligent</span>{' '}enterprise solutions.{' '}
+              With over <span className="text-AATextPrimary font-medium keyword-hover">4 years of professional experience</span>, I specialize in crafting robust backend architectures and AI-driven platforms using{' '}
+              <span className="text-AATextPrimary font-medium keyword-hover">Python</span>,{' '}
               <span className="text-AATextPrimary font-medium keyword-hover">Django</span>,{' '}
-              <span className="text-AATextPrimary font-medium keyword-hover">Flask</span>, and{' '}
-              <span className="text-AATextPrimary font-medium keyword-hover">modern AI tools</span>.
+              <span className="text-AATextPrimary font-medium keyword-hover">FastAPI</span>, and modern cloud technologies.
             </div>
             <div className="font-Header text-AATextMuted text-justify leading-relaxed">
-              Over the years, I&apos;ve had the opportunity to work across diverse domains, from{" "}
-              <span className="text-AATextPrimary font-medium keyword-hover">inventory & CRM systems</span>,{" "}
-              <span className="text-AATextPrimary font-medium keyword-hover">HR management systems</span>,{" "}
-              <span className="text-AATextPrimary font-medium keyword-hover">travel & hospitality platforms</span>,{" "}
-              <span className="text-AATextPrimary font-medium keyword-hover">university registration & learning systems</span>,{" "}
-              <span className="text-AATextPrimary font-medium keyword-hover">e-commerce</span> etc. Currently, I&apos;m working as an{" "}
-              <span className="text-AATextPrimary font-medium keyword-hover">AI/ML Engineer</span> in Abu Dhabi, where I integrate intelligent systems like{" "}
-              <span className="text-AATextPrimary font-medium keyword-hover">resume parsing</span>,{" "}
-              <span className="text-AATextPrimary font-medium keyword-hover">ATS checks</span>, and{" "}
-              <span className="text-AATextPrimary font-medium keyword-hover">chatbots</span> to enhance enterprise platforms.
+              My expertise lies in designing <span className="text-AATextPrimary font-medium keyword-hover">Microservices</span> and{' '}
+              <span className="text-AATextPrimary font-medium keyword-hover">Event-Driven Architectures</span>. Currently, I am working as an{' '}
+              <span className="text-AATextPrimary font-medium keyword-hover">AI/ML Engineer</span> at <span className="text-AATextPrimary font-medium keyword-hover">Aqary Investment and Development</span> in Abu Dhabi, where I develop enterprise CRM platforms and build reusable AI service layers for automated resume screening and intelligent chatbot responses.
             </div>
             <div className="font-Header text-AATextMuted text-justify leading-relaxed">
-              Some of my favorite projects include <span className="text-AATextPrimary font-medium keyword-hover">Wearlay</span>, an inventory and CRM
-              system, <span className="text-AATextPrimary font-medium keyword-hover">Explore World</span>, a large-scale tourism aggregator, and{" "}
-              <span className="text-AATextPrimary font-medium keyword-hover">Redalion</span>, an e-commerce platform linking QR-coded medallions to
-              digital ancestral profiles. Each project has pushed me to design{" "}
-              <span className="text-AATextPrimary font-medium keyword-hover">scalable architectures</span> and deliver{" "}
-              <span className="text-AATextPrimary font-medium keyword-hover">user-focused solutions</span>.
+              Previously at <span className="text-AATextPrimary font-medium keyword-hover">Flycatch Infotech</span>, I led the backend development of multiple customized enterprise applications, travel aggregators, and LMS platforms. I am deeply passionate about system design, optimizing API performance, and containerizing distributed services using <span className="text-AATextPrimary font-medium keyword-hover">Docker</span>.
             </div>
             <div className="font-Header tracking-wide text-AATextMuted pt-2 pb-1 text-justify">
-              Here&apos;s what I&apos;m usually working with these days:
+              Here are some of the key technologies and concepts I work with:
             </div>
             {/* Technologies List */}
             <div className="font-Header tracking-wide flex flex-row space-x-12 md:space-x-16 justify-center lg:justify-start">
@@ -78,14 +64,6 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>((props, ref) => {
                   ))}
                 </div>
               ))}
-            </div>
-            <div className="font-Header text-AATextMuted pt-4 text-justify leading-relaxed">
-              Whether it&apos;s <span className="text-AATextPrimary font-medium keyword-hover">AI-driven platforms</span>,{" "}
-              <span className="text-AATextPrimary font-medium keyword-hover">microservices-based applications</span>, or{" "}
-              <span className="text-AATextPrimary font-medium keyword-hover">innovative data solutions</span>, I&apos;m always up for the next challenge that
-              blends <span className="text-AATextPrimary font-medium keyword-hover">technology</span>,{" "}
-              <span className="text-AATextPrimary font-medium keyword-hover">creativity</span>, and{" "}
-              <span className="text-AATextPrimary font-medium keyword-hover">impact</span>.
             </div>
           </div>
 
