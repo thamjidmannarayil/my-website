@@ -109,7 +109,7 @@ const experiences: WorkExperience[] = [
   },
 ];
 
-import { GlassSection, GlassCard } from "../../Glass/GlassComponents";
+import { GlassCard } from "../../Glass/GlassComponents";
 
 export default function WhereIHaveWorked() {
   const [selectedJob, setSelectedJob] = React.useState("Aqary");
