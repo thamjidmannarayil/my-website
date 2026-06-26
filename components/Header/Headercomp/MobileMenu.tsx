@@ -12,11 +12,11 @@ const MobileMenu = props => {
         initial={{ x: "100%" }}
         animate={props.rotate ? { x: "0" } : { x: "100%" }}
         transition={{ x: { duration: 0.4 } }}
-        className="w-full fixed h-screen flex md:hidden duration-300 z-50"
+        className={`w-full fixed top-0 right-0 h-screen flex md:hidden duration-300 z-50 ${props.rotate ? 'pointer-events-auto' : 'pointer-events-none'}`}
       >
         <div
           onClick={() => closeMenu()}
-          className="w-1/4 h-full backdrop-blur-sm bg-MobileNavColor/30 hover:cursor-pointer"
+          className={`w-1/4 h-full bg-MobileNavColor/30 hover:cursor-pointer ${props.rotate ? 'backdrop-blur-sm' : ''}`}
         ></div>
         <div
           className="w-3/4 h-full bg-MobileNavBarColor flex flex-col 

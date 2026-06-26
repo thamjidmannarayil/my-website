@@ -51,7 +51,7 @@ const Header = (props: { finishedLoading: boolean, sectionsRef }) => {
             scrollSizeY.current = window.scrollY;
           }
         }
-        console.log("Scrolling checking for NavBar ", scrollSizeY.current);
+        // console.log("Scrolling checking for NavBar ", scrollSizeY.current);
       }
     }
   }, [context.sharedState.portfolio.NavBar, context.sharedState.portfolio.NavBar.IntervalEvent]);
@@ -76,24 +76,15 @@ const Header = (props: { finishedLoading: boolean, sectionsRef }) => {
     }, 1000);
   }, []);
 
-  console.log("rotate from header : ", rotate);
-  //verify document for serverSide rendering and ensure scroll is enabled after navbar loads
-  if (typeof document !== "undefined") {
-    // Only block scroll when mobile menu is actually open (rotate = true)
-    rotate ? (document.body.style.overflow = "hidden") : (document.body.style.overflow = "");
-  }
 
-  // Safety mechanism: Ensure scrolling is enabled after navbar loads
+  // Manage body scroll when mobile menu is open
   useEffect(() => {
-    if (typeof document !== "undefined" && !rotate) {
-      // Force enable scrolling after a short delay if not in mobile menu mode
-      const enableScrollTimeout = setTimeout(() => {
-        if (!rotate) {
-          document.body.style.overflow = "auto";
-        }
-      }, 2000); // Enable scroll after 2 seconds regardless of other states
-
-      return () => clearTimeout(enableScrollTimeout);
+    if (typeof document !== "undefined") {
+      if (rotate) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "";
+      }
     }
   }, [rotate]);
 
@@ -107,13 +98,12 @@ const Header = (props: { finishedLoading: boolean, sectionsRef }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ opacity: { delay: props.finishedLoading ? 0 : 0.2, duration: 0.5 } }}
-        className={`w-full fixed ${ShowElement ? `backdrop-blur-md bg-black/20 shadow-xl border-b border-white/10` : `bg-opacity-0 `} flex 
+        className={`w-full fixed top-0 ${ShowElement ? `backdrop-blur-md bg-AAprimary/80 shadow-sm border-b border-theme-border` : `bg-opacity-0 `} flex 
       justify-between px-6 sm:px-12 py-2 sm:py-4  transition-all duration-500 translate-y-0 z-50`}
       >
         {/* Logo and Cursor Switcher Container */}
         <div className="flex flex-row items-center gap-4">
           <Logo finishedLoading={props.finishedLoading} isOnDarkSection={isOnDarkSection} />
-
         </div>
 
         {/* Hide icon Designed by me */}
