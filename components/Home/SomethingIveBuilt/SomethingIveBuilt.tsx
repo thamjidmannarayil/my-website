@@ -25,6 +25,19 @@ type Project = {
 
 const projects: Project[] = [
   {
+    name: "List HRMS",
+    subtitle: "Internal Project",
+    image: "/projects/listhrms.png",
+    imageSm: "/projects/listhrms-sm.jpeg",
+    description: {
+      text: "Building a comprehensive HRMS platform, a centralized human resources management system focused on streamlining employee and organizational operations. It delivers a complete HR management experience with features like Employee Management, Attendance & Leave, Payroll, Recruitment, and Document Management, enabling efficient workforce administration. Designed as a scalable HR system supporting secure authentication, AI-powered document parsing, real-time communication, and integrations for modern enterprise HR workflows.",
+      keywords: ["HRMS platform", "HR management experience", "Employee Management", "Attendance & Leave", "Payroll", "Recruitment", "Document Management", "efficient workforce administration", "scalable HR system", "secure authentication", "AI-powered document parsing", "real-time communication", "modern enterprise HR workflows"],
+    },
+    technologies: ["Flask", "PostgreSQL", "Celery", "AzureServiceBus/Redis", "NextJS", "Docker"],
+    githubUrl: "https://github.com/thamjidmannarayil",
+    externalUrl: "https://people.aqaryone.com",
+  },
+  {
     name: "Line Inn",
     subtitle: "Personal Project",
     image: "/projects/lineinn.png",
