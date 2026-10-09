@@ -34,7 +34,7 @@ export default function Footer(props: { githubUrl: string; hideSocialsInDesktop:
     text-sm space-y-2 "
         >
           <span className="group-hover:text-AAsecondary sm:text-sm text-xs">
-            Copyright &copy; 2025. All rights reserved.
+            Copyright &copy; {new Date().getFullYear()}. All rights reserved.
           </span>
 
           <span className="text-xs flex flex-row items-center space-x-2 group-hover:text-AAsecondary">

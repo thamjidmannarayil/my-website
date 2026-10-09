@@ -5,7 +5,7 @@ import ArrowIcon from "../../Icons/ArrowIcon";
 export default function Gallery() {
   const images = [
     {
-      src: "/gallery/image1.jpg",
+      src: "/gallery/image1.jpeg",
       alt: "Gallery Image 1",
       rotation: 6,
     },
@@ -15,12 +15,12 @@ export default function Gallery() {
       rotation: -3,
     },
     {
-      src: "/gallery/image3.jpg",
+      src: "/gallery/image3.jpeg",
       alt: "Gallery Image 3",
       rotation: 2,
     },
     {
-      src: "/gallery/image4.jpg",
+      src: "/gallery/image4.jpeg",
       alt: "Gallery Image 4",
       rotation: -6,
     },

@@ -28,7 +28,7 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>((props, ref) => {
         </div>
 
         {/* Paragraphs & Image */}
-        <GlassCard className="w-full flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8 sm:space-x-2 p-6 md:p-8">
+        <GlassCard className="morphic-glass w-full flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8 sm:space-x-2 p-6 md:p-8">
           {/* Text Content */}
           <div className="w-full md:w-7/12 space-y-4 sm:text-base text-sm">
             <div className="font-Header text-AATextMuted text-justify leading-relaxed">

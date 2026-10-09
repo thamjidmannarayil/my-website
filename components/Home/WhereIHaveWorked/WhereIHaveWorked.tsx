@@ -162,11 +162,11 @@ const CompaniesBar = ({ selectedJob, setSelectedJob, experiences }) => {
         className={`flex-1 md:flex-none text-[10px] xs:text-xs sm:text-sm text-center md:text-left rounded font-mono  
              py-2 px-1 xs:py-3 xs:px-2 md:pl-6 md:px-4 md:w-44 min-w-0 duration-500 transition-all overflow-hidden
              ${isSelected
-            ? "bg-AAsecondary bg-opacity-20 text-white border-l-2 md:border-l-2 border-b-2 md:border-b-0 border-AAsecondary font-semibold"
+            ? "morphic-glass text-AATextPrimary font-semibold"
             : "text-AATextMuted hover:text-AAsecondary hover:bg-AASurface"
           }`}
       >
-        {experience.companyName}
+        <span className="relative z-10">{experience.companyName}</span>
       </button>
     );
   };
@@ -206,7 +206,7 @@ const CompaniesBar = ({ selectedJob, setSelectedJob, experiences }) => {
 
 const JobDescription = ({ experience }: { experience: WorkExperience }) => {
   return (
-    <GlassCard className="flex flex-col space-y-5 max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-4xl 3xl:max-w-5xl 4xl:max-w-6xl p-6 md:p-8 work-section-scrollbar">
+    <GlassCard className="morphic-glass flex flex-col space-y-5 max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-4xl 3xl:max-w-5xl 4xl:max-w-6xl p-6 md:p-8 work-section-scrollbar">
       <div className="flex flex-col space-y-2">
         {/* Title */}
         <div className="flex flex-row items-center gap-2">
