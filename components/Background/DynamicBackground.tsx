@@ -1,69 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import React from 'react';
 
 export default function DynamicBackground() {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
-
   return (
-    <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none" style={{ backgroundColor: 'var(--theme-primary)' }}>
-      {/* Base gradient based on theme */}
-      <div 
-        className="absolute inset-0 opacity-90 transition-colors duration-500"
-        style={{ background: 'linear-gradient(to bottom right, var(--theme-primary), var(--theme-tertiary))' }}
-      ></div>
-      
-      {/* Mesh Gradients with Framer Motion for smooth, slow movement */}
-      <div className="absolute inset-0 opacity-20">
-        <motion.div 
-          animate={{
-            x: [0, 50, -50, 0],
-            y: [0, 50, -50, 0],
-            scale: [1, 1.1, 0.9, 1],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute -top-[10%] -left-[10%] w-[70vw] h-[70vw] rounded-full filter blur-[120px]"
-          style={{ background: 'radial-gradient(circle, var(--theme-accent) 0%, transparent 60%)' }}
-        />
-        <motion.div 
-          animate={{
-            x: [0, -60, 40, 0],
-            y: [0, -40, 60, 0],
-            scale: [1, 1.2, 0.8, 1],
-          }}
-          transition={{
-            duration: 30,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute top-[20%] -right-[10%] w-[60vw] h-[60vw] rounded-full filter blur-[140px]"
-          style={{ background: 'radial-gradient(circle, var(--theme-secondary) 0%, transparent 60%)' }}
-        />
-        <motion.div 
-          animate={{
-            x: [0, 60, -30, 0],
-            y: [0, -60, 40, 0],
-            scale: [1, 0.9, 1.1, 1],
-          }}
-          transition={{
-            duration: 35,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute -bottom-[20%] left-[10%] w-[80vw] h-[80vw] rounded-full filter blur-[150px]"
-          style={{ background: 'radial-gradient(circle, var(--theme-text-muted) 0%, transparent 60%)' }}
-        />
-      </div>
-      
+    <div
+      className="fixed inset-0 z-0 overflow-hidden pointer-events-none transition-colors duration-500"
+      style={{
+        background: `
+          radial-gradient(circle at 8% 12%, color-mix(in srgb, var(--theme-accent) 14%, transparent) 0%, transparent 38%),
+          radial-gradient(circle at 92% 30%, color-mix(in srgb, var(--theme-secondary) 12%, transparent) 0%, transparent 36%),
+          radial-gradient(circle at 30% 92%, color-mix(in srgb, var(--theme-text-muted) 10%, transparent) 0%, transparent 42%),
+          linear-gradient(to bottom right, var(--theme-primary), var(--theme-tertiary))
+        `,
+      }}
+    >
       {/* Dotted Grid Texture overlay */}
       <div 
         className="absolute inset-0 pointer-events-none z-0" 

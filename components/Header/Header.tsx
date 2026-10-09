@@ -98,27 +98,29 @@ const Header = (props: { finishedLoading: boolean, sectionsRef }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ opacity: { delay: props.finishedLoading ? 0 : 0.2, duration: 0.5 } }}
-        className={`w-full fixed top-0 ${ShowElement ? `backdrop-blur-md bg-AAprimary/80 shadow-sm border-b border-theme-border` : `bg-opacity-0 `} flex 
-      justify-between px-6 sm:px-12 py-2 sm:py-4  transition-all duration-500 translate-y-0 z-50`}
+        className={`w-full fixed top-0 ${ShowElement ? `backdrop-blur-md bg-AAprimary/80 shadow-sm border-b border-theme-border` : `bg-opacity-0 `}
+      py-2 sm:py-4 transition-all duration-500 translate-y-0 z-50`}
       >
-        {/* Logo and Cursor Switcher Container */}
-        <div className="flex flex-row items-center gap-4">
-          <Logo finishedLoading={props.finishedLoading} isOnDarkSection={isOnDarkSection} />
+        <div className="content-viewport flex items-center justify-between">
+          {/* Logo and Cursor Switcher Container */}
+          <div className="flex flex-row items-center gap-4">
+            <Logo finishedLoading={props.finishedLoading} isOnDarkSection={isOnDarkSection} />
+          </div>
+
+          {/* Hide icon Designed by me */}
+
+          <IconMenu
+            rotate={rotate}
+            setRotate={setRotate}
+            setShowElement={setShowElement}
+            ShowElement={ShowElement}
+            finishedLoading={props.finishedLoading}
+            isOnDarkSection={isOnDarkSection}
+          />
+
+          {/* ? Desktop Menu */}
+          <DesktopMenu finishedLoading={props.finishedLoading} isOnDarkSection={isOnDarkSection} />
         </div>
-
-        {/* Hide icon Designed by me */}
-
-        <IconMenu
-          rotate={rotate}
-          setRotate={setRotate}
-          setShowElement={setShowElement}
-          ShowElement={ShowElement}
-          finishedLoading={props.finishedLoading}
-          isOnDarkSection={isOnDarkSection}
-        />
-
-        {/* ? Desktop Menu */}
-        <DesktopMenu finishedLoading={props.finishedLoading} isOnDarkSection={isOnDarkSection} />
       </motion.div>
     </>
   );

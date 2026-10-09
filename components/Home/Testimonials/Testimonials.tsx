@@ -21,7 +21,7 @@ const testimonials: Testimonial[] = [
     profileUrl: "https://www.linkedin.com/in/stevensaad11/",
   },
   {
-    avatar: "/avatars/manuramachandran.jpg",
+    avatar: "/avatars/manuramachandran.png",
     name: "Dr. MAanu Mundapatt Ramachandran",
     role: "Academicians @ Ministry of Education - UAE",
     message:
@@ -45,7 +45,7 @@ const testimonials: Testimonial[] = [
     profileUrl: "https://www.linkedin.com/in/arunn-ramesh-cspo%C2%AE-637b12151/",
   },
   {
-    avatar: "/avatars/rnandhukishor.jpg",
+    avatar: "/avatars/rnandhukishor.png",
     name: "R Nandhu Kishor",
     role: "Senior Software Developer, Tensaw Technologies",
     message:
@@ -74,36 +74,51 @@ const testimonialLength = 220;
 const LOOP_FACTOR = 2; // Duplicate testimonials for seamless looping
 
 export default function Testimonials() {
+  const sectionRef = useRef<HTMLElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
 
-  // Infinite auto-scroll effect
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { rootMargin: "200px 0px" }
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
+  // Only animate while the carousel is near the viewport.
   useEffect(() => {
     const container = containerRef.current;
-    if (!container) return;
+    if (!container || !isVisible || isDragging) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     let frame: number;
-    let speed = 0.5; // px per frame
+    let previousTime = performance.now();
 
-    function animate() {
-      if (!isDragging) {
-        container.scrollLeft += speed;
-        // Loop back to start for infinite effect
-        if (
-          container.scrollLeft >=
-          container.scrollWidth / LOOP_FACTOR
-        ) {
-          container.scrollLeft = 0;
-        }
+    function animate(currentTime: number) {
+      const elapsed = Math.min(currentTime - previousTime, 32);
+      previousTime = currentTime;
+      container.scrollLeft += elapsed * 0.03;
+
+      if (container.scrollLeft >= container.scrollWidth / LOOP_FACTOR) {
+        container.scrollLeft = 0;
       }
+
       frame = requestAnimationFrame(animate);
     }
+
     frame = requestAnimationFrame(animate);
 
     return () => cancelAnimationFrame(frame);
-  }, [isDragging]);
+  }, [isDragging, isVisible]);
 
   // Mouse drag handlers
   const onMouseDown = (e: React.MouseEvent) => {
@@ -159,11 +174,12 @@ export default function Testimonials() {
 
   return (
     <section
+      ref={sectionRef}
       id="TestimonialsSection"
       className="my-8 sm:my-16 overflow-x-hidden py-6 sm:py-12 relative"
     >
       {/* Title */}
-      <div data-aos="fade-up" className="flex flex-row items-center 2xl:px-72 lg:px-24 md:px-16 sm:px-16 px-4 mb-16">
+      <div data-aos="fade-up" className="content-viewport flex flex-row items-center mb-16">
         <ArrowIcon className={"flex-none h-5 md:h-6 w-5 md:w-5 translate-y-[2px] text-AAsecondary"} />
         <div className="flex-none flex-row space-x-2 items-center pr-2">
           <span className="font-bold tracking-wider text-AATextPrimary text-lg md:text-2xl w-44 md:w-56 opacity-85">
@@ -176,7 +192,7 @@ export default function Testimonials() {
 
       <div
         ref={containerRef}
-        className="flex gap-8 overflow-x-scroll no-scrollbar cursor-grab active:cursor-grabbing select-none py-8"
+        className="content-viewport flex gap-8 overflow-x-scroll no-scrollbar cursor-grab active:cursor-grabbing select-none py-8"
         style={{ scrollBehavior: "auto" }}
         onMouseDown={onMouseDown}
         onMouseMove={onMouseMove}
@@ -202,13 +218,15 @@ export default function Testimonials() {
               <img
                 src={t.avatar}
                 alt={t.name}
+                loading="lazy"
+                decoding="async"
                 className="w-28 h-28 rounded-full border border-gray-200/50 shadow-2xl hover:scale-110 transition-transform duration-300 object-cover"
                 draggable={false}
               />
             </a>
 
             {/* Card with GlassCard background - reduced height */}
-            <GlassCard className="p-6 pt-16 pb-6 w-full flex flex-col items-center relative">
+            <GlassCard className="morphic-glass p-6 pt-16 pb-6 w-full flex flex-col items-center relative">
 
               {/* Message with quotes */}
               <div className="relative w-full px-4">

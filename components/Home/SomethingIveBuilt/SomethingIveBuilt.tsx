@@ -5,7 +5,6 @@ import ArrowIcon from "../../Icons/ArrowIcon";
 import Img from "../../smallComp/image/Img";
 import GithubIcon from "../../Icons/GithubIconForSomethingIveBuild";
 import ExternalLink from "../../Icons/ExternalLink";
-import ParticleBackground from "../../Background/ParticleBackground";
 import { getTextWithHighlightedKeyword } from "../TextAndHighlight";
 
 type Project = {
@@ -187,10 +186,9 @@ export default function SomethingIveBuilt() {
   return (
     <div
       id="SomethingIveBuiltSection"
-      className=" flex flex-col xl:space-y-28 space-y-12 relative w-full overflow-x-hidden 2xl:px-72 lg:px-24 md:px-16 sm:px-16 py-32 px-4"
+      className="relative w-full overflow-x-hidden py-32"
     >
-      {/* Particle background for this section */}
-      <ParticleBackground />
+      <div className="content-viewport relative z-10 flex flex-col xl:space-y-28 space-y-12">
       {/* // ? Title   */}
       <div data-aos="fade-up" className=" flex flex-row  items-center md:px-0">
         <ArrowIcon className={"flex-none h-5 md:h-6 w-5 md:w-5 translate-y-[2px] text-AAsecondary"} />
@@ -265,9 +263,9 @@ export default function SomethingIveBuilt() {
                     </a>
                   </div>
 
-                  <div className="w-full md:backdrop-blur-md md:bg-transparent md:border md:border-gray-200/50 md:rounded-xl py-4 md:py-6 md:p-6 z-10 shadow-[0_8px_30px_rgba(0,0,0,0.04)] md:hover:bg-white/5 md:hover:border-gray-300/50 transition-all duration-300">
+                  <div className="morphic-glass w-full py-4 md:py-6 md:p-6 z-10">
                     <p
-                      className={`text-gray-300 md:text-gray-700 text-sm md:text-base ${isLeft ? "text-left" : "text-left md:text-right"}`}
+                      className={`text-AATextPrimary text-sm md:text-base leading-relaxed ${isLeft ? "text-left" : "text-left md:text-right"}`}
                       dangerouslySetInnerHTML={{
                         __html: getTextWithHighlightedKeyword(project.description.text, project.description.keywords).replace(/class="text-AAsecondary/g, 'class="text-AAsecondary font-semibold'),
                       }}
@@ -294,6 +292,7 @@ export default function SomethingIveBuilt() {
             </div>
           );
         })}
+      </div>
       </div>
     </div>
   );

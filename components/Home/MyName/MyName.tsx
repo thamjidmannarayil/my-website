@@ -13,7 +13,7 @@ const MyName: React.FC<MyNameProps> = props => {
   return (
     <div
       id="MyNameSection"
-      className="h-full flex flex-col justify-center relative px-8 2xl:px-72 xl:px-56 lg:px-32 md:px-28 sm:px-8 py-32 sm:py-52"
+      className="content-viewport min-h-[calc(100vh-5rem)] flex flex-col justify-center relative py-32 sm:py-40"
     >
       <motion.span
         initial={{ y: 10, opacity: 0 }}
