@@ -7,7 +7,7 @@ const themeAudioMap = {
   default: "/soundtrack/thachu.mp3",
   ironman: "/soundtrack/ironman.mp3",
   batman: "/soundtrack/batman.mp3",
-  drdoom: "/soundtrack/drdoom.mp3",
+  loki: "/soundtrack/loki.mp3",
   spiderman: "/soundtrack/spiderman.mp3",
 } as const;
 

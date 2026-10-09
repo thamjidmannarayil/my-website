@@ -24,6 +24,8 @@ function MyApp({ Component, pageProps }) {
   const router = useRouter();
 
   useEffect(() => {
+    if (!GA_TRACKING_ID) return;
+
     // Load Google Analytics script
     const script = document.createElement("script");
     script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`;
@@ -51,6 +53,7 @@ function MyApp({ Component, pageProps }) {
 
     return () => {
       router.events.off("routeChangeComplete", handleRouteChange);
+      script.remove();
     };
   }, [router.events]);
   const timerCookie = useRef(null);
@@ -77,6 +80,7 @@ function MyApp({ Component, pageProps }) {
       eventInputLostFocus: null,
     },
     finishedLoading: false,
+    // SmoothCursor
     customCursorEnabled: false,
   });
   return (

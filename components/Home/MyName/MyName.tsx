@@ -13,7 +13,7 @@ const MyName: React.FC<MyNameProps> = props => {
   return (
     <div
       id="MyNameSection"
-      className="h-full flex flex-col justify-center relative px-8 2xl:px-72 xl:px-56 lg:px-32 md:px-28 sm:px-8 py-32 sm:py-52"
+      className="content-viewport relative flex flex-col justify-start pb-12 pt-20 sm:pb-20 sm:pt-24 lg:pb-24 4xl:pt-36"
     >
       <motion.span
         initial={{ y: 10, opacity: 0 }}
@@ -33,7 +33,7 @@ const MyName: React.FC<MyNameProps> = props => {
           opacity: { delay: props.finishedLoading ? 0 : 0.8, duration: props.finishedLoading ? 0 : 0.6 },
           y: { delay: props.finishedLoading ? 0 : 0.8, duration: props.finishedLoading ? 0 : 0.6 },
         }}
-        className="text-AAsecondary font-bold text-3xl lg:text-7xl sm:text-5xl md:text-6xl mt-1 bg-gradient-to-r from-AATextSecondary to-AATextPrimary bg-clip-text text-transparent"
+        className="font-Header text-AAsecondary font-bold text-3xl lg:text-7xl sm:text-5xl md:text-6xl mt-1 bg-gradient-to-r from-AATextSecondary to-AATextPrimary bg-clip-text text-transparent"
       >
         Thamjid Mannarayil.
       </motion.h1>
@@ -55,7 +55,7 @@ const MyName: React.FC<MyNameProps> = props => {
           opacity: { delay: props.finishedLoading ? 0 : 1.2, duration: props.finishedLoading ? 0 : 0.6 },
           y: { delay: props.finishedLoading ? 0 : 1.2, duration: props.finishedLoading ? 0 : 0.6 },
         }}
-        className="text-AATextMuted font-bold text-3xl lg:text-7xl sm:text-5xl md:text-6xl mt-1"
+        className="font-Header text-AATextMuted font-bold text-3xl lg:text-7xl sm:text-5xl md:text-6xl mt-1"
       >
         Innovate with code.
       </motion.h2>
@@ -67,7 +67,7 @@ const MyName: React.FC<MyNameProps> = props => {
           opacity: { delay: props.finishedLoading ? 0 : 1.6, duration: props.finishedLoading ? 0 : 0.6 },
           y: { delay: props.finishedLoading ? 0 : 1.6, duration: props.finishedLoading ? 0 : 0.6 },
         }}
-        className="text-AATextMuted font-Header text-sm md:text-lg sm:text-md mt-10 tracking-wider leading-relaxed"
+        className="liquid-glass liquid-glass--overlay text-AATextMuted font-Inter text-sm md:text-lg sm:text-md mt-10 p-5 sm:p-7 tracking-wider leading-relaxed"
       >
         I&apos;m an <span className="text-AATextPrimary font-medium keyword-hover">AI-focused Python Developer</span> with over{" "}
         <span className="text-AATextPrimary font-medium keyword-hover">4 years of experience</span> designing and building scalable web applications with{" "}
@@ -103,7 +103,7 @@ const MyName: React.FC<MyNameProps> = props => {
         className="mt-12"
       >
         <a href={"/resume.pdf"} target={"_blank"} rel="noreferrer">
-          <button className="backdrop-blur-xl bg-AAprimary/10 text-AATextSecondary border-2 border-AATextMuted rounded-xl px-6 sm:px-10 py-4 sm:py-5 hover:bg-AAprimary/20 hover:border-AAAccent hover:shadow-2xl hover:shadow-AAAccent/30 transition-all duration-500 ease-out font-medium tracking-wide hover:scale-105 relative overflow-hidden group">
+          <button className="liquid-glass liquid-glass--interactive text-AATextSecondary px-6 sm:px-10 py-4 sm:py-5 transition-all duration-500 ease-out font-medium tracking-wide relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-br from-AAprimary/20 to-transparent opacity-50 group-hover:opacity-70 transition-opacity duration-500"></div>
             <div className="absolute inset-0 bg-gradient-to-t from-AAAccent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <span className="relative z-10">Check out my resume!</span>
@@ -116,8 +116,7 @@ const MyName: React.FC<MyNameProps> = props => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: props.finishedLoading ? 0 : 2.8, duration: 0.5 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-AAAccent"
-        style={{ bottom: '2.5rem', left: '50%', transform: 'translateX(-50%)' }}
+        className="absolute -bottom-5 left-1/2 -translate-x-1/2 text-AAAccent sm:bottom-10"
       >
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 animate-bounce">
           <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />

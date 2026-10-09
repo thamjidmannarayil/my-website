@@ -141,7 +141,7 @@ export function SmoothCursor({
   }, [isMobile, isEnabled])
 
   useEffect(() => {
-    if (isMobile) return
+    if (!isEnabled || isMobile) return
 
     const updateVelocity = (currentPos: Position) => {
       const currentTime = Date.now()
@@ -214,7 +214,7 @@ export function SmoothCursor({
       window.removeEventListener("mousemove", throttledMouseMove)
       if (rafId) cancelAnimationFrame(rafId)
     }
-  }, [cursorX, cursorY, rotation, scale, isVisible, isMobile])
+  }, [cursorX, cursorY, rotation, scale, isVisible, isMobile, isEnabled])
 
   if (!isEnabled || isMobile) return null
 

@@ -5,7 +5,6 @@ import ArrowIcon from "../../Icons/ArrowIcon";
 import Img from "../../smallComp/image/Img";
 import GithubIcon from "../../Icons/GithubIconForSomethingIveBuild";
 import ExternalLink from "../../Icons/ExternalLink";
-import ParticleBackground from "../../Background/ParticleBackground";
 import { getTextWithHighlightedKeyword } from "../TextAndHighlight";
 
 type Project = {
@@ -25,10 +24,23 @@ type Project = {
 
 const projects: Project[] = [
   {
-    name: "List HRMS",
+    name: "ListCRM",
+    subtitle: "Internal Web Application",
+    image: "/projects/aqarycrm.png",
+    imageSm: "/projects/aqarycrm-sm.jpg",
+    description: {
+      text: "Building List CRM, a real estate management platform powered by Django REST Framework and Flask-SocketIO for real-time operations. It features a scalable microservices architecture with modules like Admin, Notification, and Booking Management, leveraging Celery & Redis for async workflows. Designed to be a cloud-ready CRM that unites automation with modern real estate operations.",
+      keywords: ["List CRM", "real estate management platform", "Django REST Framework", "Flask-SocketIO", "real-time operations", "microservices architecture", "Admin", "Notification", "Booking Management", "Celery & Redis", "async workflows", "cloud-ready CRM", "automation", "modern real estate operations"],
+    },
+    technologies: ["Python/Flask", "PostgreSQL", "Celery", "RabbitMQ/Redis", "WebSocket", "Azure ServiceBus", "Docker"],
+    githubUrl: "https://github.com/thamjidmannarayil",
+    externalUrl: "https://crm.aqaryone.com",
+  },
+  {
+    name: "ListHRMS",
     subtitle: "Internal Project",
     image: "/projects/listhrms.png",
-    imageSm: "/projects/listhrms-sm.jpeg",
+    imageSm: "/projects/listhrms-sm.jpg",
     description: {
       text: "Building a comprehensive HRMS platform, a centralized human resources management system focused on streamlining employee and organizational operations. It delivers a complete HR management experience with features like Employee Management, Attendance & Leave, Payroll, Recruitment, and Document Management, enabling efficient workforce administration. Designed as a scalable HR system supporting secure authentication, AI-powered document parsing, real-time communication, and integrations for modern enterprise HR workflows.",
       keywords: ["HRMS platform", "HR management experience", "Employee Management", "Attendance & Leave", "Payroll", "Recruitment", "Document Management", "efficient workforce administration", "scalable HR system", "secure authentication", "AI-powered document parsing", "real-time communication", "modern enterprise HR workflows"],
@@ -36,6 +48,19 @@ const projects: Project[] = [
     technologies: ["Flask", "PostgreSQL", "Celery", "AzureServiceBus/Redis", "NextJS", "Docker"],
     githubUrl: "https://github.com/thamjidmannarayil",
     externalUrl: "https://people.aqaryone.com",
+  },
+  {
+    name: "ListIdentity",
+    subtitle: "Internal Web Application.",
+    image: "/projects/listidentity.png",
+    imageSm: "/projects/listidentity-sm.png",
+    description: {
+      text: "Developing the List Identity Service, the core authentication engine of the List ecosystem. It handles user onboarding, multi-role access control, and secure token-based authentication across microservices. Built with Django REST Framework and OAuth2 / JWT, it ensures secure, scalable, and consistent access control across the platform.",
+      keywords: ["List Identity Service", "core authentication engine", "List ecosystem", "user onboarding", "multi-role access control", "secure token-based authentication", "Django REST Framework", "OAuth2 / JWT", "secure, scalable", "consistent access control"],
+    },
+    technologies: ["Python/Flask", "PostgreSQL", "Celery", "RabbitMQ/Redis", "GRPC", "Azure BusService", "Docker"],
+    githubUrl: "https://github.com/thamjidmannarayil",
+    externalUrl: "https://id.aqaryone.com/",
   },
   {
     name: "Line Inn",
@@ -64,68 +89,30 @@ const projects: Project[] = [
     externalUrl: "https://resort.thamjidthachu.dev",
   },
   {
-    name: "Aqary CRM",
-    subtitle: "Internal Web Application",
-    image: "/projects/aqarycrm.png",
-    imageSm: "/projects/aqarycrm-sm.jpg",
-    description: {
-      text: "Building Aqary CRM, a real estate management platform powered by Django REST Framework and Flask-SocketIO for real-time operations. It features a scalable microservices architecture with modules like Admin, Notification, and Booking Management, leveraging Celery & Redis for async workflows. Designed to be a cloud-ready CRM that unites automation with modern real estate operations.",
-      keywords: ["Aqary CRM", "real estate management platform", "Django REST Framework", "Flask-SocketIO", "real-time operations", "microservices architecture", "Admin", "Notification", "Booking Management", "Celery & Redis", "async workflows", "cloud-ready CRM", "automation", "modern real estate operations"],
-    },
-    technologies: ["Python/Flask", "PostgreSQL", "Celery", "RabbitMQ/Redis", "WebSocket", "Azure ServiceBus", "Docker"],
-    githubUrl: "https://github.com/thamjidmannarayil",
-    externalUrl: "https://crm.aqaryone.com",
-  },
-  {
-    name: "HRMS - Identity Service",
-    subtitle: "Internal Web Application.",
-    image: "/projects/aqaryidentity.png",
-    imageSm: "/projects/aqaryidentity-sm.png",
-    description: {
-      text: "Developing the Aqary Identity Service, the core authentication engine of the Aqary ecosystem. It handles user onboarding, multi-role access control, and secure token-based authentication across microservices. Built with Django REST Framework and OAuth2 / JWT, it ensures secure, scalable, and consistent access control across the platform.",
-      keywords: ["Aqary Identity Service", "core authentication engine", "Aqary ecosystem", "user onboarding", "multi-role access control", "secure token-based authentication", "Django REST Framework", "OAuth2 / JWT", "secure, scalable", "consistent access control"],
-    },
-    technologies: ["Python/Flask", "PostgreSQL", "Celery", "RabbitMQ/Redis", "GRPC", "Azure BusService", "Docker"],
-    githubUrl: "https://github.com/thamjidmannarayil",
-    externalUrl: "https://id.aqaryone.com/",
-  },
-  {
     name: "App Console",
     subtitle: "Internal Web Application",
     image: "/projects/aqaryconsole.png",
     imageSm: "/projects/aqaryconsole-sm.png",
     description: {
-      text: "Building the Aqary App Console, a developer platform for seamless app integration within the Aqary ecosystem. Built with Flask and SQLAlchemy, it enables OAuth-based app registration, webhooks, and permission management through modular APIs. Supports IP whitelisting, callback validation, and dynamic event mapping to deliver secure, scalable integrations.",
-      keywords: ["Aqary App Console", "developer platform", "app integration", "Aqary ecosystem", "Flask", "SQLAlchemy", "OAuth-based app registration", "webhooks", "permission management", "modular APIs", "IP whitelisting", "callback validation", "dynamic event mapping", "secure, scalable integrations"],
+      text: "Building the List App Console, a developer platform for seamless app integration within the List ecosystem. Built with Flask and SQLAlchemy, it enables OAuth-based app registration, webhooks, and permission management through modular APIs. Supports IP whitelisting, callback validation, and dynamic event mapping to deliver secure, scalable integrations.",
+      keywords: ["List App Console", "developer platform", "app integration", "List ecosystem", "Flask", "SQLAlchemy", "OAuth-based app registration", "webhooks", "permission management", "modular APIs", "IP whitelisting", "callback validation", "dynamic event mapping", "secure, scalable integrations"],
     },
     technologies: ["Python/Flask", "Event Driven Architecture", "PostgreSQL", "Celery", "RabbitMQ/Redis", "Azure ServiceBus", "Docker"],
     githubUrl: "https://github.com/thamjidmannarayil",
     externalUrl: "https://console.aqaryone.com",
   },
   {
-    name: "Aqary API Gateway",
+    name: "API Gateway",
     subtitle: "Internal Web Application.",
     image: "/projects/aqaryrealestate.png",
     imageSm: "/projects/aqaryrealestate-sm.jpg",
     description: {
-      text: "Architected the Aqary API Gateway as the central entry point for all Aqary microservices. Built with Flask and Nginx, it manages routing, authentication, rate limiting, and service-level security. Integrated with the Identity Service for JWT validation and RBAC, featuring centralized logging and dynamic service discovery for high availability and scalability.",
-      keywords: ["Aqary API Gateway", "central entry point", "Aqary microservices", "Flask", "Nginx", "routing", "authentication", "rate limiting", "service-level security", "Identity Service", "JWT validation", "RBAC", "centralized logging", "dynamic service discovery", "high availability", "scalability"],
+      text: "Architected the List API Gateway as the central entry point for all List microservices. Built with Flask and Nginx, it manages routing, authentication, rate limiting, and service-level security. Integrated with the Identity Service for JWT validation and RBAC, featuring centralized logging and dynamic service discovery for high availability and scalability.",
+      keywords: ["List API Gateway", "central entry point", "List microservices", "Flask", "Nginx", "routing", "authentication", "rate limiting", "service-level security", "Identity Service", "JWT validation", "RBAC", "centralized logging", "dynamic service discovery", "high availability", "scalability"],
     },
     technologies: ["Python/Flask", "Docker"],
     githubUrl: "https://github.com/thamjidmannarayil",
     externalUrl: "https://aqaryaaid.com/",
-  },
-  {
-    name: "HRMS - Aqary One",
-    subtitle: "Internal Web Application.",
-    image: "/projects/hrmsaqary.png",
-    imageSm: "/projects/hrmsaqary-sm.jpg",
-    description: {
-      text: "At Aqary Investments and Development, I built real-time notification services using Webhooks and WebSockets to boost system responsiveness. Also developed an AI-powered HRMS with ATS screening, chatbot support, and biometric automation using Flask and event-driven architecture, improving HR workflows and employee experience.",
-      keywords: ["Aqary Investments and Development", "real-time notification services", "Webhooks", "WebSockets", "AI-powered HRMS", "ATS screening", "chatbot support", "biometric automation", "Flask", "event-driven architecture", "HR workflows", "employee experience"],
-    },
-    technologies: ["Python/Flask", "PyTorch", "Transformers", "Google Generative AI", "PostgreSQL", "Docker", "Celery", "RabbitMQ/Redis"],
-    externalUrl: "https://people.aqaryone.com/",
   },
   {
     name: "Explore World",
@@ -200,15 +187,14 @@ export default function SomethingIveBuilt() {
   return (
     <div
       id="SomethingIveBuiltSection"
-      className=" flex flex-col xl:space-y-28 space-y-12 relative w-full overflow-x-hidden 2xl:px-72 lg:px-24 md:px-16 sm:px-16 py-32 px-4"
+      className="relative w-full overflow-x-clip py-10 sm:py-12 lg:py-14"
     >
-      {/* Particle background for this section */}
-      <ParticleBackground />
+      <div className="content-viewport relative z-10 flex flex-col space-y-8 sm:space-y-10 lg:space-y-12">
       {/* // ? Title   */}
       <div data-aos="fade-up" className=" flex flex-row  items-center md:px-0">
         <ArrowIcon className={"flex-none h-5 md:h-6 w-5 md:w-5 translate-y-[2px] text-AAsecondary"} />
         <div className="flex-none flex-row space-x-2 items-center pr-2">
-          <span className=" font-bold tracking-wider text-AATextPrimary text-lg md:text-2xl w-44 md:w-56 opacity-85">
+          <span className="font-Header font-bold tracking-wider text-AATextPrimary text-lg md:text-2xl w-44 md:w-56 opacity-85">
             {" "}
             Some Things I&apos;ve Built
           </span>
@@ -216,7 +202,7 @@ export default function SomethingIveBuilt() {
         <div className="bg-AATextMuted h-[0.2px] w-full xl:w-1/3 md:w-1/2"></div>
       </div>
 
-      <div className="flex flex-col   xl:space-y-36 space-y-8 md:space-y-28">
+      <div className="flex flex-col space-y-8 md:space-y-16 xl:space-y-20">
         {projects.map((project, index) => {
           const isLeft = index % 2 === 0;
 
@@ -247,7 +233,7 @@ export default function SomethingIveBuilt() {
               </div>
 
               {/* Content */}
-              <div className="relative md:absolute md:grid md:grid-cols-12 w-full h-[65vh] md:h-full p-[2px] md:p-0 flex flex-col justify-center md:block">
+              <div className="relative flex min-h-[65vh] h-auto w-full flex-col justify-center p-[2px] md:absolute md:grid md:h-full md:min-h-0 md:grid-cols-12 md:p-0 md:block">
                 
                 {/* Mobile Image (Full Background Fixed Height) */}
                 <div className={`absolute inset-0 z-0 md:hidden ${isLeft ? "md:order-2" : ""}`}>
@@ -264,7 +250,7 @@ export default function SomethingIveBuilt() {
                 )}
 
                 <div
-                  className={`relative w-full h-full flex flex-col justify-center p-6 sm:p-8 md:m-0 md:p-0 z-30 bg-black/40 backdrop-blur-md border border-white/10 md:bg-transparent md:backdrop-blur-none md:border-none rounded-[22px] md:rounded-lg ${isLeft
+                  className={`relative z-30 flex h-auto min-h-[65vh] w-full flex-col justify-center gap-3 rounded-[22px] border border-white/10 bg-black/40 p-6 backdrop-blur-md sm:p-8 md:m-0 md:h-full md:min-h-0 md:gap-0 md:rounded-lg md:border-none md:bg-transparent md:p-0 md:backdrop-blur-none ${isLeft
                     ? "xl:col-span-7 xl:col-start-1 3xl:col-span-7 3xl:col-start-1 4xl:col-span-8 4xl:col-start-1 col-span-8 md:order-1"
                     : "xl:col-span-7 xl:col-start-6 3xl:col-span-7 3xl:col-start-6 4xl:col-span-8 4xl:col-start-6 col-start-5 col-span-8 items-start md:items-end"
                     }`}
@@ -278,9 +264,9 @@ export default function SomethingIveBuilt() {
                     </a>
                   </div>
 
-                  <div className="w-full md:backdrop-blur-md md:bg-transparent md:border md:border-gray-200/50 md:rounded-xl py-4 md:py-6 md:p-6 z-10 shadow-[0_8px_30px_rgba(0,0,0,0.04)] md:hover:bg-white/5 md:hover:border-gray-300/50 transition-all duration-300">
+                  <div className="liquid-glass liquid-glass--overlay project-liquid-glass z-10 w-full shrink-0 p-4 md:shrink md:p-6">
                     <p
-                      className={`text-gray-300 md:text-gray-700 text-sm md:text-base ${isLeft ? "text-left" : "text-left md:text-right"}`}
+                      className={`text-white md:text-AATextPrimary text-sm md:text-base leading-relaxed ${isLeft ? "text-left" : "text-left md:text-right"}`}
                       dangerouslySetInnerHTML={{
                         __html: getTextWithHighlightedKeyword(project.description.text, project.description.keywords).replace(/class="text-AAsecondary/g, 'class="text-AAsecondary font-semibold'),
                       }}
@@ -307,6 +293,7 @@ export default function SomethingIveBuilt() {
             </div>
           );
         })}
+      </div>
       </div>
     </div>
   );

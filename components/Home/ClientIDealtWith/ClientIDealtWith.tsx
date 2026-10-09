@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import createGlobe, { COBEOptions } from "cobe"
+import type { COBEOptions } from "cobe"
 import { useMotionValue, useSpring } from "framer-motion"
 import ArrowIcon from "../../Icons/ArrowIcon";
 
@@ -14,12 +14,12 @@ const GLOBE_CONFIG: COBEOptions = {
     width: 800,
     height: 800,
     onRender: () => { },
-    devicePixelRatio: 2,
+    devicePixelRatio: 1.5,
     phi: 0,
     theta: 0.3,
     dark: 1,
     diffuse: 0.4,
-    mapSamples: 16000,
+    mapSamples: 8000,
     mapBrightness: 1.2,
     baseColor: [1, 1, 1],
     markerColor: [251 / 255, 100 / 255, 21 / 255],
@@ -44,10 +44,12 @@ export function GlobeCanvas({
     config?: COBEOptions
 }) {
     const phi = useRef(0)
+    const containerRef = useRef<HTMLDivElement>(null)
     const canvasRef = useRef<HTMLCanvasElement>(null)
     const pointerInteracting = useRef<number | null>(null)
     const pointerInteractionMovement = useRef(0)
     const [width, setWidth] = useState(0)
+    const [isNearViewport, setIsNearViewport] = useState(false)
     const [markerColor, setMarkerColor] = useState<[number, number, number]>(config.markerColor || [255 / 255, 255 / 255, 255 / 255])
 
     const r = useMotionValue(0)
@@ -114,42 +116,73 @@ export function GlobeCanvas({
     }, []);
 
     useEffect(() => {
-        const onResize = () => {
-            if (canvasRef.current) {
-                setWidth(canvasRef.current.offsetWidth)
-            }
+        const container = containerRef.current
+        if (!container) return
+
+        const observer = new IntersectionObserver(
+            ([entry]) => setIsNearViewport(entry.isIntersecting),
+            { rootMargin: "400px 0px" }
+        )
+
+        observer.observe(container)
+        return () => observer.disconnect()
+    }, [])
+
+    useEffect(() => {
+        const canvas = canvasRef.current
+        if (!canvas) return
+
+        const updateWidth = () => setWidth(canvas.offsetWidth)
+        const resizeObserver = new ResizeObserver(updateWidth)
+        resizeObserver.observe(canvas)
+        updateWidth()
+
+        return () => resizeObserver.disconnect()
+    }, [])
+
+    useEffect(() => {
+        const canvas = canvasRef.current
+        if (!isNearViewport || !canvas || width === 0) return
+
+        let cancelled = false
+        let globe: { destroy: () => void } | null = null
+
+        const startGlobe = async () => {
+            const { default: createGlobe } = await import("cobe")
+            if (cancelled || !canvasRef.current) return
+
+            const pixelRatio = Math.min(window.devicePixelRatio || 1, 1.5)
+            const renderSize = Math.round(width * pixelRatio)
+
+            globe = createGlobe(canvasRef.current, {
+                ...config,
+                devicePixelRatio: pixelRatio,
+                width: renderSize,
+                height: renderSize,
+                markerColor,
+                onRender: (state) => {
+                    if (pointerInteracting.current === null) phi.current += 0.005
+                    state.phi = phi.current + rs.get()
+                    state.width = renderSize
+                    state.height = renderSize
+                },
+            })
+
+            canvasRef.current.style.opacity = "1"
         }
 
-        window.addEventListener("resize", onResize)
-        onResize()
-
-        if (!canvasRef.current) return
-
-        const globe = createGlobe(canvasRef.current, {
-            ...config,
-            width: width * 2,
-            height: width * 2,
-            markerColor: markerColor, // Use dynamic marker color
-            onRender: (state) => {
-                if (!pointerInteracting.current) phi.current += 0.005
-                state.phi = phi.current + rs.get()
-                state.width = width * 2
-                state.height = width * 2
-            },
-        })
-
-        setTimeout(() => {
-            if (canvasRef.current) canvasRef.current.style.opacity = "1"
-        }, 0)
+        startGlobe()
 
         return () => {
-            globe.destroy()
-            window.removeEventListener("resize", onResize)
+            cancelled = true
+            globe?.destroy()
+            if (canvasRef.current) canvasRef.current.style.opacity = "0"
         }
-    }, [rs, config, width, markerColor]) // Re-run effect when markerColor changes
+    }, [rs, config, width, markerColor, isNearViewport])
 
     return (
         <div
+            ref={containerRef}
             className={cn(
                 "relative mx-auto aspect-[1/1] w-full max-w-[600px]",
                 className
@@ -177,19 +210,19 @@ export function GlobeCanvas({
 
 export default function GlobeSection() {
     return (
-        <section id="TeamsIWorkedWithSection" className="relative overflow-hidden border-y border-AAsecondary/10 py-12 sm:py-24">
+        <section id="TeamsIWorkedWithSection" className="relative overflow-hidden border-y border-AAsecondary/10 py-10 sm:py-12 lg:py-14">
             {/* Title */}
-            <div data-aos="fade-up" className="flex flex-row items-center 2xl:px-72 lg:px-24 md:px-16 sm:px-16 px-4 mb-16">
+            <div data-aos="fade-up" className="content-viewport mb-8 flex flex-row items-center sm:mb-10">
                 <ArrowIcon className={"flex-none h-5 md:h-6 w-5 md:w-5 translate-y-[2px] text-AAsecondary"} />
                 <div className="flex-none flex-row space-x-2 text-AATextPrimary items-center pr-2">
-                    <span className="font-bold tracking-wider text-lg md:text-2xl w-44 md:w-56 opacity-85">
+                    <span className="font-Header font-bold tracking-wider text-lg md:text-2xl w-44 md:w-56 opacity-85">
                         {" "}
                         Clients I Worked With
                     </span>
                 </div>
                 <div className="bg-AATextMuted h-[0.2px] w-full xl:w-1/3 md:w-1/2"></div>
             </div>
-            <div className="container relative mx-auto flex max-w-6xl flex-col items-center gap-12 px-4 md:flex-row">
+            <div className="content-viewport liquid-glass relative flex flex-col items-center gap-12 px-6 py-8 md:flex-row md:px-10 md:py-10">
                 <div className="relative z-10 flex flex-1 flex-col items-start gap-6 text-left" data-aos="fade-right">
                     <h2 className="text-3xl font-bold tracking-tight text-AATextPrimary md:text-3xl lg:text-4xl">
                         <span className="text-AATextSecondary tracking-widest">Working with Teams</span>
