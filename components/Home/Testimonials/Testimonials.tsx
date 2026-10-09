@@ -14,7 +14,7 @@ type Testimonial = {
 const testimonials: Testimonial[] = [
   {
     avatar: "/avatars/stevenwaheed.jpg",
-    name: "Steven Waheed",
+    name: "Steven Saa Waheed",
     role: "Machine Learning Engineer, Fine Home Real Estate",
     message:
       "I've had the pleasure of working with Thamjid Mannarayil as an AI/ML Developer, and he consistently delivers high-quality, well-structured code on time. His strong problem-solving skills, attention to detail, and clean coding practices make his solutions reliable and scalable. Thamjid also brings creative ideas to the table and proactively improves models and workflows. A highly dependable and talented engineer.",
@@ -22,7 +22,7 @@ const testimonials: Testimonial[] = [
   },
   {
     avatar: "/avatars/manuramachandran.png",
-    name: "Dr. MAanu Mundapatt Ramachandran",
+    name: "Dr. Manu Mundapatt Ramachandran",
     role: "Academicians @ Ministry of Education - UAE",
     message:
       "Thamjid is exceptionally talented in programming, analytical reasoning, and problem-solving. He has demonstrated a natural ability to grasp complex concepts quickly and apply them effectively to both academic and practical projects.",
@@ -176,13 +176,13 @@ export default function Testimonials() {
     <section
       ref={sectionRef}
       id="TestimonialsSection"
-      className="my-8 sm:my-16 overflow-x-hidden py-6 sm:py-12 relative"
+      className="relative my-0 overflow-x-clip py-10 sm:py-12 lg:py-14"
     >
       {/* Title */}
-      <div data-aos="fade-up" className="content-viewport flex flex-row items-center mb-16">
+      <div data-aos="fade-up" className="content-viewport mb-8 flex flex-row items-center sm:mb-10">
         <ArrowIcon className={"flex-none h-5 md:h-6 w-5 md:w-5 translate-y-[2px] text-AAsecondary"} />
         <div className="flex-none flex-row space-x-2 items-center pr-2">
-          <span className="font-bold tracking-wider text-AATextPrimary text-lg md:text-2xl w-44 md:w-56 opacity-85">
+          <span className="font-Header font-bold tracking-wider text-AATextPrimary text-lg md:text-2xl w-44 md:w-56 opacity-85">
             {" "}
             Testimonials from Collaborators
           </span>
@@ -190,24 +190,25 @@ export default function Testimonials() {
         <div className="bg-AATextMuted h-[0.2px] w-full xl:w-1/3 md:w-1/2"></div>
       </div>
 
-      <div
-        ref={containerRef}
-        className="content-viewport flex gap-8 overflow-x-scroll no-scrollbar cursor-grab active:cursor-grabbing select-none py-8"
-        style={{ scrollBehavior: "auto" }}
-        onMouseDown={onMouseDown}
-        onMouseMove={onMouseMove}
-        onMouseUp={onMouseUp}
-        onMouseLeave={onMouseLeave}
-        onTouchStart={onTouchStart}
-        onTouchMove={onTouchMove}
-        onTouchEnd={onTouchEnd}
-      >
-        {displayTestimonials.map((t, i) => (
-          <div
-            key={i}
-            className="flex-1 min-w-[300px] sm:min-w-[340px] max-w-md flex flex-col items-center relative pt-14"
-            style={{ userSelect: "none" }}
-          >
+      <div className="content-viewport relative">
+        <div
+          ref={containerRef}
+          className="no-scrollbar flex w-full cursor-grab select-none gap-8 overflow-x-scroll py-4 active:cursor-grabbing sm:py-6"
+          style={{ scrollBehavior: "auto" }}
+          onMouseDown={onMouseDown}
+          onMouseMove={onMouseMove}
+          onMouseUp={onMouseUp}
+          onMouseLeave={onMouseLeave}
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
+        >
+          {displayTestimonials.map((t, i) => (
+            <div
+              key={i}
+              className="relative flex max-w-md min-w-[300px] flex-1 flex-col items-center pt-14 sm:min-w-[340px]"
+              style={{ userSelect: "none" }}
+            >
             {/* Avatar positioned on top center of card */}
             <a
               href={t.profileUrl}
@@ -226,7 +227,7 @@ export default function Testimonials() {
             </a>
 
             {/* Card with GlassCard background - reduced height */}
-            <GlassCard className="morphic-glass p-6 pt-16 pb-6 w-full flex flex-col items-center relative">
+            <GlassCard className="p-6 pt-16 pb-6 w-full flex flex-col items-center relative">
 
               {/* Message with quotes */}
               <div className="relative w-full px-4">
@@ -255,8 +256,12 @@ export default function Testimonials() {
                 )}
               </div>
             </GlassCard>
-          </div>
-        ))}
+            </div>
+          ))}
+        </div>
+
+        <div aria-hidden="true" className="testimonial-carousel-edge testimonial-carousel-edge--left left-4 sm:left-0" />
+        <div aria-hidden="true" className="testimonial-carousel-edge testimonial-carousel-edge--right right-4 sm:right-0" />
       </div>
     </section>
   );

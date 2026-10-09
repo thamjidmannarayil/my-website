@@ -40,7 +40,7 @@ const projects: Project[] = [
     name: "ListHRMS",
     subtitle: "Internal Project",
     image: "/projects/listhrms.png",
-    imageSm: "/projects/listhrms-sm.jpeg",
+    imageSm: "/projects/listhrms-sm.jpg",
     description: {
       text: "Building a comprehensive HRMS platform, a centralized human resources management system focused on streamlining employee and organizational operations. It delivers a complete HR management experience with features like Employee Management, Attendance & Leave, Payroll, Recruitment, and Document Management, enabling efficient workforce administration. Designed as a scalable HR system supporting secure authentication, AI-powered document parsing, real-time communication, and integrations for modern enterprise HR workflows.",
       keywords: ["HRMS platform", "HR management experience", "Employee Management", "Attendance & Leave", "Payroll", "Recruitment", "Document Management", "efficient workforce administration", "scalable HR system", "secure authentication", "AI-powered document parsing", "real-time communication", "modern enterprise HR workflows"],
@@ -187,14 +187,14 @@ export default function SomethingIveBuilt() {
   return (
     <div
       id="SomethingIveBuiltSection"
-      className="relative w-full overflow-x-hidden py-32"
+      className="relative w-full overflow-x-clip py-10 sm:py-12 lg:py-14"
     >
-      <div className="content-viewport relative z-10 flex flex-col xl:space-y-28 space-y-12">
+      <div className="content-viewport relative z-10 flex flex-col space-y-8 sm:space-y-10 lg:space-y-12">
       {/* // ? Title   */}
       <div data-aos="fade-up" className=" flex flex-row  items-center md:px-0">
         <ArrowIcon className={"flex-none h-5 md:h-6 w-5 md:w-5 translate-y-[2px] text-AAsecondary"} />
         <div className="flex-none flex-row space-x-2 items-center pr-2">
-          <span className=" font-bold tracking-wider text-AATextPrimary text-lg md:text-2xl w-44 md:w-56 opacity-85">
+          <span className="font-Header font-bold tracking-wider text-AATextPrimary text-lg md:text-2xl w-44 md:w-56 opacity-85">
             {" "}
             Some Things I&apos;ve Built
           </span>
@@ -202,7 +202,7 @@ export default function SomethingIveBuilt() {
         <div className="bg-AATextMuted h-[0.2px] w-full xl:w-1/3 md:w-1/2"></div>
       </div>
 
-      <div className="flex flex-col   xl:space-y-36 space-y-8 md:space-y-28">
+      <div className="flex flex-col space-y-8 md:space-y-16 xl:space-y-20">
         {projects.map((project, index) => {
           const isLeft = index % 2 === 0;
 
@@ -233,7 +233,7 @@ export default function SomethingIveBuilt() {
               </div>
 
               {/* Content */}
-              <div className="relative md:absolute md:grid md:grid-cols-12 w-full h-[65vh] md:h-full p-[2px] md:p-0 flex flex-col justify-center md:block">
+              <div className="relative flex min-h-[65vh] h-auto w-full flex-col justify-center p-[2px] md:absolute md:grid md:h-full md:min-h-0 md:grid-cols-12 md:p-0 md:block">
                 
                 {/* Mobile Image (Full Background Fixed Height) */}
                 <div className={`absolute inset-0 z-0 md:hidden ${isLeft ? "md:order-2" : ""}`}>
@@ -250,7 +250,7 @@ export default function SomethingIveBuilt() {
                 )}
 
                 <div
-                  className={`relative w-full h-full flex flex-col justify-center p-6 sm:p-8 md:m-0 md:p-0 z-30 bg-black/40 backdrop-blur-md border border-white/10 md:bg-transparent md:backdrop-blur-none md:border-none rounded-[22px] md:rounded-lg ${isLeft
+                  className={`relative z-30 flex h-auto min-h-[65vh] w-full flex-col justify-center gap-3 rounded-[22px] border border-white/10 bg-black/40 p-6 backdrop-blur-md sm:p-8 md:m-0 md:h-full md:min-h-0 md:gap-0 md:rounded-lg md:border-none md:bg-transparent md:p-0 md:backdrop-blur-none ${isLeft
                     ? "xl:col-span-7 xl:col-start-1 3xl:col-span-7 3xl:col-start-1 4xl:col-span-8 4xl:col-start-1 col-span-8 md:order-1"
                     : "xl:col-span-7 xl:col-start-6 3xl:col-span-7 3xl:col-start-6 4xl:col-span-8 4xl:col-start-6 col-start-5 col-span-8 items-start md:items-end"
                     }`}
@@ -264,9 +264,9 @@ export default function SomethingIveBuilt() {
                     </a>
                   </div>
 
-                  <div className="morphic-glass w-full py-4 md:py-6 md:p-6 z-10">
+                  <div className="liquid-glass liquid-glass--overlay project-liquid-glass z-10 w-full shrink-0 p-4 md:shrink md:p-6">
                     <p
-                      className={`text-AATextPrimary text-sm md:text-base leading-relaxed ${isLeft ? "text-left" : "text-left md:text-right"}`}
+                      className={`text-white md:text-AATextPrimary text-sm md:text-base leading-relaxed ${isLeft ? "text-left" : "text-left md:text-right"}`}
                       dangerouslySetInnerHTML={{
                         __html: getTextWithHighlightedKeyword(project.description.text, project.description.keywords).replace(/class="text-AAsecondary/g, 'class="text-AAsecondary font-semibold'),
                       }}

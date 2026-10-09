@@ -9,7 +9,7 @@ export default function DesktopMenu(props: { finishedLoading: boolean; isOnDarkS
   const hoverColor = props.isOnDarkSection ? "hover:text-gray-700" : "hover:text-AATextPrimary";
 
   return (
-    <div className="font-mono text-xs md:flex hidden flex-row items-center space-x-8 ">
+    <div className="font-Text2 text-xs md:flex hidden flex-row items-center space-x-8 ">
       <motion.div
         initial={{
           y: -40,

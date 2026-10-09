@@ -210,19 +210,19 @@ export function GlobeCanvas({
 
 export default function GlobeSection() {
     return (
-        <section id="TeamsIWorkedWithSection" className="relative overflow-hidden border-y border-AAsecondary/10 py-12 sm:py-24">
+        <section id="TeamsIWorkedWithSection" className="relative overflow-hidden border-y border-AAsecondary/10 py-10 sm:py-12 lg:py-14">
             {/* Title */}
-            <div data-aos="fade-up" className="content-viewport flex flex-row items-center mb-16">
+            <div data-aos="fade-up" className="content-viewport mb-8 flex flex-row items-center sm:mb-10">
                 <ArrowIcon className={"flex-none h-5 md:h-6 w-5 md:w-5 translate-y-[2px] text-AAsecondary"} />
                 <div className="flex-none flex-row space-x-2 text-AATextPrimary items-center pr-2">
-                    <span className="font-bold tracking-wider text-lg md:text-2xl w-44 md:w-56 opacity-85">
+                    <span className="font-Header font-bold tracking-wider text-lg md:text-2xl w-44 md:w-56 opacity-85">
                         {" "}
                         Clients I Worked With
                     </span>
                 </div>
                 <div className="bg-AATextMuted h-[0.2px] w-full xl:w-1/3 md:w-1/2"></div>
             </div>
-            <div className="content-viewport relative flex flex-col items-center gap-12 md:flex-row">
+            <div className="content-viewport liquid-glass relative flex flex-col items-center gap-12 px-6 py-8 md:flex-row md:px-10 md:py-10">
                 <div className="relative z-10 flex flex-1 flex-col items-start gap-6 text-left" data-aos="fade-right">
                     <h2 className="text-3xl font-bold tracking-tight text-AATextPrimary md:text-3xl lg:text-4xl">
                         <span className="text-AATextSecondary tracking-widest">Working with Teams</span>

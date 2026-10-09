@@ -55,7 +55,7 @@ export default function Home() {
         <meta name="twitter:image" content={meta.image} />
       </Head>
 
-      <div className="relative min-h-screen bg-transparent w-full overflow-x-hidden transition-colors duration-300">
+      <div className="relative min-h-screen bg-transparent w-full overflow-x-clip transition-colors duration-300">
         <DynamicBackground />
         <Header finishedLoading={context.sharedState.finishedLoading} sectionsRef={homeRef} />
         <MyName finishedLoading={context.sharedState.finishedLoading} />

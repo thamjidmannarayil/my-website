@@ -15,11 +15,11 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        Header: ["Inter", "Lato", "sans-serif"],
-        Text2: ["Inter", "Lato", "sans-serif"],
-        About: ["Playfair Display", "serif"],
-        Arimo: ["Arimo", "sans-serif"],
-        Inter: ["Inter", "sans-serif"],
+        Header: ["var(--font-header)"],
+        Text2: ["var(--font-text-2)"],
+        About: ["var(--font-about)"],
+        Arimo: ["var(--font-arimo)"],
+        Inter: ["var(--font-inter)"],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

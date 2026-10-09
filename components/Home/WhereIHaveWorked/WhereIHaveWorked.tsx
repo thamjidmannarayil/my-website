@@ -117,14 +117,14 @@ export default function WhereIHaveWorked() {
   const currentExperience = experiences.find(exp => exp.id === selectedJob);
 
   return (
-    <div data-aos="fade-up" className="flex flex-col items-center justify-center py-12 sm:py-24 space-y-6 sm:space-y-12 relative">
+    <div data-aos="fade-up" className="relative flex flex-col items-center justify-center space-y-6 py-10 sm:space-y-8 sm:py-12 lg:space-y-10 lg:py-14">
       {/* // ? Title "Where I've Worked" */}
       <section className="flex flex-row items-center w-full max-w-[500px] sm:max-w-[600px] md:max-w-[700px] lg:max-w-[900px] xl:max-w-[1100px] 2xl:max-w-[1200px] 3xl:max-w-[1400px] 4xl:max-w-[1600px] mx-auto px-4 md:px-0">
         <div className="flex flex-row items-center">
           <ArrowIcon className={"flex-none h-4 md:h-6 w-4 md:w-5 text-AAsecondary"} />
         </div>
 
-        <span className="text-AATextPrimary opacity-85 font-bold tracking-wider text-lg md:text-2xl px-3">
+        <span className="font-Header text-AATextPrimary opacity-85 font-bold tracking-wider text-lg md:text-2xl px-3">
           Where I&apos;ve Worked
         </span>
         <div className="bg-AATextMuted h-[0.2px] w-16 sm:w-44 md:w-80"></div>
@@ -145,24 +145,33 @@ export default function WhereIHaveWorked() {
 
 const CompaniesBar = ({ selectedJob, setSelectedJob, experiences }) => {
   const [barPosition, setBarPosition] = React.useState<Number>(-8);
-  const [barAbovePosition, setBarAbovePosition] = React.useState<Number>(0);
+  const selectedCompanyIndex = Math.max(0, experiences.findIndex(experience => experience.id === selectedJob));
+  const mobileColumnWeights = experiences.map((_, index) => {
+    if (index === 0) return 5;
+    if (index === 1) return 3;
+    return 2 * Math.pow(0.6, index - 2);
+  });
+  const mobileWeightTotal = mobileColumnWeights.reduce((total, weight) => total + weight, 0);
+  const mobileColumnRatios = mobileColumnWeights.map(weight => (weight / mobileWeightTotal) * 100);
+  const mobileColumnPositions = mobileColumnRatios.map((_, index) =>
+    mobileColumnRatios.slice(0, index).reduce((total, ratio) => total + ratio, 0)
+  );
+  const mobileGridTemplate = mobileColumnWeights.map(weight => `minmax(0, ${weight}fr)`).join(" ");
 
   const CompanyButton = ({ experience, index }) => {
     const isSelected = selectedJob === experience.id;
     const barPositions = [-10, 45, 100]; // Positions for each company
-    const barAbovePositions = [0, 150, 300]; // Positions for mobile bar
 
     return (
       <button
         onClick={() => {
           setBarPosition(barPositions[index]);
-          setBarAbovePosition(barAbovePositions[index]);
           setSelectedJob(experience.id);
         }}
-        className={`flex-1 md:flex-none text-[10px] xs:text-xs sm:text-sm text-center md:text-left rounded font-mono  
+        className={`w-full text-[10px] xs:text-xs sm:text-sm text-center md:text-left rounded font-mono  
              py-2 px-1 xs:py-3 xs:px-2 md:pl-6 md:px-4 md:w-44 min-w-0 duration-500 transition-all overflow-hidden
              ${isSelected
-            ? "morphic-glass text-AATextPrimary font-semibold"
+            ? "liquid-glass liquid-glass--compact text-AATextPrimary font-semibold"
             : "text-AATextMuted hover:text-AAsecondary hover:bg-AASurface"
           }`}
       >
@@ -191,13 +200,29 @@ const CompaniesBar = ({ selectedJob, setSelectedJob, experiences }) => {
       </div>
       {/* // ? Companies name as buttons */}
       <div className="flex flex-col md:order-2 order-1 space-y-1 pl-0 md:pl-0 w-full md:w-auto items-center md:items-start">
-        <div className="flex flex-row md:flex-col gap-1 xs:gap-2 md:gap-1 justify-center md:justify-start w-full md:w-auto">
+        <div
+          className="grid w-full gap-0 md:flex md:w-auto md:flex-col md:justify-start md:gap-1"
+          style={{ gridTemplateColumns: mobileGridTemplate }}
+        >
           {experiences.map((experience, index) => (
             <CompanyButton key={experience.id} experience={experience} index={index} />
           ))}
         </div>
-        <div className="block md:hidden h-0.5 rounded bg-AATextMuted/30 w-full max-w-md overflow-hidden">
-          <motion.div animate={{ x: barAbovePosition }} className="w-[150px] h-0.5 rounded bg-AAsecondary"></motion.div>
+        <div className="relative h-0.5 w-full max-w-md rounded bg-AATextMuted/30 md:hidden">
+          <motion.div
+            initial={false}
+            animate={{
+              left: `${mobileColumnPositions[selectedCompanyIndex]}%`,
+              width: `${mobileColumnRatios[selectedCompanyIndex]}%`,
+              y: [0, -3, 0],
+            }}
+            transition={{
+              left: { type: "spring", stiffness: 360, damping: 24, mass: 0.75 },
+              width: { type: "spring", stiffness: 360, damping: 24, mass: 0.75 },
+              y: { duration: 0.32, times: [0, 0.5, 1], ease: "easeOut" },
+            }}
+            className="absolute top-0 h-0.5 rounded-full bg-AAsecondary"
+          />
         </div>
       </div>
     </div>
@@ -206,7 +231,7 @@ const CompaniesBar = ({ selectedJob, setSelectedJob, experiences }) => {
 
 const JobDescription = ({ experience }: { experience: WorkExperience }) => {
   return (
-    <GlassCard className="morphic-glass flex flex-col space-y-5 max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-4xl 3xl:max-w-5xl 4xl:max-w-6xl p-6 md:p-8 work-section-scrollbar">
+    <GlassCard className="flex w-[calc(100%_-_2rem)] flex-col space-y-5 max-w-xl p-6 md:w-auto md:p-8 lg:max-w-2xl xl:max-w-3xl 2xl:max-w-4xl 3xl:max-w-5xl 4xl:max-w-6xl work-section-scrollbar">
       <div className="flex flex-col space-y-2">
         {/* Title */}
         <div className="flex flex-row items-center gap-2">

@@ -15,12 +15,12 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>((props, ref) => {
   ];
 
   return (
-    <section className="snap-start flex flex-col items-center py-10 sm:py-8 relative" id="aboutSection">
+    <section className="relative flex snap-start flex-col items-center pb-10 pt-6 sm:py-12 lg:py-14" id="aboutSection">
       <div data-aos="fade-up" className="flex flex-col space-y-8 px-4 sm:px-0 w-full sm:w-[500px] md:w-[700px] lg:w-[900px] xl:w-[1100px] 2xl:w-[1200px] 3xl:w-[1400px] 4xl:w-[1600px] relative z-10">
         <div className="flex flex-row items-center">
           <div className="flex flex-row items-center mr-4">
             <ArrowIcon className={"flex-none h-4 md:h-6 w-4 md:w-5 translate-y-[0.5px] text-AAAccent"} />
-            <span className="flex-none text-AATextSecondary opacity-95 font-bold tracking-wider text-lg sm:text-2xl pl-4">
+            <span className="flex-none font-About text-AATextSecondary opacity-95 font-bold tracking-wider text-lg sm:text-2xl pl-4">
               About Me
             </span>
           </div>
@@ -28,10 +28,10 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>((props, ref) => {
         </div>
 
         {/* Paragraphs & Image */}
-        <GlassCard className="morphic-glass w-full flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8 sm:space-x-2 p-6 md:p-8">
+        <GlassCard className="w-full flex flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-8 sm:space-x-2 p-6 md:p-8">
           {/* Text Content */}
           <div className="w-full md:w-7/12 space-y-4 sm:text-base text-sm">
-            <div className="font-Header text-AATextMuted text-justify leading-relaxed">
+            <div className="font-Inter text-AATextMuted text-justify leading-relaxed">
               Hey there! I&apos;m <span className="text-AATextPrimary font-medium keyword-hover">Thamjid</span>, an{' '}
               <span className="text-AATextPrimary font-medium keyword-hover">AI/ML Engineer & Software Developer</span>{' '}
               who loves building <span className="text-AATextPrimary font-medium keyword-hover">scalable</span>{' '}and{' '}
@@ -41,19 +41,19 @@ const AboutMe = forwardRef<HTMLDivElement, AboutMeProps>((props, ref) => {
               <span className="text-AATextPrimary font-medium keyword-hover">Django</span>,{' '}
               <span className="text-AATextPrimary font-medium keyword-hover">FastAPI</span>, and modern cloud technologies.
             </div>
-            <div className="font-Header text-AATextMuted text-justify leading-relaxed">
+            <div className="font-Inter text-AATextMuted text-justify leading-relaxed">
               My expertise lies in designing <span className="text-AATextPrimary font-medium keyword-hover">Microservices</span> and{' '}
               <span className="text-AATextPrimary font-medium keyword-hover">Event-Driven Architectures</span>. Currently, I am working as an{' '}
               <span className="text-AATextPrimary font-medium keyword-hover">AI/ML Engineer</span> at <span className="text-AATextPrimary font-medium keyword-hover">Aqary Investment and Development</span> in Abu Dhabi, where I develop enterprise CRM platforms and build reusable AI service layers for automated resume screening and intelligent chatbot responses.
             </div>
-            <div className="font-Header text-AATextMuted text-justify leading-relaxed">
+            <div className="font-Inter text-AATextMuted text-justify leading-relaxed">
               Previously at <span className="text-AATextPrimary font-medium keyword-hover">Flycatch Infotech</span>, I led the backend development of multiple customized enterprise applications, travel aggregators, and LMS platforms. I am deeply passionate about system design, optimizing API performance, and containerizing distributed services using <span className="text-AATextPrimary font-medium keyword-hover">Docker</span>.
             </div>
-            <div className="font-Header tracking-wide text-AATextMuted pt-2 pb-1 text-justify">
+            <div className="font-Inter tracking-wide text-AATextMuted pt-2 pb-1 text-justify">
               Here are some of the key technologies and concepts I work with:
             </div>
             {/* Technologies List */}
-            <div className="font-Header tracking-wide flex flex-row space-x-12 md:space-x-16 justify-center lg:justify-start">
+            <div className="font-Inter tracking-wide flex flex-row space-x-12 md:space-x-16 justify-center lg:justify-start">
               {technologies.map((techGroup, groupIndex) => (
                 <div key={groupIndex} className="flex flex-col space-y-4 sm:text-base text-sm">
                   {techGroup.map((tech, techIndex) => (
