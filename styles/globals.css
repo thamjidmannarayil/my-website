@@ -2,19 +2,19 @@
 
 @font-face {
   font-family: "Amazing Spider-Man";
-  src: url("/fonts/spider-man.ttf") format("truetype");
+  src: url("/fonts/spiderman/spider-man.ttf") format("truetype");
   font-display: swap;
 }
 
 @font-face {
   font-family: "Spider Eclipse";
-  src: url("/fonts/spider-man-esclipse.ttf") format("truetype");
+  src: url("/fonts/spiderman/spider-man-esclipse.ttf") format("truetype");
   font-display: swap;
 }
 
 @font-face {
   font-family: "Homoarakhn";
-  src: url("/fonts/homoarak.TTF") format("truetype");
+  src: url("/fonts/spiderman/homoarak.TTF") format("truetype");
   font-display: swap;
 }
 

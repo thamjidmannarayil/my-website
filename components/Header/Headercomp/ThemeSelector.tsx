@@ -14,60 +14,16 @@ interface ThemeSelectorProps {
 const themes: ReadonlyArray<{
   id: Theme;
   name: string;
+  icon: string;
 }> = [
-  { id: "default", name: "Default" },
-  { id: "ironman", name: "Iron Man" },
-  { id: "batman", name: "Batman" },
-  { id: "loki", name: "Loki" },
-  { id: "spiderman", name: "Spider-Man" },
+  { id: "default", name: "Default", icon: "/theme-icons/default.svg" },
+  { id: "ironman", name: "Iron Man", icon: "/theme-icons/ironman.svg" },
+  { id: "batman", name: "Batman", icon: "/theme-icons/batman.svg" },
+  { id: "loki", name: "Loki", icon: "/theme-icons/loki.svg" },
+  { id: "spiderman", name: "Spider-Man", icon: "/theme-icons/spiderman.svg" },
 ];
 
 type ThemeItem = (typeof themes)[number];
-
-const MinimalThemeGlyph = ({ theme }: { theme: Theme }) => {
-  if (theme === "ironman") {
-    return (
-      <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" aria-hidden="true">
-        <circle cx="12" cy="12" r="7" stroke="currentColor" strokeWidth="1.5" />
-        <path d="M12 7.5L16 14.5H8L12 7.5Z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" />
-      </svg>
-    );
-  }
-
-  if (theme === "batman") {
-    return (
-      <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" aria-hidden="true">
-        <path d="M3.5 8.5L8.2 10L10 7.5L12 10L14 7.5L15.8 10L20.5 8.5C19.4 13.4 16.5 16.2 12 17.5C7.5 16.2 4.6 13.4 3.5 8.5Z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" />
-      </svg>
-    );
-  }
-
-  if (theme === "loki") {
-    return (
-      <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" aria-hidden="true">
-        <path d="M8.5 17V10C6 8.5 5 5.5 5.5 3C8.2 5.1 9.5 7.1 10 9H14C14.5 7.1 15.8 5.1 18.5 3C19 5.5 18 8.5 15.5 10V17" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M8.5 14H15.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-      </svg>
-    );
-  }
-
-  if (theme === "spiderman") {
-    return (
-      <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" aria-hidden="true">
-        <path d="M12 3C7.5 4.5 5 8 5.5 12.5C6 17 8.6 20 12 21C15.4 20 18 17 18.5 12.5C19 8 16.5 4.5 12 3Z" stroke="currentColor" strokeWidth="1.35" />
-        <path d="M8 10L10.5 12L8.5 14M16 10L13.5 12L15.5 14M12 4V20" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    );
-  }
-
-  return (
-    <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" aria-hidden="true">
-      <circle cx="12" cy="12" r="7" stroke="currentColor" strokeWidth="1.4" />
-      <path d="M12 5V19" stroke="currentColor" strokeWidth="1.4" />
-      <path d="M12 5A7 7 0 0 1 12 19" fill="currentColor" opacity="0.18" />
-    </svg>
-  );
-};
 
 const ThemeIcon = ({ item, selected = false }: { item: ThemeItem; selected?: boolean }) => (
   <span
@@ -75,7 +31,20 @@ const ThemeIcon = ({ item, selected = false }: { item: ThemeItem; selected?: boo
       selected ? "bg-AASurface/55 text-AATextPrimary" : "text-AATextMuted"
     }`}
   >
-    <MinimalThemeGlyph theme={item.id} />
+    <span
+      className="h-4 w-4 bg-current"
+      aria-hidden="true"
+      style={{
+        WebkitMaskImage: `url(${item.icon})`,
+        maskImage: `url(${item.icon})`,
+        WebkitMaskPosition: "center",
+        maskPosition: "center",
+        WebkitMaskRepeat: "no-repeat",
+        maskRepeat: "no-repeat",
+        WebkitMaskSize: "contain",
+        maskSize: "contain",
+      }}
+    />
   </span>
 );
 
