@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
+import Image from "next/image";
 import ArrowIcon from "../../Icons/ArrowIcon";
-import Img from "../../smallComp/image/Img";
 import { GlassCard } from "../../Glass/GlassComponents";
 
 type Testimonial = {
@@ -216,11 +216,11 @@ export default function Testimonials() {
               rel="noopener noreferrer"
               className="absolute top-0 left-1/2 -translate-x-1/2 z-20"
             >
-              <img
+              <Image
                 src={t.avatar}
                 alt={t.name}
-                loading="lazy"
-                decoding="async"
+                width={112}
+                height={112}
                 className="w-28 h-28 rounded-full border border-gray-200/50 shadow-2xl hover:scale-110 transition-transform duration-300 object-cover"
                 draggable={false}
               />

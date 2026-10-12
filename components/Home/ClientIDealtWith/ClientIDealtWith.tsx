@@ -149,12 +149,12 @@ export function GlobeCanvas({
 
         const startGlobe = async () => {
             const { default: createGlobe } = await import("cobe")
-            if (cancelled || !canvasRef.current) return
+            if (cancelled) return
 
             const pixelRatio = Math.min(window.devicePixelRatio || 1, 1.5)
             const renderSize = Math.round(width * pixelRatio)
 
-            globe = createGlobe(canvasRef.current, {
+            globe = createGlobe(canvas, {
                 ...config,
                 devicePixelRatio: pixelRatio,
                 width: renderSize,
@@ -168,7 +168,7 @@ export function GlobeCanvas({
                 },
             })
 
-            canvasRef.current.style.opacity = "1"
+            canvas.style.opacity = "1"
         }
 
         startGlobe()
@@ -176,7 +176,7 @@ export function GlobeCanvas({
         return () => {
             cancelled = true
             globe?.destroy()
-            if (canvasRef.current) canvasRef.current.style.opacity = "0"
+            canvas.style.opacity = "0"
         }
     }, [rs, config, width, markerColor, isNearViewport])
 

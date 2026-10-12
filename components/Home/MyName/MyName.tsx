@@ -1,15 +1,20 @@
 import React from "react";
 import { motion } from "../../../node_modules/framer-motion/dist/framer-motion"; // Or import { motion } from "framer-motion";
-import Link from "next/link"; // Link component is imported but not used in this snippet. Remove if not needed elsewhere.
-import { useRouter } from "next/router"; // useRouter is imported but not used. Remove if not needed.
+import Image from "next/image";
+
+// Replace these with your project or profile URLs when they are ready.
+const heroToolLinks = {
+  linkedin: "https://www.linkedin.com/in/thamjid-mannarayil/",
+  design: "https://www.figma.com/@thamjidm",
+  code: "https://github.com/thamjidmannarayil",
+  deploy: "https://vercel.com/thamjidmannarayil",
+};
 
 interface MyNameProps {
   finishedLoading: boolean;
 }
 
 const MyName: React.FC<MyNameProps> = props => {
-  // const router = useRouter(); // Not used currently
-
   return (
     <div
       id="MyNameSection"
@@ -33,9 +38,20 @@ const MyName: React.FC<MyNameProps> = props => {
           opacity: { delay: props.finishedLoading ? 0 : 0.8, duration: props.finishedLoading ? 0 : 0.6 },
           y: { delay: props.finishedLoading ? 0 : 0.8, duration: props.finishedLoading ? 0 : 0.6 },
         }}
-        className="font-Header text-AAsecondary font-bold text-3xl lg:text-7xl sm:text-5xl md:text-6xl mt-1 bg-gradient-to-r from-AATextSecondary to-AATextPrimary bg-clip-text text-transparent"
+        className="font-Header text-AAsecondary font-bold text-3xl lg:text-7xl sm:text-5xl md:text-6xl mt-3 sm:mt-4"
       >
-        Thamjid Mannarayil.
+        <span className="relative inline-block bg-gradient-to-r from-AATextSecondary to-AATextPrimary bg-clip-text text-transparent">
+          <a
+            href={heroToolLinks.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Open LinkedIn profile"
+            className="liquid-glass liquid-glass--compact hero-tool-icon hero-tool-icon--linkedin"
+          >
+            <Image src="/icons/linkedin.svg" alt="" width={26} height={26} className="h-[70%] w-[70%]" />
+          </a>
+          Thamjid Mannarayil.
+        </span>
       </motion.h1>
       <motion.span
         initial={{ y: 10, opacity: 0 }}
@@ -55,9 +71,45 @@ const MyName: React.FC<MyNameProps> = props => {
           opacity: { delay: props.finishedLoading ? 0 : 1.2, duration: props.finishedLoading ? 0 : 0.6 },
           y: { delay: props.finishedLoading ? 0 : 1.2, duration: props.finishedLoading ? 0 : 0.6 },
         }}
-        className="font-Header text-AATextMuted font-bold text-3xl lg:text-7xl sm:text-5xl md:text-6xl mt-1"
+        className="font-Header text-AATextMuted font-bold text-3xl lg:text-7xl sm:text-5xl md:text-6xl mt-4 sm:mt-5"
       >
-        Innovate with code.
+        <span className="relative inline-block">
+          <a
+            href={heroToolLinks.design}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Open design link"
+            className="liquid-glass liquid-glass--compact hero-tool-icon hero-tool-icon--design"
+          >
+            <Image src="/icons/figma.svg" alt="" width={12} height={17} className="h-[72%] w-auto" />
+          </a>
+          Design,
+        </span>{" "}
+        <span className="relative inline-block">
+          <a
+            href={heroToolLinks.code}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Open code link"
+            className="liquid-glass liquid-glass--compact hero-tool-icon hero-tool-icon--code"
+          >
+            <Image src="/icons/github.svg" alt="" width={16} height={16} className="h-[68%] w-[68%]" />
+          </a>
+          Code
+        </span>{" "}
+        and{" "}
+        <span className="relative inline-block">
+          <a
+            href={heroToolLinks.deploy}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Open deployment link"
+            className="liquid-glass liquid-glass--compact hero-tool-icon hero-tool-icon--deploy"
+          >
+            <Image src="/icons/vercel.svg" alt="" width={18} height={16} className="h-[64%] w-auto" />
+          </a>
+          Deploy.
+        </span>
       </motion.h2>
 
       <motion.h3

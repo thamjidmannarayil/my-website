@@ -248,7 +248,7 @@ export default function SomethingIveBuilt() {
                     }`}
                 >
                   <div className={`flex flex-col space-y-1 z-10 ${isLeft ? "" : "md:items-end"}`}>
-                    <span className="text-AATextMuted md:text-gray-500 font-medium text-base">{project.subtitle}</span>
+                    <span className="project-subtitle text-AATextMuted md:text-gray-500 font-medium text-base">{project.subtitle}</span>
                     <a href={project.externalUrl} target="_blank" rel="noopener noreferrer">
                       <span className="text-AATextPrimary md:text-gray-900 keyword-hover font-bold text-xl hover:cursor-pointer">
                         {project.name}
@@ -258,7 +258,7 @@ export default function SomethingIveBuilt() {
 
                   <div className="liquid-glass liquid-glass--overlay project-liquid-glass z-10 w-full shrink-0 p-2 md:shrink md:p-6">
                     <p
-                      className={`text-AATextPrimary text-sm md:text-base leading-relaxed ${isLeft ? "text-left" : "text-left md:text-right"}`}
+                      className={`project-description text-AATextPrimary text-sm md:text-base leading-relaxed ${isLeft ? "text-left" : "text-left md:text-right"}`}
                       dangerouslySetInnerHTML={{
                         __html: getTextWithHighlightedKeyword(project.description.text, project.description.keywords).replace(/class="text-AAsecondary/g, 'class="text-AAsecondary font-semibold'),
                       }}
