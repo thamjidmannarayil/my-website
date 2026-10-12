@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useTheme } from "./ThemeContext";
 
 const themeAudioMap = {
@@ -26,10 +26,11 @@ const ThemeAudio = () => {
     return theme.charAt(0).toUpperCase() + theme.slice(1);
   }, [theme]);
 
-  const playAudio = async () => {
-    if (!audioRef.current) return;
+  const playAudio = useCallback(async () => {
+    const audio = audioRef.current;
+    if (!audio) return;
     try {
-      await audioRef.current.play();
+      await audio.play();
       setIsPlaying(true);
       setNotification(`${songName} Theme Music is playing`);
       window.setTimeout(() => setNotification(""), 3500);
@@ -37,7 +38,7 @@ const ThemeAudio = () => {
       setIsPlaying(false);
       console.debug("ThemeAudio: playback blocked or not allowed yet", error);
     }
-  };
+  }, [songName]);
 
   const pauseAudio = () => {
     if (!audioRef.current) return;
@@ -47,23 +48,26 @@ const ThemeAudio = () => {
   };
 
   useEffect(() => {
-    if (!audioRef.current) return;
-    audioRef.current.src = source;
-    audioRef.current.load();
-    if (isPlaying) {
+    const audio = audioRef.current;
+    if (!audio) return;
+    const wasPlaying = !audio.paused;
+    audio.src = source;
+    audio.load();
+    if (wasPlaying) {
       playAudio();
     }
-  }, [source]);
+  }, [playAudio, source]);
 
   useEffect(() => {
-    if (!audioRef.current) return;
+    const audio = audioRef.current;
+    if (!audio) return;
     const onPlay = () => setIsPlaying(true);
     const onPause = () => setIsPlaying(false);
-    audioRef.current.addEventListener("play", onPlay);
-    audioRef.current.addEventListener("pause", onPause);
+    audio.addEventListener("play", onPlay);
+    audio.addEventListener("pause", onPause);
     return () => {
-      audioRef.current?.removeEventListener("play", onPlay);
-      audioRef.current?.removeEventListener("pause", onPause);
+      audio.removeEventListener("play", onPlay);
+      audio.removeEventListener("pause", onPause);
     };
   }, []);
 

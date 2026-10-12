@@ -694,6 +694,84 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Match the Spider-Man work-title treatment on project subtitles. */
+:root[data-theme="spiderman"] .project-subtitle {
+  color: var(--theme-project-subtitle);
+  font-family: var(--font-arimo);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+}
+
+@media (min-width: 640px) {
+  :root[data-theme="spiderman"] .project-subtitle {
+    font-size: 1.125rem;
+  }
+}
+
+:root[data-theme="loki"] .project-description {
+  color: #ffffff;
+}
+
+.hero-tool-icon {
+  --hero-icon-rotation: 0deg;
+  --glass-radius: 0.35rem;
+  --glass-blur: 16px;
+  --glass-saturation: 165%;
+  --glass-fill: color-mix(in srgb, var(--theme-surface) 64%, transparent);
+  --glass-fill-secondary: rgba(255, 255, 255, 0.24);
+  --glass-accent: color-mix(in srgb, var(--theme-accent) 12%, transparent);
+  --glass-border: color-mix(in srgb, var(--theme-border-strong) 24%, rgba(255, 255, 255, 0.68));
+  --glass-highlight: rgba(255, 255, 255, 0.82);
+  position: absolute;
+  top: 0;
+  left: 0.08em;
+  z-index: 2;
+  display: flex;
+  width: clamp(1.25rem, 0.48em, 2.15rem);
+  height: clamp(1.25rem, 0.48em, 2.15rem);
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 12px rgba(15, 23, 42, 0.28);
+  transform: translate(-32%, -45%) rotate(var(--hero-icon-rotation));
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.hero-tool-icon--design {
+  --hero-icon-rotation: -10deg;
+}
+
+.hero-tool-icon--linkedin {
+  --hero-icon-rotation: -8deg;
+}
+
+.hero-tool-icon--code {
+  --hero-icon-rotation: 43deg;
+}
+
+.hero-tool-icon--code img {
+  transform: rotate(-43deg);
+}
+
+.hero-tool-icon--deploy {
+  --hero-icon-rotation: 12deg;
+}
+
+.hero-tool-icon--deploy img {
+  transform: rotate(-12deg);
+}
+
+.hero-tool-icon:hover,
+.hero-tool-icon:focus-visible {
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.34);
+  outline: none;
+  transform: translate(-32%, -52%) rotate(var(--hero-icon-rotation)) scale(1.08);
+}
+
+.hero-tool-icon:focus-visible {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--theme-accent) 34%, transparent), 0 8px 18px rgba(15, 23, 42, 0.34);
+}
+
 /* Dotted Background Pattern */
 .dotted-bg {
   background-color: var(--theme-primary);

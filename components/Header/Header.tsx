@@ -7,8 +7,6 @@ import MobileMenu from "./Headercomp/MobileMenu";
 import { motion } from "framer-motion";
 import AppContext from "../AppContextFolder/AppContext";
 
-const NAVBAR_REVEAL_DURATION = 4000;
-
 const Header = (props: { finishedLoading: boolean, sectionsRef }) => {
   const [ShowElement, setShowElement] = useState(false);
   const [rotate, setRotate] = useState<boolean>(false);
@@ -34,42 +32,9 @@ const Header = (props: { finishedLoading: boolean, sectionsRef }) => {
     }
   }, [appContext]);
 
-  // Keep the navigation available on upward intent, then dismiss it after a
-  // short idle period so it does not cover content in the middle of the page.
+  // Show the navigation while scrolling up and hide it while scrolling down.
   useEffect(() => {
-    let hideTimer: number | undefined;
     let animationFrame: number | undefined;
-    let lastTouchY: number | undefined;
-
-    const clearHideTimer = () => {
-      if (hideTimer !== undefined) {
-        window.clearTimeout(hideTimer);
-        hideTimer = undefined;
-      }
-    };
-
-    const scheduleHide = () => {
-      clearHideTimer();
-      if (window.scrollY > 64 && !rotate) {
-        hideTimer = window.setTimeout(() => setIsNavVisible(false), NAVBAR_REVEAL_DURATION);
-      }
-    };
-
-    const revealNavigation = () => {
-      setIsNavVisible(true);
-      if (window.scrollY <= 24 || rotate) {
-        clearHideTimer();
-      } else {
-        scheduleHide();
-      }
-    };
-
-    const hideNavigation = () => {
-      if (window.scrollY > 24 && !rotate) {
-        clearHideTimer();
-        setIsNavVisible(false);
-      }
-    };
 
     const updateDarkSection = () => {
       const projectSection = document.getElementById("SomethingIveBuiltSection");
@@ -85,12 +50,11 @@ const Header = (props: { finishedLoading: boolean, sectionsRef }) => {
       updateDarkSection();
 
       if (currentScrollY <= 24 || rotate) {
-        clearHideTimer();
         setIsNavVisible(true);
-      } else if (scrollDelta > 4) {
-        hideNavigation();
-      } else if (scrollDelta < -0.5) {
-        revealNavigation();
+      } else if (scrollDelta > 0) {
+        setIsNavVisible(false);
+      } else if (scrollDelta < 0) {
+        setIsNavVisible(true);
       }
 
       lastScrollY.current = currentScrollY;
@@ -103,51 +67,16 @@ const Header = (props: { finishedLoading: boolean, sectionsRef }) => {
       }
     };
 
-    const onWheel = (event: WheelEvent) => {
-      if (event.deltaY < -1) revealNavigation();
-      if (event.deltaY > 4) hideNavigation();
-    };
-
-    const onTouchStart = (event: TouchEvent) => {
-      lastTouchY = event.touches[0]?.clientY;
-    };
-
-    const onTouchMove = (event: TouchEvent) => {
-      const currentTouchY = event.touches[0]?.clientY;
-      if (currentTouchY === undefined || lastTouchY === undefined) return;
-
-      const touchDelta = currentTouchY - lastTouchY;
-      if (touchDelta > 2) revealNavigation();
-      if (touchDelta < -4) hideNavigation();
-      lastTouchY = currentTouchY;
-    };
-
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (["ArrowUp", "PageUp", "Home"].includes(event.key)) revealNavigation();
-      if (["ArrowDown", "PageDown", "End"].includes(event.key)) hideNavigation();
-    };
-
     lastScrollY.current = Math.max(0, window.scrollY);
     updateDarkSection();
-    if (rotate) {
+    if (rotate || window.scrollY <= 24) {
       setIsNavVisible(true);
-    } else if (window.scrollY > 64) {
-      scheduleHide();
     }
 
     window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("wheel", onWheel, { passive: true });
-    window.addEventListener("touchstart", onTouchStart, { passive: true });
-    window.addEventListener("touchmove", onTouchMove, { passive: true });
-    window.addEventListener("keydown", onKeyDown);
 
     return () => {
       window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("wheel", onWheel);
-      window.removeEventListener("touchstart", onTouchStart);
-      window.removeEventListener("touchmove", onTouchMove);
-      window.removeEventListener("keydown", onKeyDown);
-      clearHideTimer();
       if (animationFrame !== undefined) window.cancelAnimationFrame(animationFrame);
     };
   }, [rotate]);
