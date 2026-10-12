@@ -193,7 +193,7 @@ export default function Testimonials() {
       <div className="content-viewport relative">
         <div
           ref={containerRef}
-          className="no-scrollbar flex w-full cursor-grab select-none gap-8 overflow-x-scroll py-4 active:cursor-grabbing sm:py-6"
+          className="testimonial-carousel-track no-scrollbar flex w-full cursor-grab select-none gap-8 overflow-x-scroll py-4 active:cursor-grabbing sm:py-6"
           style={{ scrollBehavior: "auto" }}
           onMouseDown={onMouseDown}
           onMouseMove={onMouseMove}
@@ -260,8 +260,6 @@ export default function Testimonials() {
           ))}
         </div>
 
-        <div aria-hidden="true" className="testimonial-carousel-edge testimonial-carousel-edge--left left-4 sm:left-0" />
-        <div aria-hidden="true" className="testimonial-carousel-edge testimonial-carousel-edge--right right-4 sm:right-0" />
       </div>
     </section>
   );
