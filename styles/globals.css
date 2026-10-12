@@ -552,59 +552,40 @@ html[data-theme="loki"] body {
   overflow: visible;
 }
 
-.testimonial-carousel-edge {
-  position: absolute;
-  z-index: 30;
-  top: 1rem;
-  bottom: 1rem;
-  width: clamp(1.4rem, 5vw, 2.75rem);
-  pointer-events: none;
-  opacity: 0.86;
-  -webkit-backdrop-filter: blur(1.5px);
-  backdrop-filter: blur(1.5px);
-}
-
-.testimonial-carousel-edge::after {
-  content: "";
-  position: absolute;
-  top: 12%;
-  bottom: 12%;
-  width: 1px;
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    color-mix(in srgb, var(--theme-accent) 34%, transparent) 24%,
-    color-mix(in srgb, var(--theme-text-muted) 26%, transparent) 50%,
-    color-mix(in srgb, var(--theme-accent) 34%, transparent) 76%,
-    transparent
-  );
-  box-shadow: 0 0 10px color-mix(in srgb, var(--theme-accent) 18%, transparent);
-}
-
-.testimonial-carousel-edge--left {
-  background: linear-gradient(
+.testimonial-carousel-track {
+  -webkit-mask-image: linear-gradient(
     to right,
-    color-mix(in srgb, var(--theme-primary) 82%, transparent),
-    color-mix(in srgb, var(--theme-primary) 40%, transparent) 55%,
-    transparent
+    transparent 0,
+    #000 12px,
+    #000 calc(100% - 12px),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 12px,
+    #000 calc(100% - 12px),
+    transparent 100%
   );
 }
 
-.testimonial-carousel-edge--left::after {
-  left: 0;
-}
-
-.testimonial-carousel-edge--right {
-  background: linear-gradient(
-    to left,
-    color-mix(in srgb, var(--theme-primary) 82%, transparent),
-    color-mix(in srgb, var(--theme-primary) 40%, transparent) 55%,
-    transparent
-  );
-}
-
-.testimonial-carousel-edge--right::after {
-  right: 0;
+@media (min-width: 640px) {
+  .testimonial-carousel-track {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      #000 20px,
+      #000 calc(100% - 20px),
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      #000 20px,
+      #000 calc(100% - 20px),
+      transparent 100%
+    );
+  }
 }
 
 @media (max-width: 767px) {
@@ -648,12 +629,43 @@ html[data-theme="loki"] body {
 }
 
 @media (max-width: 767px) {
+  .project-card-liquid-glass {
+    --glass-radius: 24px;
+    --glass-fill: color-mix(in srgb, var(--theme-surface) 58%, transparent);
+    --glass-fill-secondary: color-mix(in srgb, var(--theme-primary) 36%, transparent);
+    --glass-accent: color-mix(in srgb, var(--theme-accent) 9%, transparent);
+    --glass-border: color-mix(in srgb, var(--theme-border-strong) 30%, rgba(255, 255, 255, 0.52));
+    --glass-highlight: rgba(255, 255, 255, 0.72);
+    --glass-blur: 28px;
+    --glass-saturation: 145%;
+  }
+
   .project-liquid-glass {
-    --glass-fill: rgba(7, 10, 18, 0.42);
-    --glass-fill-secondary: rgba(255, 255, 255, 0.045);
-    --glass-accent: color-mix(in srgb, var(--theme-accent) 13%, transparent);
-    --glass-border: rgba(255, 255, 255, 0.2);
-    --glass-highlight: rgba(255, 255, 255, 0.4);
+    --glass-radius: 18px;
+    --glass-fill: color-mix(in srgb, var(--theme-surface) 72%, transparent);
+    --glass-fill-secondary: rgba(255, 255, 255, 0.18);
+    --glass-accent: color-mix(in srgb, var(--theme-accent) 7%, transparent);
+    --glass-border: color-mix(in srgb, var(--theme-border-strong) 34%, rgba(255, 255, 255, 0.58));
+    --glass-highlight: rgba(255, 255, 255, 0.78);
+    --glass-shadow: color-mix(in srgb, var(--theme-shadow) 68%, transparent);
+    --glass-blur: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .project-card-liquid-glass {
+    isolation: auto;
+    overflow: visible;
+    border: 0;
+    background: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    box-shadow: none;
+  }
+
+  .project-card-liquid-glass::before,
+  .project-card-liquid-glass::after {
+    display: none;
   }
 }
 

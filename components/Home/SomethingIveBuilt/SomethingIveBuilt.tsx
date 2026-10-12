@@ -26,8 +26,8 @@ const projects: Project[] = [
   {
     name: "ListCRM",
     subtitle: "Internal Web Application",
-    image: "/projects/aqarycrm.png",
-    imageSm: "/projects/aqarycrm-sm.jpg",
+    image: "/projects/listcrm.png",
+    imageSm: "/projects/listcrm-sm.jpg",
     description: {
       text: "Building List CRM, a real estate management platform powered by Django REST Framework and Flask-SocketIO for real-time operations. It features a scalable microservices architecture with modules like Admin, Notification, and Booking Management, leveraging Celery & Redis for async workflows. Designed to be a cloud-ready CRM that unites automation with modern real estate operations.",
       keywords: ["List CRM", "real estate management platform", "Django REST Framework", "Flask-SocketIO", "real-time operations", "microservices architecture", "Admin", "Notification", "Booking Management", "Celery & Redis", "async workflows", "cloud-ready CRM", "automation", "modern real estate operations"],
@@ -233,15 +233,7 @@ export default function SomethingIveBuilt() {
               </div>
 
               {/* Content */}
-              <div className="relative flex min-h-[65vh] h-auto w-full flex-col justify-center p-[2px] md:absolute md:grid md:h-full md:min-h-0 md:grid-cols-12 md:p-0 md:block">
-                
-                {/* Mobile Image (Full Background Fixed Height) */}
-                <div className={`absolute inset-0 z-0 md:hidden ${isLeft ? "md:order-2" : ""}`}>
-                  <div className="relative w-full h-full rounded-[24px] overflow-hidden">
-                    <div className="absolute inset-0 bg-gray-900/40 z-20 pointer-events-none"></div>
-                    <Img src={project.imageSm} alt={"Project Screen shot"} className={`w-full h-full object-cover z-10`} />
-                  </div>
-                </div>
+              <div className="relative flex h-auto w-full flex-col justify-center p-[2px] md:absolute md:grid md:h-full md:min-h-0 md:grid-cols-12 md:p-0 md:block">
 
                 {project.badge && !isLeft && (
                   <div className="absolute top-4 right-4 md:hidden z-40">
@@ -250,23 +242,23 @@ export default function SomethingIveBuilt() {
                 )}
 
                 <div
-                  className={`relative z-30 flex h-auto min-h-[65vh] w-full flex-col justify-center gap-3 rounded-[22px] border border-white/10 bg-black/40 p-6 backdrop-blur-md sm:p-8 md:m-0 md:h-full md:min-h-0 md:gap-0 md:rounded-lg md:border-none md:bg-transparent md:p-0 md:backdrop-blur-none ${isLeft
+                  className={`liquid-glass liquid-glass--overlay project-card-liquid-glass relative z-30 flex h-auto w-full flex-col justify-center gap-3 p-3 sm:p-4 md:m-0 md:h-full md:min-h-0 md:gap-0 md:rounded-lg md:p-0 ${isLeft
                     ? "xl:col-span-7 xl:col-start-1 3xl:col-span-7 3xl:col-start-1 4xl:col-span-8 4xl:col-start-1 col-span-8 md:order-1"
                     : "xl:col-span-7 xl:col-start-6 3xl:col-span-7 3xl:col-start-6 4xl:col-span-8 4xl:col-start-6 col-start-5 col-span-8 items-start md:items-end"
                     }`}
                 >
                   <div className={`flex flex-col space-y-1 z-10 ${isLeft ? "" : "md:items-end"}`}>
-                    <span className="text-gray-300 md:text-gray-500 font-medium text-base">{project.subtitle}</span>
+                    <span className="text-AATextMuted md:text-gray-500 font-medium text-base">{project.subtitle}</span>
                     <a href={project.externalUrl} target="_blank" rel="noopener noreferrer">
-                      <span className="text-white md:text-gray-900 keyword-hover font-bold text-xl hover:cursor-pointer">
+                      <span className="text-AATextPrimary md:text-gray-900 keyword-hover font-bold text-xl hover:cursor-pointer">
                         {project.name}
                       </span>
                     </a>
                   </div>
 
-                  <div className="liquid-glass liquid-glass--overlay project-liquid-glass z-10 w-full shrink-0 p-4 md:shrink md:p-6">
+                  <div className="liquid-glass liquid-glass--overlay project-liquid-glass z-10 w-full shrink-0 p-2 md:shrink md:p-6">
                     <p
-                      className={`text-white md:text-AATextPrimary text-sm md:text-base leading-relaxed ${isLeft ? "text-left" : "text-left md:text-right"}`}
+                      className={`text-AATextPrimary text-sm md:text-base leading-relaxed ${isLeft ? "text-left" : "text-left md:text-right"}`}
                       dangerouslySetInnerHTML={{
                         __html: getTextWithHighlightedKeyword(project.description.text, project.description.keywords).replace(/class="text-AAsecondary/g, 'class="text-AAsecondary font-semibold'),
                       }}
@@ -274,11 +266,11 @@ export default function SomethingIveBuilt() {
                   </div>
 
                   <ul
-                    className={`flex flex-wrap w-full text-gray-400 md:text-gray-500 text-sm font-Text2 ${isLeft ? "" : "md:justify-end"
+                    className={`flex flex-wrap w-full text-AATextMuted md:text-gray-500 text-sm font-Text2 ${isLeft ? "" : "md:justify-end"
                       }`}
                   >
                     {project.technologies.map((tech, techIndex) => (
-                      <span key={techIndex} className="pr-4 z-10 hover:text-white md:hover:text-black transition-colors cursor-default">{tech}</span>
+                      <span key={techIndex} className="pr-4 z-10 hover:text-AAsecondary md:hover:text-black transition-colors cursor-default">{tech}</span>
                     ))}
                   </ul>
 
