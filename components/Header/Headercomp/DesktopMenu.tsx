@@ -169,9 +169,17 @@ export default function DesktopMenu(props: { finishedLoading: boolean; isOnDarkS
             delay: props.finishedLoading ? 0 : 1.5,
           }}
           // onClick={()=>{router.push("/resume.pdf")}}
-          className={`${textColor} border-2 border-AAAccent py-2 px-4 rounded-lg hover:bg-AAAccent/20 ${props.isOnDarkSection ? 'hover:border-white' : 'hover:border-AATextPrimary'} transition-all duration-300 backdrop-blur-sm`}
+          className={`${textColor} group inline-flex items-center gap-2 border-2 border-AAAccent py-2 px-4 rounded-lg hover:bg-AAAccent/20 ${props.isOnDarkSection ? 'hover:border-white' : 'hover:border-AATextPrimary'} transition-all duration-300 backdrop-blur-sm`}
         >
-          Resume
+          <span>Resume</span>
+          <svg
+            viewBox="0 0 24 24"
+            className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path d="M8 16L16 8M10 8H16V14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
         </motion.button>
       </a>
 
