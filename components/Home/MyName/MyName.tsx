@@ -155,10 +155,18 @@ const MyName: React.FC<MyNameProps> = props => {
         className="mt-12"
       >
         <a href={"/resume.pdf"} target={"_blank"} rel="noreferrer">
-          <button className="liquid-glass liquid-glass--interactive text-AATextSecondary px-6 sm:px-10 py-4 sm:py-5 transition-all duration-500 ease-out font-medium tracking-wide relative overflow-hidden group">
+          <button className="liquid-glass liquid-glass--interactive text-AATextSecondary px-6 sm:px-10 py-4 sm:py-5 transition-all duration-500 ease-out font-medium tracking-wide relative overflow-hidden group inline-flex items-center justify-center gap-4">
             <div className="absolute inset-0 bg-gradient-to-br from-AAprimary/20 to-transparent opacity-50 group-hover:opacity-70 transition-opacity duration-500"></div>
             <div className="absolute inset-0 bg-gradient-to-t from-AAAccent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <span className="relative z-10">Check out my resume!</span>
+            <svg
+              viewBox="0 0 24 24"
+              className="relative z-10 h-5 w-5 shrink-0 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path d="M8 16L16 8M10 8H16V14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
           </button>
         </a>
       </motion.div>

@@ -44,7 +44,7 @@
 
 @font-face {
   font-family: "Bebas Neue Local";
-  src: url("/fonts/batman/BebasNeue-Regular.ttf") format("truetype");
+  src: url("/fonts/batman/Bruce-Forever.otf") format("truetype");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -709,6 +709,15 @@ body {
   }
 }
 
+/* Keep project keywords distinct from the surrounding copy on light themes. */
+:root[data-theme="default"] .project-description {
+  color: var(--theme-text-muted);
+}
+
+:root[data-theme="spiderman"] .project-description {
+  color: var(--theme-text-muted);
+}
+
 :root[data-theme="loki"] .project-description {
   color: #ffffff;
 }
@@ -725,7 +734,7 @@ body {
   --glass-highlight: rgba(255, 255, 255, 0.82);
   position: absolute;
   top: 0;
-  left: 0.08em;
+  left: 0;
   z-index: 2;
   display: flex;
   width: clamp(1.25rem, 0.48em, 2.15rem);
@@ -733,7 +742,7 @@ body {
   align-items: center;
   justify-content: center;
   box-shadow: 0 5px 12px rgba(15, 23, 42, 0.28);
-  transform: translate(-32%, -45%) rotate(var(--hero-icon-rotation));
+  transform: translate(-50%, -45%) rotate(var(--hero-icon-rotation));
   transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
@@ -742,30 +751,29 @@ body {
 }
 
 .hero-tool-icon--linkedin {
-  --hero-icon-rotation: -8deg;
+  --hero-icon-rotation: -14deg;
+  left: 0.06em;
 }
 
 .hero-tool-icon--code {
-  --hero-icon-rotation: 43deg;
-}
-
-.hero-tool-icon--code img {
-  transform: rotate(-43deg);
+  --hero-icon-rotation: 0deg;
+  left: 0.3em;
 }
 
 .hero-tool-icon--deploy {
-  --hero-icon-rotation: 12deg;
+  --hero-icon-rotation: 42deg;
+  left: 0.3em;
 }
 
 .hero-tool-icon--deploy img {
-  transform: rotate(-12deg);
+  transform: rotate(-42deg);
 }
 
 .hero-tool-icon:hover,
 .hero-tool-icon:focus-visible {
   box-shadow: 0 8px 18px rgba(15, 23, 42, 0.34);
   outline: none;
-  transform: translate(-32%, -52%) rotate(var(--hero-icon-rotation)) scale(1.08);
+  transform: translate(-50%, -52%) rotate(var(--hero-icon-rotation)) scale(1.08);
 }
 
 .hero-tool-icon:focus-visible {
